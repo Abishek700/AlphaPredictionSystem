@@ -1,0 +1,74 @@
+%%%%%%
+%
+% $Author: Yogesh$
+% $Date: 01.07.2024 $
+% $Path: BA24-02-Time-Series\report\Contents\en$
+% $Version: 1.0 $
+% $Reviewed by: Rakesh $
+%
+% !TeX encoding = utf8
+% !TeX root = Rename
+% !TeX TXS-program:bibliography = txs:///bibtex
+%
+%%%%%%
+
+\chapter{Requirement.txt}
+\section{Dependencies}
+A `requirements.txt` file is crucial in Python projects for managing dependencies. It lists all the dependencies (libraries and packages) required for forecasting air quality of India project. This allows others to replicate your environment easily.
+\begin{verbatim}
+	numpy==1.18.4
+	scipy==1.4.1
+	pandas==1.0.3
+	scikit-learn==0.23.0
+	matplotlib==3.2.1
+	seaborn==0.10.1
+	jupyter==1.0.0
+	xgboost==1.3.3
+	streamlit==1.1.0
+	sqlalchemy==1.3.18
+	requests==2.23.0
+\end{verbatim}
+
+\begin{itemize}
+	\item numpy: Fundamental package for scientific computing with Python \cite{NumPy:2024}.
+	\item scipy: Scientific library for Python.
+	\item pandas: Data analysis and manipulation library \cite{Pandas:2024}.
+	\item scikit-learn: Machine learning library for Python \cite{Scikit-Learn:2024}.
+	\item matplotlib: Python 2D plotting library \cite{Matplotlib:2024}.
+	\item seaborn: Statistical data visualization library \cite{Seaborn:2024}.
+	\item jupyter: Interactive computing environment \cite{Jupyter:2024}.
+	\item xgboost: Scalable and flexible gradient boosting library \cite{Xgboost:2024}.
+	\item streamlit: Fast way to build and share data apps \cite{Streamlit:2024}.
+	\item sqlalchemy: SQL toolkit and Object-Relational Mapping (ORM) library.
+	\item requests: Simple HTTP library for Python.
+\end{itemize}
+
+With this requirements.txt file, one can ensure that anyone who runs the project will have the same dependencies installed, leading to consistent behavior across different environments.
+
+\section{How to Use}
+
+To utilize the `requirements.txt` file and set up your environment for the project "Forecasting Air Quality of India," follow these steps:
+
+\begin{enumerate}
+	\item \textbf{Create a Virtual Environment:} 
+	\begin{verbatim}
+		python -m venv env
+	\end{verbatim}
+	\item \textbf{Activate the Virtual Environment:} 
+	\begin{itemize}
+		\item \textbf{On Windows:}
+		\begin{verbatim}
+			.\env\Scripts\activate
+		\end{verbatim}
+		\item \textbf{On MacOS/Linux:}
+		\begin{verbatim}
+			source env/bin/activate
+		\end{verbatim}
+	\end{itemize}
+	\item \textbf{Install the Dependencies:} 
+	\begin{verbatim}
+		pip install -r requirements.txt
+	\end{verbatim}
+\end{enumerate}
+
+These steps will ensure that all the required libraries and packages are installed in your virtual environment, making our project setup consistent and reproducible.

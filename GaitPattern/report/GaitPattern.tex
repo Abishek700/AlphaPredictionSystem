@@ -1,0 +1,100 @@
+% !TeX document-id = {30be4840-0da7-453b-b8fd-5ebc8eb96334}
+
+%%%%%%
+%
+% $Autor: Wings $
+% $Datum: 2020-01-18 11:15:45Z $
+% $Pfad: WuSt/Skript/Produktspezifikation/powerpoint/ImageProcessing.tex $
+% $Version: 4620 $
+%
+% !TeX encoding = utf8
+% !TEX TS-program = pdflatex
+% !TeX root = Rename
+% !TeX TXS-program:bibliography = txs:///biber
+%
+%%%%%%
+
+\documentclass[12pt,a4paper]{scrbook}
+
+% Auswahl der Sprache
+% Die nicht gewünschte Sprache muss auskommentiert werden:
+%\def\isGerman{1}
+\def\isEnglish{1}
+
+
+\include{General/Packages}
+\include{General/commands}
+\include{General/tikzdefs}
+
+\input{General/acronyms}
+\input{General/Hyphenations}%
+
+\addbibresource{../Documents/literature.bib}
+\addbibresource{../Documents/MyLiterature.bib}
+\usepackage{hyperref}
+\begin{document}
+ 
+
+\InputLanguage{Chapters/}{Titlepage} 
+\newpage
+
+\pagenumbering{roman}
+
+\tableofcontents
+\cleardoublepage
+
+
+\listoffigures
+\cleardoublepage
+
+
+\listoftables
+\cleardoublepage
+ 
+
+%\InputLanguage{Chapters/}{Symbols}
+
+%\printnomenclature
+\cleardoublepage
+
+
+%\addcontentsline{toc}{chapter}{Acronyms}
+%\printacronyms
+\cleardoublepage
+ 
+\pagenumbering{arabic}
+\InputLanguage{Chapters/}{Hints}
+\InputLanguage{Chapters/}{introduction}
+\InputLanguage{Chapters/}{Gait pattern}
+%\newpage
+\InputLanguage{Chapters/}{Hardware}
+\InputLanguage{Chapters/}{SoftwareG}
+\InputLanguage{Chapters/}{Algorithms}
+%\InputLanguage{Chapters/}{Nano33BLESense}
+%\InputLanguage{Chapters/}{IMU}
+%\InputLanguage{Chapters/}{Powersource}
+%\newpage
+%%\InputLanguage{Chapters/}{MapleFiles}
+%
+%%\newpage
+%\InputLanguage{Chapters/}{Software}
+%\InputLanguage{Chapters/}{TinyML}
+\InputLanguage{Chapters/}{Datasets}
+\InputLanguage{Chapters/}{Database}
+%\InputLanguage{Chapters/}{Testing}
+%\cleardoublepage
+%\appendix
+%\InputLanguage{Chapters/}{AppendixTikz}
+
+\cleardoublepage
+
+
+%\cleardoublepage
+\addcontentsline{toc}{chapter}{\TRANS{Literaturverzeichnis}{Bibliography}}
+\printbibliography
+%\cleardoublepage
+
+%\renewcommand{\indexname}{\TRANS{Stichwortverzeichnis}{Index}}
+%\addcontentsline{toc}{chapter}{\TRANS{Stichwortverzeichnis}{Index}}
+\printindex
+\end{document}

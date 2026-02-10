@@ -1,0 +1,213 @@
+\chapter{Data Version Control}
+
+\section{Introduction}
+Data versioning is a critical component of modern data management, ensuring that datasets are consistently tracked, reproducible, and well-organized throughout the project lifecycle. According to Stanford Libraries, data versioning refers to the process where each modification to a dataset results in a new version, allowing users to revert to previous states and maintain a clear history of changes. This approach is especially valuable in research and data-driven projects where accuracy and traceability are essential.
+
+In this project, data versioning is applied to maintain structured, reproducible, and trackable records of our datasets. By implementing version control, we ensure that all changes, updates, and transformations in the data can be monitored effectively, preventing data loss and inconsistencies.
+
+\section{Plan}
+To implement an effective data versioning strategy, we structured our workflow into the following key steps:
+
+\begin{enumerate}
+    \item \textbf{Selection of Versioning Tool}: Evaluate different version control solutions and choose the most suitable one for our project needs.
+    \item \textbf{Integration with Project Workflow}: Ensure that version control is seamlessly integrated with the project repository, enabling efficient collaboration.
+    \item \textbf{Storage and Backup Strategy}: Define how different versions of datasets are stored, archived, and backed up.
+    \item \textbf{Versioning Rules and Commit Standards}: Establish best practices for dataset updates, documentation, and change tracking.
+    \item \textbf{Implementation and Monitoring}: Deploy the selected tool and continuously monitor versioning effectiveness.
+\end{enumerate}
+
+This structured plan ensures that dataset versioning remains a core part of our project, enabling better organization, reproducibility, and collaboration.
+
+\section{Importance of Data Versioning}
+Implementing a robust data versioning strategy is essential in ensuring that research remains reproducible, auditable, and historically traceable. Several key benefits highlight the importance of data versioning:
+
+\begin{itemize}
+    \item \textbf{Reproducibility}: Scientific and data-driven projects require results to be reproducible. By maintaining structured data versions, we ensure that previous datasets can be retrieved for validation and consistency checks.
+    \item \textbf{Auditability}: Maintaining a version history enables clear tracking of changes, which is particularly crucial in regulated industries, ensuring data integrity and compliance with standards such as ISO 9001 and GDPR.
+    \item \textbf{Historical Tracking}: Over time, datasets evolve, and maintaining historical versions allows for retrospective analysis, debugging errors, and understanding trends in data changes.
+    \item \textbf{Collaboration \& Workflow Management}: With multiple contributors working on the project, version control prevents accidental overwrites, conflicting edits, and ensures that team members work with the latest validated dataset.
+\end{itemize}
+
+By integrating a structured data versioning system, we uphold data integrity, facilitate collaboration, and enhance the reliability of our analysis.
+
+\section{How to Choose a Data Versioning Tool}
+Selecting an appropriate data versioning tool depends on several factors, ensuring that it aligns with the project's workflow and data management needs. The following criteria were considered:
+
+\begin{enumerate}
+    \item \textbf{Support for Data Modality}: The tool must accommodate various data types, such as tabular datasets, logs, images, or time-series data.
+    \item \textbf{Ease of Use}: The tool should integrate smoothly with our workflow without imposing a steep learning curve.
+    \item \textbf{Comparison \& Tracking Features}: It should enable tracking changes across different dataset versions and support rollback functionality.
+    \item \textbf{Integration with Project Stack}: Seamless compatibility with Git repositories, cloud storage, and other infrastructure components is essential.
+    \item \textbf{Collaboration \& Adoption}: The tool should support team collaboration and be easily adopted by all contributors.
+\end{enumerate}
+
+
+\section{Decision: Choosing GitHub Desktop for Version Control}
+After evaluating multiple data versioning solutions, we selected GitHub Desktop in combination with Git Large File Storage (LFS) as the most suitable tool for our project. This choice was influenced by several key factors:
+
+\begin{itemize}
+    \item \textbf{Ease of Use}: GitHub Desktop provides an intuitive graphical interface, making it easier for team members to manage repositories and track dataset changes without extensive Git command-line expertise\cite{GitHubDesktop}.
+    \item \textbf{Seamless Git Integration}: It integrates directly with Git, allowing us to maintain dataset history alongside project code within a unified repository\cite{GitHubDesktop}.
+    \item \textbf{Versioning Large Files with Git LFS}: While Git is not optimized for handling large files, Git LFS ensures efficient storage and retrieval of large datasets, improving repository performance\cite{GitHubDesktop}.
+    \item \textbf{Collaboration \& Cloud Storage}: Using GitHub allows multiple team members to contribute, review, and manage dataset versions while ensuring cloud-based backups\cite{GitHubDesktop}.
+    \item \textbf{Reliability \& Industry Adoption}: GitHub is widely used in software development and research, ensuring long-term support and reliability for our project\cite{GitHubDesktop}.
+\end{itemize}
+
+While alternatives like  DVC  and  Pachyderm  provide specialized dataset versioning capabilities, they introduce additional complexity and dependencies. GitHub Desktop, combined with  Git LFS , offers a balance of simplicity, flexibility, and effective version control tailored to our workflow.
+
+\section{Installation}
+To effectively manage dataset versioning, we utilize \textbf{GitHub Desktop} alongside \textbf{Git Large File Storage (LFS)}. This section provides a comprehensive step-by-step guide on downloading, installing, setting up, and using these tools for efficient data versioning\cite{GitHubDesktop}.
+
+\subsection{Downloading and Installing GitHub Desktop}
+GitHub Desktop provides an intuitive graphical user interface (GUI) for managing Git repositories, making it easier to track changes, commit updates, and collaborate on projects\cite{GitHubDesktop}.
+
+\paragraph{Step 1: Download GitHub Desktop}
+\begin{itemize}
+    \item Navigate to the official GitHub Desktop download page: \url{https://desktop.github.com/}
+    \item Click on the download button corresponding to your operating system:
+    \begin{itemize}
+        \item \textbf{Windows}: Download the `.exe` installer.
+        \item \textbf{Mac}: Download the `.dmg` file.
+        \item \textbf{Linux}: GitHub Desktop is not officially available for Linux, but users can try alternatives like \texttt{GitKraken} or the CLI version of Git.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Step 2: Install GitHub Desktop}
+\begin{itemize}
+    \item \textbf{Windows:} Double-click the downloaded `.exe` file and follow the installation wizard.
+    \item \textbf{Mac:} Open the `.dmg` file, then drag and drop the GitHub Desktop application into the Applications folder.
+\end{itemize}
+
+\paragraph{Step 3: Set Up GitHub Desktop}
+\begin{itemize}
+    \item Launch GitHub Desktop.
+    \item Click \textbf{"Sign in to GitHub.com"} and enter your GitHub credentials.
+    \item If you do not have an account, click on \textbf{"Create an account"} and follow the signup process at \url{https://github.com/}.
+    \item Configure your Git settings:
+    \begin{itemize}
+        \item Enter your \textbf{name} and \textbf{email address} (this will be associated with all commits).
+        \item Click \textbf{"Continue"} to complete the setup.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Downloading and Installing Git LFS}
+\textbf{Git Large File Storage (LFS)} extends Git’s capabilities to efficiently manage large files, such as datasets, images, and videos.
+
+\paragraph{Step 1: Download Git LFS}
+\begin{itemize}
+    \item Visit the official Git LFS website: \url{https://git-lfs.github.com/}
+    \item Download the appropriate version for your operating system:
+    \begin{itemize}
+        \item \textbf{Windows}: `.exe` installer.
+        \item \textbf{Mac}: `.pkg` installer.
+        \item \textbf{Linux}: Use package managers such as `apt`, `dnf`, or `brew` (for macOS).
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Step 2: Install Git LFS}
+\begin{itemize}
+    \item \textbf{Windows:} Run the `.exe` installer and follow the installation steps.
+    \item \textbf{Mac:} Double-click the `.pkg` file and install the package.
+    \item \textbf{Linux:} Install using the package manager:
+    \begin{itemize}
+        \item \texttt{sudo apt install git-lfs} (Ubuntu/Debian)
+        \item \texttt{sudo dnf install git-lfs} (Fedora)
+        \item \texttt{brew install git-lfs} (macOS)
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Step 3: Verify Installation}
+\begin{itemize}
+    \item Open a terminal or command prompt.
+    \item Run the following command:
+    \begin{verbatim}
+    git lfs install
+    \end{verbatim}
+    \item If installed correctly, you should see a confirmation message: \texttt{Git LFS initialized}.
+\end{itemize}
+
+\subsection{Setting Up a GitHub Repository for Version Control}
+\textbf{Step 1: Create a New Repository}
+\begin{itemize}
+    \item Open GitHub Desktop.
+    \item Click on \textbf{"File"} > \textbf{"New Repository"}.
+    \item Enter the repository name (e.g., \texttt{data-versioning-project}).
+    \item Select a local path to store the repository files.
+    \item Choose a \textbf{Git Ignore template} based on your project type (optional).
+    \item Click \textbf{"Create repository"}.
+\end{itemize}
+
+\textbf{Step 2: Initialize Git LFS in the Repository}
+\begin{itemize}
+    \item Open a terminal and navigate to the repository:
+    \begin{verbatim}
+    cd /path/to/your/repository
+    \end{verbatim}
+    \item Initialize Git LFS:
+    \begin{verbatim}
+    git lfs install
+    \end{verbatim}
+\end{itemize}
+
+\textbf{Step 3: Track Large Files}
+To enable tracking for specific file types (e.g., CSV files for datasets):
+\begin{verbatim}
+git lfs track "*.csv"
+\end{verbatim}
+
+For multiple file types:
+\begin{verbatim}
+git lfs track "*.csv" "*.json" "*.h5"
+\end{verbatim}
+
+This creates a `.gitattributes` file, which lists all large files tracked using Git LFS.
+
+\textbf{Step 4: Commit and Push the Changes}
+\begin{itemize}
+    \item Stage the changes:
+    \begin{verbatim}
+    git add .gitattributes
+    \end{verbatim}
+    \item Commit the changes:
+    \begin{verbatim}
+    git commit -m "Initialize Git LFS tracking"
+    \end{verbatim}
+    \item Push the changes to the remote GitHub repository:
+    \begin{verbatim}
+    git push origin main
+    \end{verbatim}
+\end{itemize}
+
+\subsection{Using GitHub Desktop for Version Control}
+\begin{enumerate}
+    \item Open \textbf{GitHub Desktop} and navigate to the repository.
+    \item Modify or add new dataset files to the project.
+    \item In the \textbf{Changes} tab, review modified files.
+    \item Write a descriptive commit message (e.g., \texttt{Updated dataset with new entries}).
+    \item Click \textbf{"Commit to main"} to save changes locally.
+    \item Click \textbf{"Push origin"} to sync changes with the remote GitHub repository.
+\end{enumerate}
+
+\subsection{Rolling Back to a Previous Version}
+To restore a previous dataset version, use:
+\begin{verbatim}
+git checkout <commit_hash> -- path/to/file.csv
+\end{verbatim}
+
+To reset the entire repository to a previous commit:
+\begin{verbatim}
+git reset --hard <commit_hash>
+\end{verbatim}
+
+\subsection{Collaborating with Team Members}
+\begin{itemize}
+    \item Invite team members to the repository via GitHub.
+    \item Use \textbf{Branches} to work on different versions of the dataset without affecting the main project.
+    \item Merge changes via GitHub Pull Requests.
+    \item Resolve conflicts by reviewing file differences in GitHub Desktop.
+\end{itemize}
+
+\subsection{Conclusion}
+This section provides a complete guide to installing, configuring, and using GitHub Desktop with Git LFS for dataset versioning. By following these steps, our project ensures reproducibility, collaboration, and structured management of large datasets. The use of GitHub Desktop simplifies the version control process, making it accessible to users with varying levels of technical expertise.
+
+

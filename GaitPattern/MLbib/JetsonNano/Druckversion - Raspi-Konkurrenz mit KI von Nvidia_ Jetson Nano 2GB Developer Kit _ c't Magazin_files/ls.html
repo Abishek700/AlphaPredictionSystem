@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://688012155290337.mateti.net/mcp/ls.html?trackId=688012155290337 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>MCP localStorage Sync iFrame</title>
+</head>
+<body>
+<script type="text/javascript">
+/**
+ * wt-mate-mcp
+ * @version v2.3.8 - 2020-09-23
+ */
+
+!function(){"use strict";var trackId,sourceURL="*";try{trackId=location.href.split("?")[1].split("=")[1];var parser=document.createElement("a");parser.href=document.referrer,sourceURL=parser.protocol+"//"+parser.host}catch(err){}if(window.parent!==window)if(window.localStorage){window.addEventListener("message",function(event){if("*"===sourceURL||event.origin===sourceURL)if("string"==typeof event.data)try{if("getdata"!==event.data){if(0!==event.data.indexOf("{MCPDATASET}-"))return;window.localStorage.setItem("mcp-data",event.data)}window.parent.postMessage({type:"mcp-ls-sync",trackId:trackId,data:window.localStorage.getItem("mcp-data")},sourceURL)}catch(err){event.source.postMessage("mcp-ls-sync-err4",sourceURL)}else event.source.postMessage("mcp-ls-sync-err3",sourceURL)},!1);try{window.parent.postMessage({type:"mcp-ls-sync",trackId:trackId,data:window.localStorage.getItem("mcp-data")},sourceURL),window.addEventListener("storage",function(event){"mcp-data"===event.key&&window.parent.postMessage({type:"mcp-ls-sync",trackId:trackId,data:window.localStorage.getItem("mcp-data")},sourceURL)})}catch(err){window.parent.postMessage("mcp-ls-sync-err5",sourceURL)}}else window.parent.postMessage("mcp-ls-sync-err2",sourceURL);else window.parent.postMessage("mcp-ls-sync-err1",sourceURL)}();
+</script>
+
+</body></html>

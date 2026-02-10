@@ -1,0 +1,110 @@
+%%%%%%
+%
+% $Autor: Abishek, Fedor, Bruna $
+% $Date: 15-01-2025 $
+% $File name:  Literature Review.tex
+% $Version: 1.0 $
+%
+% !TeX encoding = utf8
+%
+%%%%%%
+
+
+
+	\section{Problem's Description}
+	
+	\frame{\frametitle{Problem's Description}
+		\begin{itemize}
+			\item Parkinson's disease affects motor functions, leading to gait issues such as short steps, freezing, and falls\cite{Hausdorff:2009}.
+			\item \textbf{Objective:} Detect early signs of gait instability to prevent falls and assist in patient recovery.
+			\item \textbf{Motivation:} Create an affordable, portable system for real-time monitoring and alerts.
+	\end{itemize}}
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[node distance=1cm, every node/.style={draw, rectangle, minimum width=3cm, minimum height=0.5cm, align=center}]
+		% Nodes
+		\node[fill=blue!20] (normal) {Normal Walking};
+		\node[fill=yellow!20, below=of normal] (shortsteps) {Short Steps};
+		\node[fill=orange!20, below=of shortsteps] (freezing) {Freezing};
+		\node[fill=red!20, below=of freezing] (falling) {Fall};
+		
+		% Arrows with transitions
+		\draw[->, thick] (normal.south) -- (shortsteps.north) node[midway, right] {Transition Phase};
+		\draw[->, thick] (shortsteps.south) -- (freezing.north) node[midway, right] {Deterioration Phase};
+		\draw[->, thick] (freezing.south) -- (falling.north) node[midway, right] {Critical Risk};
+	\end{tikzpicture}
+	\caption{Transition from normal walking to fall in Parkinson's patients.\cite{Hausdorff:2009}}
+	\label{fig:gait_progression}
+\end{figure}
+
+    \section{Description of the Application}
+		
+	\frame{\frametitle{Description of the Application}
+		
+		\begin{itemize}
+			\item Dataset: Recorded from 10 participants (6 females, 4 males) performing walking tasks in csv format.
+			\item Features used: \textbf{Stride length, Stride time, Stride velocity}. derived from single-leg data\cite{ZhangWenwen:2022}.
+		\end{itemize}
+		
+			\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.7\textwidth]{Images/PhasesOfGaitCycle}
+			\caption{Phases of the gait cycle \cite{ZhangWenwen:2022}.} 
+			\label{fig:GaitCyclePhase}
+		\end{figure}}
+		
+	\frame{\frametitle{Description of the Application }
+		
+			\begin{itemize} 
+			\item Model: A CNN-based binary classifier was developed to differentiate between normal and Parkinson’s gait patterns. The model learns key spatial and temporal features from gait data, such as step length and stance time, ensuring accurate real-time classification.
+			\item Hardware: Arduino Nano 33 BLE Sense Lite for real-time prediction, using RGB lights for alerts.
+			\begin{itemize}
+				\item \textbf{Red}: Normal
+				\item  \textbf{Blue}: Parkinson
+				 \end{itemize}
+	        \end{itemize}}
+	
+	\section{Challenges}
+	\frame{\frametitle{Challenges}
+		\begin{itemize}
+			\item \textbf{Single-sensor limitation:} The dataset includes features derived from both legs (e.g., stride length and stride time), but the current setup uses only one sensor, making it difficult to compute these features directly.
+			\item \textbf{Feature extraction mismatch:} The model is trained on features extracted from processed dataset samples, but real-time user data is raw sensor output.
+			\item \textbf{Data quality:} Noise and inconsistencies in sensor readings.
+			 \item \textbf{Model compression:} Maintaining accuracy while reducing model size for microcontroller deployment.
+	\end{itemize}}
+
+	\section{Solutions}
+	\frame{\frametitle{Solutions}
+
+			\begin{itemize}
+				\item \textbf{Single-sensor limitation:} Reframe the model to work with features that can be accurately derived from one leg alone, such as:
+				\begin{itemize}
+					\item Stride length
+					\item Stride time
+					\item Stride Velocity \cite{Nascimento:2022}.
+					 
+				\end{itemize}
+				\item \textbf{Feature extraction mismatch:} Implement a preprocessing module directly in the IDE to process raw sensor data into the required features. This ensures real-time compatibility with the trained model by performing:
+		     	\item \textbf{Data quality:} Apply noise-reduction techniques like low-pass filtering and outlier detection to improve the reliability of sensor data.
+		     	\item \textbf{Model compression:} Use TensorFlow Lite for converting the trained model to a lightweight format suitable for microcontrollers\cite{TensorFlow:2024}.
+		\end{itemize}}
+		
+	
+\section{Results}
+\frame{\frametitle{Results}
+	\begin{itemize}
+	
+		\item \textbf{Accuracy:} Achieved a classification accuracy of approximately 82\% in detecting normal vs. Parkinson’s gait patterns using single-leg features.
+		\item \textbf{Model Size and Deployment:} Optimized the model to a size of ~102KB using TensorFlow Lite quantization, ensuring smooth deployment on Arduino Nano without significant loss of accuracy.
+			\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.6\textwidth]{Images/PredictionVisual}
+			\caption{Visualizing model prediction} 
+			\label{fig:PredictionVisual}
+			\end{figure}
+		
+\end{itemize}}
+
+	
+
+	

@@ -1,0 +1,35 @@
+%%%%%%
+%
+% $Author: Abishek $
+% $Date: 12.01.2025 $
+% $Path: ML24-02-Gait-Pattern-Recognition\report\Contents\en$
+% $Version: 1.0 $
+%
+%
+% !TeX encoding = utf8
+% !TeX root = Rename
+% !TeX TXS-program:bibliography = txs:///bibtex
+%
+%%%%%%
+
+	\chapter{Inertial Measurement Unit (IMU)}
+	
+	\section{General Description of an Inertial Measurement Unit (IMU)}
+	
+	An Inertial Measurement Unit (IMU) is a compact electronic device that measures and reports a body's specific force, angular velocity, and orientation. It achieves this using a combination of accelerometers, gyroscopes, and, in many cases, magnetometers. These components work together to provide multi-axis motion data essential for precise spatial awareness:
+	
+	\begin{itemize}
+		\item \textbf{Accelerometers}: Measure linear acceleration along the X, Y, and Z axes.
+		\item \textbf{Gyroscopes}: Measure angular velocity or rotational rate around the same axes.
+		\item \textbf{Magnetometers}: When included, provide orientation correction by referencing Earth's magnetic field to ensure accurate heading information\cite{Arduino:2024h}.
+	\end{itemize}
+	
+IMUs are widely employed in fields such as aerospace, robotics, automotive systems, wearable technology, virtual reality (VR), and augmented reality (AR). They enable applications like navigation, stability control, and real-time motion tracking, especially in environments where external reference signals (e.g., GPS) are unavailable or unreliable.\cite{Bosch:2024}
+	
+While IMUs are incredibly versatile, they are not without limitations. Measurement errors, such as bias drift and noise, accumulate over time due to environmental factors or sensor imperfections. To address this, calibration techniques and sensor fusion algorithms, such as Kalman filters or complementary filters, are employed to enhance the accuracy and reliability of the data.\cite{Kalman:2012}
+	
+Recent advancements in MEMS (Micro Electro Mechanical Systems) technology have made IMUs smaller, more cost-effective, and power-efficient, further extending their utility across consumer and industrial applications.\cite{Khoshnoud:2012}
+	
+
+
+

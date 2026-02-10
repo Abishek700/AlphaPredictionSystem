@@ -1,0 +1,124 @@
+%%%
+%
+% $Autor: Wings $
+% $Datum: 2021-05-14 $
+% $Pfad: GitLab/CornerBLending $
+% $Dateiname: Hints
+% $Version: 4620 $
+%
+% !TeX spellcheck = de_DE/GB
+%
+%%%
+
+\chapter{Hinweise}
+
+
+
+Steps: 
+\begin{itemize}
+\item Was ist ein Gangbild?
+\item Was soll gemessen werden  (was ist nützlich, um den Gang zu analysieren)
+\item Welche Sensortypen werden verwendet? 
+- Hüpfen laufen gehen muss man identifizieren können 
+ Später: 
+
+\item Verstehen, wie man Daten mit dem Mikrocontroller aufzeichnet. (Bsp. smart band) 
+\end{itemize}
+basics of the gait cycle and gate anaysis:  (\url {https://www.youtube.com/watch?v=1u6d1CX7o9c&ab_channel=Physiotutors})
+
+- detailliert/ 
+Explaining the Gait Cycle for the NPTE - 2021 (\url {https://www.youtube.com/watch?v=dvpi1WHCDwM&t=69s&ab_channel=ConqueringtheNPTE})
+
+
+- Gangstörungen: Bewegungsstörung, die das Gehen bzw. das Gangbild betrifft. Sie kann neurologische, orthopädische oder psychogene Ursachen haben. Gangstörungen vermindern die Mobilität und erhöhen gerade bei älteren Patienten das Sturzrisiko.
+%https://www.researchgate.net/publication/321515644_Gangstorungen
+
+
+%Kurz beschrieben: 
+%das Gangbild bezeichnet die visuelle Abbildung der Bewegung und Haltung der Extremitäten sowie deren Zusammenspiel mit dem Rumpf während des Gangzyklus bsw. des Gehens. 
+%Bei einem gesunden Gang bewegen sich die Extremitäten fließend und koordiniert, während die Haltung des Oberkörpers ausbalanciert wird. was normalerweise zu einer nach vorne gerichteten Verlagerung des Schwerpunkts führt.
+%unter ein Gangzyklus versteht man der Vorgang vom anfangs-Kontakt mit dem Boden bis zum nächsten anfangs-Kontak aus dem nächsten Zyklus. 
+%ein bestimmte Gangbildmuster gibt es nicht denn jeder entwickelt seine eigene lösung : "Wie gelange ich mit einem Minimum an Anstrengung, mit ausreichend Stabilitat sowie einem guten Erscheinungsbild von einem Ort zum an- deren?"
+%Dementsprechend, ist die Bestimmung der zu berücksichtigenden Parametern für den Rest des Projekts wichtig. %\cite{BeckersDeckers1997}
+
+
+
+Sensoren
+Gyroscope Winkel beschleunigung
+
+Was ist das Problem?  
+herausfoedwrungen: 
+- generierung von data ( data aufzeichnen )
+- beschränkte hardware : speicher, geh
+Methode "KDD process" ( wenn man das Probelm kennt aber kein data hat )
+ frage: wo soll ich die daten bearbeiten ( maschinelles lernen )
+ rq: qualität sicherung bei VW wird mit bild verarbeitung gemacht 
+
+1. Recherche: 
+\begin{itemize}
+\item \textbf{Part1} 
+\item Was versteht man unter Gangbildern 
+	 	- Using Machine Learning and Wearable Inertial Sensor Data for the Classification of Fractal Gait Patterns in Women and Men During Load Carriage \cite{U.Ahamed2021}
+\item Wozu ist das Projekt 
+		
+		- Was bringt uns eine gangbildanalyse, wo wird die gebraucht 
+\item Was ist der Zeit benutzt um Gangbildern zu bewerten ( tools , kosten, ort  …) 
+\item \textbf{Part2} 
+\item Arduino Nano BLE 33 definieren 
+	\item Datasheet lesen
+	\item Beschränkungen identifizieren : Speicher, Gehäuse, Komplexität, Geschwindigkeit.  
+	\item Welcher Sensoren werden benutzt, warum und Welcher format von data ergeben die (IMU)  
+\end{itemize}
+2. Database erstellen
+\begin{itemize}
+\item intern : data generieren, 
+\item extern:  
+\end{itemize}
+3. Data selection 
+	 Nur Data von Hupfen Gehen und Laufen bleiben  
+4. Data Preparation 
+\begin{itemize}
+\item qualitätprufung
+\item Zeitbereich muss angepasst werden, gleiche länge ( chose the same time for each data )
+\item Format anpassen  ( -> bild)
+\end{itemize}
+5. Data transformieren (frequenz analyse oder bild analyse) 
+
+
+6. Data mining 
+\begin{itemize}
+\item Algorithm wählen (CNN)
+\item Trenieren 
+\item Evaluierung und Verifikation ( Verifikation Testen, Evaluierung: hab ich das richtige gemacht  )
+\item Monitoring
+\end{itemize}
+7. Application 
+\begin{itemize}
+\item Beschreibung des Systems: handbuch ( extern), Entwicklung beschreibung (Teil der Arbeit)
+\item Arduino HW 
+\item Stromversorgung / Schrittstellen 
+\item Software /IDE 
+\item welche Daten ( allgemein, speziell)
+ \item IMU /Datenstruktur 
+\item Tests 
+\item Musrererknennung / Auswertung (datenaufnahme/ anwendung des modeles/ Ergebnis)
+\end{itemize}
+rq 
+- wie sollen meine daten aussehen ??
+- was soll ich sammeln 
+
+
+8.  Open questions /to do / conclusion 
+Appendix 
+Material lists 
+Data sheet 
+bibliography 
+SW Ständer 
+\begin{flushleft} 
+	\includegraphics[width=15cm]{Images/GaitCycle}
+\end{flushleft} 
+
+
+
+
+

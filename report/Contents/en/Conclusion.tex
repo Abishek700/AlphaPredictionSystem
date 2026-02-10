@@ -1,0 +1,33 @@
+\chapter{Conclusion}
+\section{System Performance Evaluation and Limitations}
+The gait pattern recognition system demonstrated a high level of accuracy during model training and validation. However, real-world testing revealed several challenges that affect practical usability:
+
+\begin{itemize}
+    \item \textbf{Step Recognition Sensitivity:} Despite the model's high accuracy, it often misclassifies short or normal steps as Parkinsonian gait. This occurs because the system expects gait patterns with the exact amplitude, length, and speed as those in the training dataset. As a result, variations in real-world gait patterns lead to misclassification.
+    
+    \item \textbf{Dataset Limitations:} The model currently lacks sufficient diversity in training data, especially for different walking speeds, step lengths, and amplitudes. This restricts its ability to generalize across different users and real-world conditions.
+    
+    \item \textbf{LED-Based Indication Limitations:} The use of LED signals for classification results is not practical in real-world scenarios, as users cannot continuously monitor the onboard indicators.
+    
+    \item \textbf{Hardware Design Constraints:} The current design requires modernization to improve usability, portability, and real-time communication capabilities.
+\end{itemize}
+
+Despite these limitations, the system successfully classifies gait patterns under controlled conditions and serves as a foundational framework for future improvements.
+
+\subsection{Recommendations for Future Improvements and Applications}
+To improve the robustness and real-world applicability of the system, the following modifications are recommended:
+
+\begin{itemize}
+    \item \textbf{Expanded Training Dataset:} The model should be trained on gait patterns with varying step lengths, amplitudes, and walking speeds to improve classification accuracy in diverse real-world conditions.
+    
+    \item \textbf{Wireless Communication Integration:} Instead of relying on LED indicators, the system should incorporate Bluetooth or internet-based communication to transmit classification results to an external device, such as a smartphone or cloud-based monitoring system.
+    
+    \item \textbf{Hardware Redesign:} The current prototype should be modernized to improve wearability and integration with external monitoring systems.
+    
+    \item \textbf{Real-Time Adaptive Learning:} Implementing real-time model updates or personalization for individual users could enhance classification accuracy by allowing the system to adapt to unique walking patterns.
+\end{itemize}
+
+
+
+
+These improvements will significantly enhance the system’s usability and real-world effectiveness, enabling it to serve as a reliable tool for Parkinson’s disease monitoring and research.

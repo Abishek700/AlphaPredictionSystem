@@ -1,0 +1,124 @@
+%%%%%%
+% Metadata
+%%%%%%
+\documentclass[12pt,a4paper]{scrbook}
+
+% Language Selection
+\def\isEnglish{1}
+
+% -------------------------------------------------
+% PREAMBLE (ALL PACKAGES & SETUP GO HERE)
+% -------------------------------------------------
+
+% Common configurations
+\input{General/Packages}
+\input{General/commands}
+\input{General/tikzdefs}
+\input{General/acronyms}
+\input{General/Hyphenations}
+
+% Bibliography (MUST be before \begin{document})
+	\addbibresource{../MLbib/MyLiterature.bib}
+	
+	% Extra packages
+	\usepackage{float}
+	\usepackage{acro}
+	\usepackage{hyperref}
+	\usepackage{pdfpages}
+	\usepackage{rotating}
+	\usepackage{listings}
+	\usepackage{xcolor}
+	\usepackage{amsmath}
+	\usepackage{graphicx}
+	\usepackage{caption}
+	\usepackage{algorithm}
+	\usepackage{algpseudocode}
+	\usepackage[T1]{fontenc}
+	\usepackage{lmodern}
+	\usepackage{csquotes}
+	\PassOptionsToPackage{nottoc}{tocbibind}
+	\usepackage{tocbibind}
+	
+	% Listings setup
+	\definecolor{lightgreen}{rgb}{0.6, 0.8, 0.6}
+	\lstset{
+		language=Python,
+		backgroundcolor=\color{white},
+		basicstyle=\ttfamily\footnotesize,
+		frame=single,
+		numbers=none,
+		breaklines=true,
+		keywordstyle=\color{blue},
+		commentstyle=\color{lightgreen},
+		stringstyle=\color{red},
+		showspaces=false,
+		showstringspaces=false
+	}
+	
+	% -------------------------------------------------
+	% DOCUMENT STARTS HERE (ONLY ONCE)
+	% -------------------------------------------------
+	\begin{document}
+		
+		\InputLanguage{Contents/}{Titlepage}
+		\newpage
+		
+		\pagenumbering{roman}
+		\tableofcontents
+		\listoffigures
+		\cleardoublepage
+		\listoftables
+		\cleardoublepage
+		\pagenumbering{arabic}
+		
+		\part{Introduction}
+		\InputLanguage{Contents/}{Introduction}
+		
+		\part{Domain Knowledge}
+		\InputLanguage{Contents/}{DomainKnowledge}
+		
+		\part{Hardware Description}
+		\InputLanguage{Contents/}{Nano33BLESenseLite}
+		\InputLanguage{Contents/}{IMU}
+		\InputLanguage{Contents/}{Accelerometer}
+		\InputLanguage{Contents/}{Magnetometer}
+		\InputLanguage{Contents/}{Gyroscope}
+		\InputLanguage{Contents/}{HardwarePins}
+		\InputLanguage{Contents/}{PoweringDevice}
+		\InputLanguage{Contents/}{HardwareDimension}
+		
+		\part{List of Materials}
+		\InputLanguage{Contents/}{ListOfMaterial}
+		
+		\part{Domain Machine Learning}
+		\InputLanguage{Contents/}{Algorithm}
+		
+		\part{Domain Tools}
+		\InputLanguage{Contents/}{DevelopmentEnvironment}
+		\InputLanguage{Contents/}{versioncontrol}
+		
+		\part{Application Development}
+		\InputLanguage{Contents/}{KDD}
+		\InputLanguage{Contents/}{DocumentationDeveloper}
+		\InputLanguage{Contents/}{Monitoring}
+		\InputLanguage{Contents/}{DevelopmentToDeployment}
+		
+		\part{Application Deployment}
+		\InputLanguage{Contents/}{Deployment}
+		\InputLanguage{Contents/}{TestCompleteSystem}
+		\InputLanguage{Contents/}{Evaluation}
+		
+		\part{Appendix}
+		\InputLanguage{Contents/}{GivenDocument}
+		
+		\part{SBOM}
+		\InputLanguage{Contents/}{SBOM}
+		
+		\part{Conclusion}
+		\InputLanguage{Contents/}{Conclusion}
+		
+		% Bibliography output
+		\addcontentsline{toc}{chapter}{\TRANS{Literaturverzeichnis}{Bibliography}}
+		\printbibliography
+		
+	\end{document}

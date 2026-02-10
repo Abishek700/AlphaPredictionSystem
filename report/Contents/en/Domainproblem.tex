@@ -1,0 +1,72 @@
+%%%%%%
+%
+% $Author: Abishek $
+% $Date: 06.01.2025 $
+% $Path: ML24-02-Gait-Pattern-Recognition\report\Contents\en$
+% $Version: 1.0 $
+% $Reviewed by: Abishek $
+%
+% !TeX encoding = utf8
+% !TeX root = Rename
+% !TeX TXS-program:bibliography = txs:///bibtex
+%
+%%%%%%
+
+\chapter{Domain Problem Overview}
+
+
+This section provides a clear and detailed understanding of the core concepts and knowledge necessary to comprehend and implement this project. It delves into the purpose of the application, the problem being addressed, and the critical aspects of the dataset used. Each topic is discussed thoroughly to highlight how the data supports the project's goals and ensures its reliability and relevance.
+
+\section{Domain Problem}
+
+The main problem is accurately predicting the concentration of various air pollutants (PM2.5, PM10, NO2, SO2, CO, O3) to mitigate their impact on health and the environment. This involves understanding the sources of pollution, their dispersion patterns, and the influence of meteorological factors.
+
+
+\section{Application}
+
+Application The application of air quality forecasting is multifaceted, involving:
+\begin{enumerate}
+
+\item \textbf{Public Health:}Providing timely alerts to prevent health issues related to poor air quality\cite{EPA:2021}.
+\item \textbf{Policy Making:} Informing government policies for emissions control and environmental regulations.
+\item \textbf{Urban Planning:} Assisting in planning urban infrastructure to reduce pollution\cite{Kumar:2019}.	
+\item \textbf{Research:} Supporting scientific research on the effects of air pollution and mitigation strategies.
+\end{enumerate}
+
+\section{Data Acquisition}
+
+The data mentioned is sourced from the Central Pollution Control Board (CPCB) website \cite{CPCB:2023}.This website provides comprehensive information on pollution control of air and real-time data on air quality. Selenium, a powerful web automation tool, is utilized to extract data from the Central Pollution Control Board (CPCB) website. This process is essential for ensuring the accuracy and reliability of the data collected. By automating the data extraction, Selenium helps in systematically gathering extensive datasets from the CPCB website, which is critical for subsequent analysis. This automated approach not only saves time but also reduces the risk of human error, thereby enhancing the precision and consistency of the data used for air quality forecasting. Data acquisition from CPCB involves: 
+\begin{enumerate}
+	
+	\item \textbf{Monitoring Stations:}Data from fixed and mobile stations across India that measure pollutant levels.
+	\item \textbf{Satellite Data:}Utilizing remote sensing data for large-scale pollution monitoring. 
+	\item \textbf{Weather Stations:}Incorporating meteorological data including temperature, humidity, wind speed, and direction.
+	\item \textbf{Traffic and Industrial Data:} Gathering information on vehicle emissions and industrial activities.
+\end{enumerate}
+
+\section{Data Quantity}
+ Data quantity refers to the substantial volume of data collected from the Central Pollution Control Board (CPCB). The dataset includes comprehensive air quality data for 453 cities across India, covering an extensive period of 13 years from 2010 to 2023. This rich dataset, which amounts to 1.5GB of CSV files, contains detailed records and measurements of various air quality indicators. Such a large dataset is crucial for conducting in-depth time series analysis and generating accurate forecasts of air quality trends across different regions in India.
+ 
+ \section{Data Quality}
+ 
+High-quality data is crucial for the effective analysis, modeling, and forecasting of air quality. Ensuring measurements from CPCB are accurate and free from errors using Selenium. Since CPCB is an Indian Government’s board the relaiablity of the data is enhanced.
+
+\section{Data Relevance}
+ Ensuring data relevance is pivotal for accurate air quality forecasting models. This entails selecting key pollutants like PM2.5, PM10, NO2, SO2, CO, and O3, alongside meteorological variables such as temperature, humidity, wind speed and direction, precipitation, and solar radiation. These factors directly impact air pollution levels and their prediction accuracy. Additionally, auxiliary variables like traffic volume and industrial activity provide insights into primary pollution sources.
+ 
+ \bigskip
+ 
+ Local factors, including industrial areas, vehicular emissions, and agricultural practices, play crucial roles in determining air quality. Proximity to factories, major roads, and agricultural zones can lead to localized pollution spikes. Geographical features like topography and urban-rural divides further influence air quality dynamics. For example, cities nestled in valleys might experience stagnant air and heightened pollution levels compared to coastal or inland regions. Understanding these nuances is vital for comprehensive air quality modeling and effective pollution mitigation strategies\cite{Smith:2019}. 
+ 
+\section{Outliers}
+
+When forecasting air quality in India using data from sources like the Central Pollution Control Board (CPCB), outliers, identifiable through significant deviations from expected pollutant concentrations, stem from diverse factors. These include extreme weather events like dust storms or heavy rainfall, seasonal fluctuations such as post-monsoon pollution spikes from activities like stubble burning, and special events like Diwali, marked by fireworks-induced pollutant surges.\cite{CPCB:2023}.
+
+ \bigskip
+
+Understanding the origins of outliers is crucial for developing reliable forecasting models and implementing effective pollution control measures in India. By recognizing outliers arising from factors like weather variations, seasonal dynamics, and human activities, policymakers can devise targeted interventions. Moreover, addressing outliers caused by industrial incidents, traffic fluctuations, regulatory shifts, and data anomalies enhances the accuracy and reliability of air quality forecasts based on CPCB monitoring data, aiding in informed decision-making and pollution management strategies.
+
+\section{Anomalies}
+
+Anomalies in air quality data from sources like the Central Pollution Control Board (CPCB) represent deviations from expected patterns, often stemming from errors in data collection, transmission, or processing. These anomalies can also arise from equipment malfunctions or calibration issues, affecting the accuracy of the data provided by CPCB monitoring stations across India. Addressing anomalies is crucial for ensuring the reliability of air quality assessments and forecasting models. By identifying and rectifying anomalies caused by technical glitches or data inconsistencies, authorities can uphold the integrity of air quality data and make informed decisions regarding pollution control measures and public health interventions.\cite{Smith:2019}\cite{CPCB:2023}.
+ 

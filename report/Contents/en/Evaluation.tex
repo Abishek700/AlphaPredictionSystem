@@ -1,0 +1,89 @@
+%%%%%%
+%
+% $Author: Abishek $
+% $Date: 12.01.2025 $
+% $Path: ML24-02-Gait-Pattern-Recognition\report\Contents\en$
+% $Version: 1.0 $
+%
+%
+% !TeX encoding = utf8
+% !TeX root = Rename
+% !TeX TXS-program:bibliography = txs:///bibtex
+%
+%%%%%%
+\chapter{Evaluation}
+
+\section{Evaluation}
+
+\subsection{Concept}
+The primary objective of this project is to predict a user’s gait pattern and determine if it is classified as normal or indicative of Parkinson’s disease. By leveraging the Arduino Nano Lite, CNN, and IMU sensors, this system aims to provide a real-time monitoring solution for users to track their gait patterns remotely. The system is designed to assist both patients and medical professionals by enabling remote monitoring and early diagnosis of Parkinson’s disease.
+
+Key challenges included:
+\begin{itemize}
+	\item Processing raw sensor data from IMUs effectively.
+	\item Achieving a high level of accuracy using data collected from a single leg.
+\end{itemize}
+
+These challenges were addressed through careful data preprocessing techniques, training robust CNN models, and optimizing hardware integration.
+
+\subsection{Application}
+The system has significant real-world applications in healthcare, particularly for:
+\begin{itemize}
+	\item \textbf{Patients}: Allowing individuals with mobility issues or suspected Parkinson’s disease to monitor their gait remotely and in real time.
+	\item \textbf{Medical Professionals}: Providing accurate data for diagnosis and treatment planning, without requiring patients to visit in person.
+\end{itemize}
+
+The solution integrates seamlessly into remote monitoring systems, enabling users to share their data with healthcare providers through cloud-based platforms. This reduces the need for frequent hospital visits and facilitates continuous monitoring in daily life environments.
+
+\subsection{Results}
+The project achieved the following results:
+\begin{itemize}
+	\item \textbf{Accuracy}: The CNN model obtained a classification accuracy of 82\%, demonstrating reliable performance in distinguishing between normal and Parkinsonian gait patterns.
+	\item \textbf{Real-Time Prediction}: The system can predict gait patterns in real time, providing instant feedback to users.
+	\item \textbf{Visualization}: Visualizations such as confusion matrices, accuracy trends, and sample predictions were generated to validate the model’s performance and improve interpretability.\ref{fig:output}
+\end{itemize}
+
+These results align well with the project’s objectives and demonstrate the feasibility of using low-cost hardware and machine learning for remote healthcare monitoring.
+
+\section{Validation}
+
+\subsection{General}
+The system was validated using a combination of testing and real-world experiments:
+\begin{itemize}
+	\item \textbf{Testing}: The CNN model was tested using labeled datasets collected from IMU sensors on the Arduino Nano Lite.
+	\item \textbf{Real-World Experimentation}: The system was deployed on a single-leg setup in real-world environments, where it successfully classified gait patterns with high reliability.
+	\item \textbf{Real-Time Use}: Validation experiments confirmed the system’s ability to make predictions in real time, meeting one of the primary goals of the project.
+\end{itemize}
+
+Key feedback from testing emphasized the need for extending the system to include data from both legs to further enhance accuracy.
+
+\subsection{3 Ideas}
+\begin{enumerate}
+	\item \textbf{Training with Data from Both Legs}: Incorporate sensor data from both legs to improve model accuracy and robustness.
+	\item \textbf{Improved Monitoring Interface}: Develop a more intuitive user interface or mobile app for easier data visualization and sharing with medical professionals.
+	\item \textbf{Integration with Wearable Devices}: Adapt the system to work with wearable devices like smart shoes or ankle bands to improve usability and portability.
+\end{enumerate}
+
+\section{Conclusion}
+
+\subsection{Todo}
+\begin{itemize}
+	\item \textbf{Implementing Two-Leg Sensor Setup}: Train the model using data from both legs to improve classification accuracy and account for asymmetrical gait patterns.
+	\item \textbf{Improved Monitoring System}: Finalize the implementation of an online monitoring system for remote maintenance and diagnostics.
+	\item \textbf{Enhancing Visualization}: Create more detailed and user-friendly visualizations for both patients and medical professionals.
+\end{itemize}
+
+\subsection{Unanswered Points}
+\begin{itemize}
+	\item \textbf{Sensor Placement Challenges}: The ideal sensor placement for accurate gait detection has not been fully explored. Research is required to determine the most effective locations.
+	\item \textbf{Handling Edge Cases}: The system has not been tested on users with other mobility impairments (e.g., stroke). Additional testing is needed to confirm its generalizability.
+	\item \textbf{Power and Battery Life Optimization}: The impact of prolonged usage on battery life and hardware performance remains an open question.
+\end{itemize}
+
+\subsection{Next Steps}
+\begin{itemize}
+	\item \textbf{Expanding Use Cases}: Extend the system to detect additional conditions such as stroke-related gait patterns, broadening its applicability.
+	\item \textbf{Collaborating with Medical Experts}: Work with healthcare professionals to refine the system’s diagnostic capabilities and validate its clinical accuracy.
+	\item \textbf{Field Deployment}: Conduct large-scale field trials to test the system’s performance across diverse user groups and environments.
+	\item \textbf{Integration with Wearables}: Explore partnerships with wearable technology manufacturers to create compact, user-friendly devices for seamless integration.
+\end{itemize}

@@ -1,0 +1,13 @@
+# Python Dependencies
+logging
+pandas
+pykalman
+tensorflow
+
+# Arduino IDE Dependencies
+Arduino_LSM9DS1
+TensorFlowLite
+tensorflow/lite/micro/all_ops_resolver.h
+tensorflow/lite/micro/micro_interpreter.h
+tensorflow/lite/schema/schema_generated.h
+tensorflow/lite/version.h
