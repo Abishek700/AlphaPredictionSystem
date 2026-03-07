@@ -1,0 +1,115 @@
+%%%%%%
+% Metadata
+%%%%%%
+
+\chapter{Origins of Modern Hypothesis Testing}
+
+\section{Fisher’s Approach to Significance Testing}
+
+The modern practice of statistical hypothesis testing has its roots in the early twentieth century. One of the central figures in its development was Ronald A. Fisher. In his book \emph{Statistical Methods for Research Workers}, Fisher (1925) introduced the idea of testing a null hypothesis using probability calculations \cite{Fisher1925}.
+
+Fisher’s main contribution was the introduction of the p-value as a measure of evidence against the null hypothesis. In his framework, the null hypothesis represents a default assumption, usually that there is no effect or no difference. After collecting data, a test statistic is calculated. The p-value then measures how unusual the observed result would be if the null hypothesis were true.
+
+Importantly, Fisher did not originally present hypothesis testing as a strict decision rule. Instead, he treated the p-value as a continuous measure of evidence. A smaller p-value indicated stronger evidence against the null hypothesis. For example, a p-value of 0.01 was considered stronger evidence than a p-value of 0.04.
+
+Fisher suggested conventional thresholds such as 0.05 and 0.01 as useful reference values \cite{Fisher1925}. However, these thresholds were not meant to be rigid boundaries. They were intended as practical guidelines. Later historical analysis shows that the choice of 0.05 was influenced by convenience and available statistical tables rather than by a formal optimality argument \cite{CowlesDavis1982}.
+
+In Fisher’s framework, there was no formal definition of Type I and Type II errors, and no explicit requirement to fix the significance level in advance. The p-value itself was interpreted as a measure of how surprising the data were under the null hypothesis.
+
+Thus, Fisher’s approach focused mainly on measuring evidence rather than making long run error controlled decisions.
+
+
+\section{The Neyman-Pearson Framework}
+
+While Fisher focused on the interpretation of evidence, Jerzy Neyman and Egon Pearson developed a different and more formal framework for hypothesis testing. In their influential 1933 paper, they introduced a decision theoretic approach to testing statistical hypotheses \cite{NeymanPearson1933}.
+
+In the Neyman-Pearson framework, hypothesis testing is treated as a decision problem between two competing hypotheses:
+\begin{itemize}
+	\item The null hypothesis $H_0$
+	\item The alternative hypothesis $H_1$
+\end{itemize}
+
+Unlike Fisher, Neyman and Pearson defined two types of errors explicitly.
+
+A Type I error occurs when the null hypothesis is rejected even though it is true. Its probability is defined as
+\begin{equation}
+	\alpha = P(\text{Reject } H_0 \mid H_0)
+\end{equation}
+
+A Type II error occurs when the null hypothesis is not rejected even though it is false. Its probability is denoted by $\beta$.
+
+The significance level $\alpha$ must be fixed before observing the data. By fixing $\alpha$ in advance, the researcher controls the long run frequency of false positive decisions.
+
+Neyman and Pearson also introduced the concept of statistical power, defined as
+\begin{equation}
+	\text{Power} = 1 - \beta
+\end{equation}
+
+Power represents the probability of correctly rejecting the null hypothesis when it is false. It depends on several factors, including the sample size, the true effect size, and the chosen significance level. Cohen (1988) later emphasized the importance of power analysis in study design \cite{Cohen1988}.
+
+The Neyman-Pearson framework therefore treats hypothesis testing as a rule based decision procedure with controlled error probabilities. The focus is not on measuring evidence, but on minimizing incorrect decisions over repeated experiments.
+
+
+\section{Conceptual Differences Between Fisher and Neyman-Pearson}
+
+Although Fisher’s and Neyman-Pearson’s approaches are often presented together in modern statistics textbooks, they were originally developed as distinct theoretical frameworks. Understanding their differences is important for interpreting the role of the significance level $\alpha$.
+
+Fisher’s approach focused primarily on measuring the strength of evidence against the null hypothesis. In this framework, the p-value serves as a continuous indicator of how incompatible the data are with $H_0$. Fisher did not require the specification of a precise alternative hypothesis, nor did he formally define a second type of error. The emphasis was on interpreting the p-value within the context of a single study \cite{Fisher1925}.
+
+In contrast, Neyman and Pearson (1933) developed a framework that treats hypothesis testing as a formal decision problem \cite{NeymanPearson1933}. Their approach requires explicit specification of both the null and the alternative hypothesis. The significance level $\alpha$ is fixed in advance in order to control the long run probability of a Type I error. In addition, the probability of a Type II error, denoted by $\beta$, is explicitly defined, and statistical power is introduced as $1 - \beta$.
+
+To summarize these conceptual differences, \ref{TablefisherNP} presents a direct comparison of the two approaches.
+
+The fundamental distinction lies in interpretation. Fisher’s method evaluates the strength of evidence in a single experiment, whereas the Neyman-Pearson framework evaluates the performance of a decision rule across repeated experiments.
+
+
+
+\begin{table}[htbp]
+	\centering
+	
+	
+	\begin{tabularx}{\textwidth}{X X X}
+		\hline
+		& Fisher (1925) & Neyman--Pearson (1933) \\
+		\hline
+		Main focus & Measuring strength of evidence & Controlling decision errors \\
+		Role of p-value & Continuous measure of evidence & Compared to fixed $\alpha$ for decision \\
+		Alternative hypothesis & Not strictly required & Must be specified \\
+		Type I error ($\alpha$) & Not central concept & Fixed in advance and controlled \\
+		Type II error ($\beta$) & Not formally defined & Explicitly defined \\
+		Interpretation & Single study inference & Long run error control \\
+		\hline
+	\end{tabularx}
+	\caption{Comparison of Fisher and Neyman--Pearson approaches}
+	\label{TablefisherNP}
+\end{table}
+
+
+
+
+\section{The Institutionalization of $\alpha = 0.05$}
+
+Over time, the value $\alpha = 0.05$ became the default threshold in many scientific disciplines. The widespread use of this value was reinforced through teaching materials, journal policies, and statistical software defaults.
+
+Historical analysis suggests that the dominance of 0.05 is largely conventional rather than theoretically justified \cite{CowlesDavis1982}. Nevertheless, it acquired the status of a standard rule. In many applied fields, results are routinely classified as either ``statistically significant'' or ``not significant'' based solely on whether the p-value falls below 0.05.
+
+In recent years, this practice has been increasingly questioned. The American Statistical Association emphasized that scientific conclusions should not be based solely on whether a p-value crosses a fixed threshold \cite{WassersteinLazar2016}. Furthermore, proposals have been made to lower the default threshold for certain claims, for example to 0.005, in order to reduce false positive findings \cite{Benjamin2018}.
+
+These discussions indicate that the choice of the significance level is not merely a technical detail, but a substantive methodological decision.
+
+
+\section{Implications for the Present Thesis}
+
+The historical development of hypothesis testing shows that the commonly used decision rule
+
+\begin{equation}
+	\text{Reject } H_0 \text{ if } p \leq 0.05
+\end{equation}
+
+is the result of a combination of ideas from different theoretical frameworks and historical conventions.
+
+Fisher emphasized evidence, whereas Neyman and Pearson emphasized error control. The modern routine use of a fixed significance level blends these perspectives without always acknowledging their conceptual differences.
+
+This historical background provides the foundation for the present thesis. If the conventional significance level is historically contingent and theoretically flexible, then it is reasonable to explore whether a more adaptive and context sensitive approach to choosing $\alpha$ can improve statistical decision making.
+
+

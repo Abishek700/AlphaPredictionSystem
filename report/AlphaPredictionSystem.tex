@@ -3,122 +3,91 @@
 %%%%%%
 \documentclass[12pt,a4paper]{scrbook}
 
-% Language Selection
+% Auswahl der Sprache/Language selection
+% Die nicht gewünschte Sprache muss auskommentiert werden:/The language that is not desired must be commented out:
+%\def\isGerman{1}
 \def\isEnglish{1}
 
-% -------------------------------------------------
-% PREAMBLE (ALL PACKAGES & SETUP GO HERE)
-% -------------------------------------------------
 
-% Common configurations
-\input{General/Packages}
-\input{General/commands}
-\input{General/tikzdefs}
+\include{General/Packages}
+\include{General/commands}
+\include{General/tikzdefs}
+
 \input{General/acronyms}
-\input{General/Hyphenations}
+\input{General/Hyphenations}%
 
-% Bibliography (MUST be before \begin{document})
-	\addbibresource{../MLbib/MyLiterature.bib}
+\addbibresource{../MLbib/MyLiterature.bib}
+\usepackage{float}
+\usepackage{acro}
+\usepackage{hyperref} 
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{parskip}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+
+% Define custom light green color
+\definecolor{lightgreen}{rgb}{0.6, 0.8, 0.6}
+\lstset{
+	language=Python,
+	backgroundcolor=\color{white},
+	basicstyle=\ttfamily\footnotesize,
+	frame=single,
+	numbers=none,
+	breaklines=true,
+	keywordstyle=\color{blue},
+	commentstyle=\color{lightgreen},
+	stringstyle=\color{red},
+	showspaces=false,
+	showstringspaces=false
+}
+%New colors defined below
+
+
+\begin{document}
 	
-	% Extra packages
-	\usepackage{float}
-	\usepackage{acro}
-	\usepackage{hyperref}
-	\usepackage{pdfpages}
-	\usepackage{rotating}
-	\usepackage{listings}
-	\usepackage{xcolor}
-	\usepackage{amsmath}
-	\usepackage{graphicx}
-	\usepackage{caption}
-	\usepackage{algorithm}
-	\usepackage{algpseudocode}
-	\usepackage[T1]{fontenc}
-	\usepackage{lmodern}
-	\usepackage{csquotes}
-	\PassOptionsToPackage{nottoc}{tocbibind}
-	\usepackage{tocbibind}
+	\InputLanguage{Contents/}{Titlepage} 
+	\newpage
 	
-	% Listings setup
-	\definecolor{lightgreen}{rgb}{0.6, 0.8, 0.6}
-	\lstset{
-		language=Python,
-		backgroundcolor=\color{white},
-		basicstyle=\ttfamily\footnotesize,
-		frame=single,
-		numbers=none,
-		breaklines=true,
-		keywordstyle=\color{blue},
-		commentstyle=\color{lightgreen},
-		stringstyle=\color{red},
-		showspaces=false,
-		showstringspaces=false
-	}
+	\pagenumbering{roman}
 	
-	% -------------------------------------------------
-	% DOCUMENT STARTS HERE (ONLY ONCE)
-	% -------------------------------------------------
-	\begin{document}
-		
-		\InputLanguage{Contents/}{Titlepage}
-		\newpage
-		
-		\pagenumbering{roman}
-		\tableofcontents
-		\listoffigures
-		\cleardoublepage
-		\listoftables
-		\cleardoublepage
-		\pagenumbering{arabic}
-		
-		\part{Introduction}
-		\InputLanguage{Contents/}{Introduction}
-		
-		\part{Domain Knowledge}
-		\InputLanguage{Contents/}{DomainKnowledge}
-		
-		\part{Hardware Description}
-		\InputLanguage{Contents/}{Nano33BLESenseLite}
-		\InputLanguage{Contents/}{IMU}
-		\InputLanguage{Contents/}{Accelerometer}
-		\InputLanguage{Contents/}{Magnetometer}
-		\InputLanguage{Contents/}{Gyroscope}
-		\InputLanguage{Contents/}{HardwarePins}
-		\InputLanguage{Contents/}{PoweringDevice}
-		\InputLanguage{Contents/}{HardwareDimension}
-		
-		\part{List of Materials}
-		\InputLanguage{Contents/}{ListOfMaterial}
-		
-		\part{Domain Machine Learning}
-		\InputLanguage{Contents/}{Algorithm}
-		
-		\part{Domain Tools}
-		\InputLanguage{Contents/}{DevelopmentEnvironment}
-		\InputLanguage{Contents/}{versioncontrol}
-		
-		\part{Application Development}
-		\InputLanguage{Contents/}{KDD}
-		\InputLanguage{Contents/}{DocumentationDeveloper}
-		\InputLanguage{Contents/}{Monitoring}
-		\InputLanguage{Contents/}{DevelopmentToDeployment}
-		
-		\part{Application Deployment}
-		\InputLanguage{Contents/}{Deployment}
-		\InputLanguage{Contents/}{TestCompleteSystem}
-		\InputLanguage{Contents/}{Evaluation}
-		
-		\part{Appendix}
-		\InputLanguage{Contents/}{GivenDocument}
-		
-		\part{SBOM}
-		\InputLanguage{Contents/}{SBOM}
-		
-		\part{Conclusion}
-		\InputLanguage{Contents/}{Conclusion}
-		
-		% Bibliography output
-		\addcontentsline{toc}{chapter}{\TRANS{Literaturverzeichnis}{Bibliography}}
-		\printbibliography
-		
-	\end{document}
+	\tableofcontents
+	\listoffigures
+	\cleardoublepage
+	\listoftables
+	\cleardoublepage
+	\pagenumbering{arabic}
+	\part{Introduction and Problem Setup}
+	\InputLanguage{Contents/}{IntroductionandProblemSetup}
+	\part{Historical Foundations of Statistical Hypothesis Testing}
+	\InputLanguage{Contents/}{History}
+	\part{Literature on Significance Level Selection}
+	\InputLanguage{Contents/}{ExisitingApproaches}
+	\part{System Development}
+	\InputLanguage{Contents/}{AlphaDevelopment}
+	\part{Deployment}
+	\InputLanguage{Contents/}{AlphaDeployment}
+	\part{Testing}
+	\InputLanguage{Contents/}{AlphaTesting}
+	\cleardoublepage
+	\addcontentsline{toc}{chapter}{\TRANS{Literaturverzeichnis}{Bibliography}}
+	\printbibliography
+	
+	
+	\cleardoublepage
+	
+	%\renewcommand{\indexname}{\TRANS{Stichwortverzeichnis}{Index}}
+	%\addcontentsline{toc}{chapter}{\TRANS{Stichwortverzeichnis}{Index}}
+	
+\end{document}

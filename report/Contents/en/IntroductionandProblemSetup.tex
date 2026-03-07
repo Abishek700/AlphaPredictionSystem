@@ -1,0 +1,98 @@
+%%%%%%
+% Metadata
+%%%%%%
+
+\chapter{Introduction}
+
+\section{Background and Motivation}
+
+Statistical hypothesis testing is one of the most commonly used methods in scientific research. In empirical research, researchers aim to assess whether an observed effect represents a real relationship or whether it may have occurred due to random variation.
+
+To answer this question, researchers define two competing statements. The first is the null hypothesis, denoted by $H_0$, which usually represents "no effect" or "no difference". The second is the alternative hypothesis, denoted by $H_1$, which represents the presence of an effect.
+
+After collecting data, researchers calculate a value known as the \emph{p-value}. \cite{Fisher1925} introduced the p-value as a way to measure how compatible the observed data are with the null hypothesis. In simple terms, the p-value answers the following question:
+
+\begin{quote}
+	If the null hypothesis were true, how likely would it be to observe data like the ones we obtained?
+\end{quote}
+
+More formally, if $T$ is a test statistic and $t_{\text{obs}}$ is its observed value, the p-value can be written as
+\begin{equation}
+	\alpha = P(\text{Reject } H_0 \mid H_0 \text{ is true})
+\end{equation}
+
+This means that the p-value is a probability calculated under the assumption that the null hypothesis is true.
+
+To make a decision, the p-value is compared to a pre chosen threshold called the significance level, denoted by $\alpha$. According to the framework developed by \cite{NeymanPearson1933}, the null hypothesis is rejected if
+\begin{equation}
+	p \leq \alpha
+\end{equation}
+
+The significance level $\alpha$ represents the probability of making a Type I error, which means rejecting the null hypothesis even though it is true \cite{NeymanPearson1933}. Formally,
+
+\begin{equation}
+	\alpha = P(\text{Reject } H_0 \mid H_0 \text{ is true})
+\end{equation}
+
+In practice, researchers often choose $\alpha = 0.05$. Other common values are $0.10$ and $0.01$. The value $0.05$ has become the standard in many scientific fields. However, \cite{Fisher1925} originally suggested $0.05$ as a convenient reference point, not as a universal rule. Later research has shown that the dominance of $0.05$ is mainly historical and conventional rather than theoretically optimal \cite{CowlesDavis1982}.
+
+At first glance, this decision rule seems clear and simple. If the p-value is smaller than $0.05$, the result is called "statistically significant". If it is larger, it is not.
+
+However, problems arise when the p-value is very close to the threshold. For example, if $p = 0.049$, the null hypothesis is rejected. If $p = 0.051$, it is not rejected. The numerical difference is very small, but the conclusion changes completely. In practice, researchers sometimes describe such results as "almost significant" or "marginally significant", even though hypothesis testing formally allows only two decisions.
+
+This discomfort has become more serious in recent years. Large replication projects have shown that many statistically significant findings cannot be reproduced in independent studies. For example, the Open Science Collaboration (2015) reported that a substantial proportion of findings in psychology failed to replicate \cite{OpenScience2015}. In addition, the American Statistical Association warned that p-values should not be used mechanically or interpreted without context \cite{WassersteinLazar2016}.
+
+These developments suggest that the routine use of a fixed significance level, especially $\alpha = 0.05$, may not always be appropriate.
+
+\section{Research Problem}
+
+Even though many researchers are aware of the limitations of fixed significance levels, the value $\alpha = 0.05$ is still used almost automatically in most empirical studies. This creates several concerns.
+
+First, studies differ in important ways. Some studies have small sample sizes, while others include thousands of observations. Some studies aim to detect very small effects, while others focus on large effects. Despite these differences, the same significance level is often applied.
+
+Second, hypothesis testing involves two types of errors. A Type I error occurs when the null hypothesis is rejected even though it is true. Its probability is $\alpha$. A Type II error occurs when the null hypothesis is not rejected even though it is false. Its probability is denoted by $\beta$. The statistical power of a test is defined as
+\begin{equation}
+	\text{Power} = 1 - \beta.
+\end{equation}
+
+Power depends on three main factors: the significance level $\alpha$, the sample size, and the true effect size. \cite{Cohen1988} emphasized that these quantities are closely related and should be considered together when planning a study. Fixing $\alpha$ without considering sample size or expected effect size may therefore lead to an imbalance between false positive and false negative decisions.
+
+Third, the strict division between "significant" and "not significant" can create misleading interpretations when p-values are close to the threshold. Two results that are almost identical numerically can lead to completely different conclusions simply because one falls slightly below $0.05$ and the other slightly above.
+
+Although the statistical literature contains proposals to modify or lower the conventional threshold, such as recommending $\alpha = 0.005$ for certain claims \cite{Benjamin2018}, these proposals still rely on fixed values. There is currently no widely used method that systematically adapts the significance level to the characteristics of a specific study.
+
+This gap forms the starting point of the present thesis.
+\section{Research Objective}
+
+The main objective of this thesis is to develop and evaluate a systematic approach for choosing the significance level $\alpha$. Instead of treating $\alpha$ as a fixed constant, this thesis proposes to view it as a flexible value that can depend on study characteristics. In particular, the proposed approach uses information from past replication studies to inform the choice of $\alpha$. Study characteristics such as sample size and effect size are used to generate a data based baseline recommendation.
+
+In a second step, this baseline value can be adjusted based on contextual factors, such as the researcher’s tolerance for risk or the number of hypotheses being tested.
+
+The goal is not to replace statistical reasoning or to claim that there is one universally correct significance level. Instead, the goal is to provide a structured and transparent recommendation that helps researchers make more informed decisions, especially in situations where the p-value is close to the threshold.
+
+The central research question of this thesis is:
+
+\begin{quote}
+	Can a data-driven and context-sensitive approach improve the choice of the significance level compared to the conventional fixed value of $0.05$?
+\end{quote}
+
+
+\section{Structure of the Thesis}
+
+The remainder of this thesis is organized as follows:
+
+\begin{itemize}
+	\item Chapter~2 explains the historical development of hypothesis testing, focusing on the contributions of \cite{Fisher1925} and \cite{NeymanPearson1933}.
+	
+	\item Chapter~3 reviews existing approaches in the literature for selecting appropriate significance levels.
+	
+	\item Chapter~4 presents the development of the proposed Alpha Recommendation System.
+	
+	\item Chapter~5 evaluates the system using published replication studies from different research fields.
+	
+	\item Chapter~6 discusses implications, limitations, and directions for future research.
+	
+	\item Chapter~7 concludes the thesis.
+\end{itemize}
+
+

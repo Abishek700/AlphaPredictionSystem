@@ -1,0 +1,112 @@
+%%%%%%
+% Metadata
+%%%%%%
+
+\chapter{Approaches in the Literature for Choosing the Significance Level}
+
+\section{Conventional Fixed Significance Levels}
+
+In most empirical research, the significance level $\alpha$ is selected from a small set of conventional values, typically 0.10, 0.05, or 0.01. Among these, the value 0.05 has become the default standard across many disciplines. As discussed in Chapter~2, this convention can be traced back to Fisher’s early work \cite{Fisher1925}, and its dominance was later reinforced through textbooks and journal practices \cite{CowlesDavis1982}.
+
+The practical advantage of using a fixed threshold is simplicity. Researchers do not need to justify their choice of $\alpha$ for each study, and results can be compared easily across studies. However, this simplicity comes at a cost.
+
+Mathematically, the conventional decision rule can be written as
+
+\begin{equation}
+	\text{Reject } H_0 \text{ if } p \leq \alpha
+	\label{eq:decision_rule}
+\end{equation}
+
+When $\alpha$ is fixed at 0.05 for all studies, the probability of committing a Type I error is held constant at five percent in the long run. However, this does not guarantee balanced error rates in individual studies. In particular, the structure of the rejection rule in Equation~\ref{eq:decision_rule} does not account for differences in sample size or expected effect size.
+
+Statistical power can be expressed as
+
+\begin{equation}
+	\text{Power} = P(\text{Reject } H_0 \mid H_0 \text{ is false}) = 1 - \beta
+	\label{eq:power_definition}
+\end{equation}
+
+Equation~\ref{eq:power_definition} highlights the direct relationship between statistical power and the probability of a Type II error. Power is influenced by three main factors: the significance level $\alpha$, the sample size $N$, and the true effect size. Cohen (1988) emphasized that these elements should be considered jointly during study planning \cite{Cohen1988}.
+
+Although fixed thresholds provide comparability and simplicity, they do not adapt to differences between studies.
+
+
+\section{Power Based and Design Oriented Approaches}
+
+One line of research focuses on the relationship between the significance level and statistical power. In this view, the choice of $\alpha$ should not be isolated from study design decisions.
+
+Consider a simple test statistic for a standardized effect size $d$. Under standard assumptions, the test statistic can be written as
+
+\begin{equation}
+	Z = \frac{d \sqrt{N}}{\sigma}
+	\label{eq:z_statistic}
+\end{equation}
+
+Equation~\ref{eq:z_statistic} shows that the magnitude of the test statistic increases with larger sample sizes and stronger effect sizes. The probability of rejecting the null hypothesis depends on how large $Z$ is relative to the critical value determined by $\alpha$.
+
+If $\alpha$ is reduced, the critical value increases. This makes rejection more difficult and reduces the probability of a Type I error. However, as implied by Equation~\ref{eq:power_definition}, reducing $\alpha$ may simultaneously decrease statistical power unless the sample size is increased accordingly.
+
+From this perspective, some researchers argue that $\alpha$ should be chosen in conjunction with sample size planning. Although this approach improves study design, it typically still relies on selecting $\alpha$ from a small set of conventional values.
+
+
+\section{Decision Theoretic and Error Cost Approaches}
+
+Another class of approaches treats hypothesis testing explicitly as a decision problem. 
+Within decision theoretic frameworks, the choice of the significance level $\alpha$ 
+is based on the relative costs of different types of errors rather than on convention 
+alone \cite{Berger1985}.
+
+In this setting, the objective is to select a decision rule that minimizes the 
+expected loss associated with incorrect decisions. The expected loss depends on 
+both the probabilities of error and the costs assigned to these errors.
+
+Formally, following \cite{Berger1985}, the expected loss function can be written as
+
+\begin{equation}
+	L = C_1 \alpha + C_2 \beta,
+	\label{eq:expected_loss}
+\end{equation}
+
+where $C_1$ denotes the cost of a false positive decision and $C_2$ denotes the 
+cost of a false negative decision. Since $\alpha$ and $\beta$ denote the probabilities of 
+Type I and Type II errors, respectively, Equation~\ref{eq:expected_loss} expresses expected loss 
+as a weighted combination of these two error probabilities.
+
+
+Under this framework, the optimal significance level is the value of $\alpha$ 
+that minimizes the expected loss. In principle, this provides a rational and 
+context sensitive basis for selecting the test level.
+
+Despite its theoretical appeal, practical implementation is often challenging. 
+In many empirical research settings, the costs $C_1$ and $C_2$ cannot be quantified 
+precisely, as they may depend on economic, ethical, or disciplinary considerations. 
+For this reason, decision theoretic approaches are rarely applied in routine 
+empirical research.
+
+
+
+\section{Recent Proposals for Stricter Thresholds}
+
+In response to concerns about replication failures, several authors have proposed lowering the conventional significance level. A prominent example is the recommendation to redefine statistical significance from 0.05 to 0.005 for claims of new discoveries \cite{Benjamin2018}.
+
+Reducing $\alpha$ directly alters the rejection rule described in Equation~\ref{eq:decision_rule}. By lowering the threshold, the rejection region becomes smaller, thereby decreasing the probability of a Type I error.
+
+However, as indicated by Equation~\ref{eq:power_definition}, reducing $\alpha$ may also increase the probability of a Type II error unless adjustments are made to the study design. Thus, lowering the threshold does not eliminate the fundamental trade off between false positives and false negatives.
+
+Importantly, even proposals such as $\alpha = 0.005$ still rely on selecting a fixed universal value.
+
+
+\section{Limitations of Existing Approaches}
+\label{sec:litlmitiations}
+The literature demonstrates broad agreement that the universal use of $\alpha = 0.05$ is problematic. However, most proposed alternatives share two common limitations.
+
+First, they typically rely on choosing from a small set of discrete values rather than treating $\alpha$ as a continuous parameter.
+
+Second, they rarely provide a practical and easily implementable procedure that researchers can apply during study planning.
+
+The structural trade offs between $\alpha$ and $\beta$, formalized in Equations~\ref{eq:power_definition} and~\ref{eq:expected_loss}, illustrate why a more systematic and adaptive approach may be desirable.
+
+This gap motivates the development of the method proposed in this thesis. Rather than replacing the concept of statistical significance, the goal is to provide a systematic and data informed way of recommending a study specific significance level.
+
+
+
