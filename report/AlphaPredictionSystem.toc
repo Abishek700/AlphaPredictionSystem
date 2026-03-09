@@ -1,0 +1,81 @@
+\acswitchoff 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Contents}{i}{chapter*.1}%
+\contentsline {chapter}{List of Figures}{v}{chapter*.2}%
+\contentsline {chapter}{List of Tables}{vii}{chapter*.3}%
+\contentsline {part}{\numberline {I}Introduction and Problem Setup}{1}{part.1}%
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Background and Motivation}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Research Problem}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Research Objective}{5}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Structure of the Thesis}{6}{section.1.4}%
+\contentsline {part}{\numberline {II}Historical Foundations of Statistical Hypothesis Testing}{7}{part.2}%
+\contentsline {chapter}{\numberline {2}Origins of Modern Hypothesis Testing}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Fisher’s Approach to Significance Testing}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}The Neyman-Pearson Framework}{10}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Conceptual Differences Between Fisher and Neyman-Pearson}{10}{section.2.3}%
+\contentsline {section}{\numberline {2.4}The Institutionalization of $\alpha = 0.05$}{11}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Implications for the Present Thesis}{12}{section.2.5}%
+\contentsline {part}{\numberline {III}Literature on Significance Level Selection}{13}{part.3}%
+\contentsline {chapter}{\numberline {3}Approaches in the Literature for Choosing the Significance Level}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Conventional Fixed Significance Levels}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Power Based and Design Oriented Approaches}{16}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Decision Theoretic and Error Cost Approaches}{16}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Recent Proposals for Stricter Thresholds}{17}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Limitations of Existing Approaches}{18}{section.3.5}%
+\contentsline {part}{\numberline {IV}System Development}{19}{part.4}%
+\contentsline {chapter}{\numberline {4}Development of the Alpha Recommendation System}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Overview of the System Design}{21}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Data Driven Alpha Recommendation}{22}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Context-Based Adjustment of Alpha}{23}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Dataset Construction and Optimal Alpha Definition}{25}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Data Acquisition}{26}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Data Quantity}{27}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Data Quality and Reliability}{28}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Data Relevance}{28}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Handling Missing Values and Anomalies}{28}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Definition and Calculation of Optimal Alpha}{29}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}Derivation of Sample Size and Effect Size}{29}{subsection.4.2.7}%
+\contentsline {subsection}{\numberline {4.2.8}Final Dataset Structure}{30}{subsection.4.2.8}%
+\contentsline {section}{\numberline {4.3}ML model for predicting $\alpha _{base}$}{31}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Data Preparation for Model Training}{31}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Feature Selection and Target Variable}{31}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Conceptual Idea of the Data-Driven Model}{32}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Choice of Algorithm}{33}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Model Implementation in Python}{35}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Role of the Data-Driven Model}{36}{subsection.4.3.6}%
+\contentsline {section}{\numberline {4.4}Context-Based Adjustment of the Baseline Alpha}{36}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Motivation for Context-Based Adjustment}{36}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Adjustment Factors}{37}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Risk Tolerance}{37}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Test Directionality}{38}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Multiple Testing}{39}{subsection.4.4.5}%
+\contentsline {subsection}{\numberline {4.4.6}Combining the Adjustments}{39}{subsection.4.4.6}%
+\contentsline {subsection}{\numberline {4.4.7}Understanding the Final Alpha Recommendation}{40}{subsection.4.4.7}%
+\contentsline {subsection}{\numberline {4.4.8}Role of the Adjustment Step in the System}{40}{subsection.4.4.8}%
+\contentsline {part}{\numberline {V}Deployment}{41}{part.5}%
+\contentsline {chapter}{\numberline {5}Deployment}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Model Deployment}{43}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Purpose of Deployment}{44}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Choice of Deployment Tool}{44}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Loading the Trained Model}{44}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}User Interaction}{45}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}User Input Interface}{45}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Generating the Alpha Recommendation}{46}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Displaying Results to the User}{47}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Running the Application}{48}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}Summary}{49}{section.5.3}%
+\contentsline {part}{\numberline {VI}Testing}{51}{part.6}%
+\contentsline {chapter}{\numberline {6}Testing}{53}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Study Selection for Evaluation}{53}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Procedure for Testing}{54}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Decision Comparison}{54}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Overall Result}{55}{subsection.6.2.2}%
+\contentsline {part}{\numberline {VII}Conclusion}{57}{part.7}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future Directions}{59}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of the Study}{59}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Main Findings}{59}{section.7.2}%
+\contentsline {section}{\numberline {7.3}limitations}{60}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Future Research Directions}{61}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Final Remarks}{61}{section.7.5}%
+\contentsline {chapter}{ Bibliography}{63}{section.7.5}%

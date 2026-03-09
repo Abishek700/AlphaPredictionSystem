@@ -1,0 +1,8 @@
+\babel@toc {german}{}\relax 
+\babel@toc {german}{}\relax 
+\beamer@sectionintoc {1}{Problem's Description}{3}{0}{1}
+\beamer@sectionintoc {2}{Description of the Application}{4}{0}{2}
+\beamer@sectionintoc {3}{Challenges}{7}{0}{3}
+\beamer@sectionintoc {4}{Solutions}{8}{0}{4}
+\beamer@sectionintoc {5}{Results}{9}{0}{5}
+\beamer@sectionintoc {6}{Literature}{11}{0}{6}

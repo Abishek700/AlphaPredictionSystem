@@ -1,0 +1,1019 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{anyt/global//global/global/global}
+  \entry{Benjamini1995}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=BY}{%
+         family={Benjamini},
+         familyi={B\bibinitperiod},
+         given={Yoav},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=HY}{%
+         family={Hochberg},
+         familyi={H\bibinitperiod},
+         given={Yosef},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BYHY1}
+    \strng{fullhash}{BYHY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BH95}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{number}{1}
+    \field{pages}{289\bibrangedash 300}
+    \field{title}{Controlling the False Discovery Rate: A Practical and
+  Powerful Approach to Multiple Testing}
+    \field{volume}{57}
+    \field{journaltitle}{Journal of the Royal Statistical Society: Series B}
+    \field{year}{1995}
+  \endentry
+
+  \entry{Baker2016}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=BM}{%
+         family={Baker},
+         familyi={B\bibinitperiod},
+         given={Monya},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BM1}
+    \strng{fullhash}{BM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Bak16}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1038/533452a
+    \endverb
+    \field{number}{7604}
+    \field{pages}{452\bibrangedash 454}
+    \field{title}{1,500 Scientists Lift the Lid on Reproducibility}
+    \field{volume}{533}
+    \field{journaltitle}{Nature}
+    \field{year}{2016}
+  \endentry
+
+  \entry{becker2000}{manual}{}{}
+    \name{author}{1}{}{%
+      {{hash=BLA}{%
+         family={Becker},
+         familyi={B\bibinitperiod},
+         given={Lee\bibnamedelima A.},
+         giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {University of Colorado Colorado Springs}%
+    }
+    \strng{namehash}{BLA1}
+    \strng{fullhash}{BLA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Bec00}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{howpublished}{Lecture notes / PDF on effect size measures}
+    \field{note}{Accessed: 2026-02-25}
+    \field{title}{Effect Size (ES)}
+    \verb{url}
+    \verb https://www.uv.es/~friasnav/EffectSizeBecker.pdf
+    \endverb
+    \field{year}{2000}
+  \endentry
+
+  \entry{Benjamin2018}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=BDJ}{%
+         family={Benjamin},
+         familyi={B\bibinitperiod},
+         given={Daniel\bibnamedelima J.},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BDJ+1}
+    \strng{fullhash}{BDJ+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Ben+18}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{pages}{6\bibrangedash 10}
+    \field{title}{Redefine statistical significance}
+    \field{volume}{2}
+    \field{journaltitle}{Nature Human Behaviour}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Berger1985}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=BJO}{%
+         family={Berger},
+         familyi={B\bibinitperiod},
+         given={James\bibnamedelima O.},
+         giveni={J\bibinitperiod\bibinitdelim O\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BJO1}
+    \strng{fullhash}{BJO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Ber85}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1007/978-1-4757-4286-2
+    \endverb
+    \field{title}{Statistical Decision Theory and Bayesian Analysis}
+    \list{location}{1}{%
+      {New York}%
+    }
+    \field{year}{1985}
+  \endentry
+
+  \entry{Breiman2001}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=BL}{%
+         family={Breiman},
+         familyi={B\bibinitperiod},
+         given={Leo},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BL1}
+    \strng{fullhash}{BL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Bre01}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1023/A:1010933404324
+    \endverb
+    \field{number}{1}
+    \field{pages}{5\bibrangedash 32}
+    \field{title}{Random Forests}
+    \verb{url}
+    \verb https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf
+    \endverb
+    \field{volume}{45}
+    \field{journaltitle}{Machine Learning}
+    \field{year}{2001}
+  \endentry
+
+  \entry{CowlesDavis1982}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=CM}{%
+         family={Cowles},
+         familyi={C\bibinitperiod},
+         given={Mary},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=DC}{%
+         family={Davis},
+         familyi={D\bibinitperiod},
+         given={Caroline},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CMDC1}
+    \strng{fullhash}{CMDC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{CD82}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \verb{doi}
+    \verb 10.1037/0003-066X.37.5.553
+    \endverb
+    \field{number}{5}
+    \field{pages}{553\bibrangedash 558}
+    \field{title}{On the Origins of the .05 Level of Statistical Significance}
+    \field{volume}{37}
+    \field{journaltitle}{American Psychologist}
+    \field{year}{1982}
+  \endentry
+
+  \entry{Chang2025}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=CJ}{%
+         family={Chang},
+         familyi={C\bibinitperiod},
+         given={Jenny},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Center for Open Science}%
+    }
+    \strng{namehash}{CJ1}
+    \strng{fullhash}{CJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Cha25}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Pre-Hacking: Can Behavioral Experimenters Make Design
+  Decisions To Get The Results They Want?}
+    \verb{url}
+    \verb https://osf.io/s9p7a
+    \endverb
+    \field{year}{2025}
+  \endentry
+
+  \entry{Cohen1988}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=CJ}{%
+         family={Cohen},
+         familyi={C\bibinitperiod},
+         given={Jacob},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Lawrence Erlbaum Associates}%
+    }
+    \strng{namehash}{CJ2}
+    \strng{fullhash}{CJ2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Coh88}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{edition}{2}
+    \field{title}{Statistical Power Analysis for the Behavioral Sciences}
+    \list{location}{1}{%
+      {Hillsdale, NJ}%
+    }
+    \field{year}{1988}
+  \endentry
+
+  \entry{ErringtonDenis2021}{misc}{}{}
+    \name{author}{2}{}{%
+      {{hash=ETM}{%
+         family={Errington},
+         familyi={E\bibinitperiod},
+         given={Timothy\bibnamedelima M.},
+         giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={Denis},
+         familyi={D\bibinitperiod},
+         given={Alexandria},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Center for Open Science}%
+    }
+    \strng{namehash}{ETMDA1}
+    \strng{fullhash}{ETMDA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{ED21}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \verb{doi}
+    \verb 10.17605/OSF.IO/E5NVR
+    \endverb
+    \field{title}{Replication Data from the Reproducibility Project: Cancer
+  Biology}
+    \verb{url}
+    \verb https://osf.io/e5nvr
+    \endverb
+    \field{year}{2021}
+  \endentry
+
+  \entry{FosterDeardorff2017}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=FED}{%
+         family={Foster},
+         familyi={F\bibinitperiod},
+         given={Erin\bibnamedelima D.},
+         giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={Deardorff},
+         familyi={D\bibinitperiod},
+         given={Andrea},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FEDDA1}
+    \strng{fullhash}{FEDDA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{FD17}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{doi}
+    \verb 10.5195/jmla.2017.88
+    \endverb
+    \field{number}{2}
+    \field{pages}{203\bibrangedash 206}
+    \field{title}{Open Science Framework (OSF)}
+    \field{volume}{105}
+    \field{journaltitle}{Journal of the Medical Library Association}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Fisher1925}{book}{}{}
+    \name{author}{1}{}{%
+      {{hash=FRA}{%
+         family={Fisher},
+         familyi={F\bibinitperiod},
+         given={Ronald\bibnamedelima A.},
+         giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Oliver}%
+      {Boyd}%
+    }
+    \strng{namehash}{FRA1}
+    \strng{fullhash}{FRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Fis25}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Statistical Methods for Research Workers}
+    \verb{url}
+    \verb https://archive.org/details/in.ernet.dli.2015.205971/mode/2up
+    \endverb
+    \list{location}{1}{%
+      {Edinburgh}%
+    }
+    \field{year}{1925}
+  \endentry
+
+  \entry{FORRTFReDExplorer}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=F}{%
+         family={{Framework for Open and Reproducible Research Training
+  (FORRT)}},
+         familyi={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{F1}
+    \strng{fullhash}{F1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{{Fra}26}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{note}{Accessed: 2026-03-07}
+    \field{title}{FReD Explorer: FORRT Replication Database}
+    \verb{url}
+    \verb https://forrt.org/explorer/
+    \endverb
+    \field{year}{2026}
+  \endentry
+
+  \entry{Herzog2019}{incollection}{}{}
+    \name{author}{3}{}{%
+      {{hash=HMH}{%
+         family={Herzog},
+         familyi={H\bibinitperiod},
+         given={Michael\bibnamedelima H.},
+         giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=FG}{%
+         family={Francis},
+         familyi={F\bibinitperiod},
+         given={Gregory},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Clarke},
+         familyi={C\bibinitperiod},
+         given={Aaron},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{HMHFGCA1}
+    \strng{fullhash}{HMHFGCA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{HFC19}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Understanding Statistics and Experimental Design}
+    \verb{doi}
+    \verb 10.1007/978-3-030-03499-3_5
+    \endverb
+    \field{pages}{63\bibrangedash 66}
+    \field{title}{The Multiple Testing Problem}
+    \list{location}{1}{%
+      {Cham}%
+    }
+    \field{year}{2019}
+  \endentry
+
+  \entry{Hales2023}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=HAH}{%
+         family={Hales},
+         familyi={H\bibinitperiod},
+         given={Andrew\bibnamedelima H.},
+         giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HAH1}
+    \strng{fullhash}{HAH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Hal23}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.1037/met0000610
+    \endverb
+    \field{number}{6}
+    \field{pages}{1209\bibrangedash 1218}
+    \field{title}{One-Tailed Tests: Let’s Do This (Responsibly)}
+    \field{volume}{29}
+    \field{journaltitle}{Psychological Methods}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Kim2015}{report}{}{}
+    \name{author}{1}{}{%
+      {{hash=KJH}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Jae\bibnamedelima H.},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KJH1}
+    \strng{fullhash}{KJH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Kim15}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{66373}
+    \field{title}{How to Choose the Level of Significance: A Pedagogical Note}
+    \verb{url}
+    \verb https://mpra.ub.uni-muenchen.de/66373/1/MPRA_paper_66373.pdf
+    \endverb
+    \list{institution}{1}{%
+      {Munich Personal RePEc Archive}%
+    }
+    \field{type}{techreport}
+    \field{year}{2015}
+  \endentry
+
+  \entry{kim2017}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=KHY}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Hae-Young},
+         giveni={H\bibinithyphendelim Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KHY1}
+    \strng{fullhash}{KHY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Kim17}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{doi}
+    \verb 10.5395/rde.2017.42.2.152
+    \endverb
+    \field{number}{2}
+    \field{pages}{152\bibrangedash 155}
+    \field{title}{Statistical notes for clinical researchers: Chi-squared test
+  and Fisher’s exact test}
+    \verb{url}
+    \verb https://rde.ac/journal/view.php?doi=10.5395/rde.2017.42.2.152
+    \endverb
+    \field{volume}{42}
+    \field{journaltitle}{Restorative Dentistry \& Endodontics}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Kwak2023}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=KS}{%
+         family={Kwak},
+         familyi={K\bibinitperiod},
+         given={Sunhee},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KS1}
+    \strng{fullhash}{KS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Kwa23}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \verb{doi}
+    \verb 10.12997/jla.2023.12.2.89
+    \endverb
+    \field{number}{2}
+    \field{pages}{89\bibrangedash 95}
+    \field{title}{Are Only p-Values Less Than 0.05 Significant? A p-Value
+  Greater Than 0.05 Is Also Significant!}
+    \field{volume}{12}
+    \field{journaltitle}{Journal of Lipid and Atherosclerosis}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Li2021}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=LX}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Xingyu},
+         giveni={X\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Center for Open Science}%
+    }
+    \strng{namehash}{LX1}
+    \strng{fullhash}{LX1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Li21}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Challenging the N-Myopia: Effect Size, Not Sample Size,
+  Predicts the Replicability of Psychological Science}
+    \verb{url}
+    \verb https://osf.io/5nvrt
+    \endverb
+    \field{year}{2021}
+  \endentry
+
+  \entry{maier2022}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=MM}{%
+         family={Maier},
+         familyi={M\bibinitperiod},
+         given={Maximilian},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Lakens},
+         familyi={L\bibinitperiod},
+         given={Daniël},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MMLD1}
+    \strng{fullhash}{MMLD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{ML22}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.1177/25152459221080396
+    \endverb
+    \field{number}{2}
+    \field{title}{Justify Your Alpha: A Primer on Two Practical Approaches}
+    \verb{url}
+    \verb https://doi.org/10.1177/25152459221080396
+    \endverb
+    \field{volume}{5}
+    \field{journaltitle}{Advances in Methods and Practices in Psychological
+  Science}
+    \field{year}{2022}
+  \endentry
+
+  \entry{mudge2012}{article}{}{}
+    \name{author}{4}{}{%
+      {{hash=MJF}{%
+         family={Mudge},
+         familyi={M\bibinitperiod},
+         given={Joseph\bibnamedelima F.},
+         giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=BLF}{%
+         family={Baker},
+         familyi={B\bibinitperiod},
+         given={Leanne\bibnamedelima F.},
+         giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=ECB}{%
+         family={Edge},
+         familyi={E\bibinitperiod},
+         given={Christopher\bibnamedelima B.},
+         giveni={C\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=HJE}{%
+         family={Houlahan},
+         familyi={H\bibinitperiod},
+         given={Jeff\bibnamedelima E.},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MJF+1}
+    \strng{fullhash}{MJFBLFECBHJE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Mud+12}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{doi}
+    \verb 10.1371/journal.pone.0032734
+    \endverb
+    \field{number}{2}
+    \field{pages}{e32734}
+    \field{title}{Setting an Optimal {$\alpha$} That Minimizes Errors in Null
+  Hypothesis Significance Tests}
+    \verb{url}
+    \verb https://doi.org/10.1371/journal.pone.0032734
+    \endverb
+    \field{volume}{7}
+    \field{journaltitle}{PLOS ONE}
+    \field{year}{2012}
+  \endentry
+
+  \entry{NeymanPearson1933}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=NJ}{%
+         family={Neyman},
+         familyi={N\bibinitperiod},
+         given={Jerzy},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=PES}{%
+         family={Pearson},
+         familyi={P\bibinitperiod},
+         given={Egon\bibnamedelima S.},
+         giveni={E\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NJPES1}
+    \strng{fullhash}{NJPES1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{NP33}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \verb{doi}
+    \verb 10.1098/rsta.1933.0009
+    \endverb
+    \field{number}{694-706}
+    \field{pages}{289\bibrangedash 337}
+    \field{title}{On the Problem of the Most Efficient Tests of Statistical
+  Hypotheses}
+    \field{volume}{231}
+    \field{journaltitle}{Philosophical Transactions of the Royal Society of
+  London. Series A}
+    \field{year}{1933}
+  \endentry
+
+  \entry{OpenScience2015}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=O}{%
+         family={{Open Science Collaboration}},
+         familyi={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{O1}
+    \strng{fullhash}{O1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{{Ope}15}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \verb{doi}
+    \verb 10.1126/science.aac4716
+    \endverb
+    \field{number}{6251}
+    \field{title}{Estimating the Reproducibility of Psychological Science}
+    \field{volume}{349}
+    \field{journaltitle}{Science}
+    \field{year}{2015}
+  \endentry
+
+  \entry{PetersonFoley2021}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=PSJ}{%
+         family={Peterson},
+         familyi={P\bibinitperiod},
+         given={Susan\bibnamedelima J.},
+         giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=FS}{%
+         family={Foley},
+         familyi={F\bibinitperiod},
+         given={Susan},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PSJFS1}
+    \strng{fullhash}{PSJFS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{PF21}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \verb{doi}
+    \verb 10.1002/ncp.10674
+    \endverb
+    \field{number}{3}
+    \field{pages}{598\bibrangedash 605}
+    \field{title}{Clinician's Guide to Understanding Effect Size, Alpha Level,
+  Power, and Sample Size}
+    \field{volume}{36}
+    \field{journaltitle}{Nutrition in Clinical Practice}
+    \field{year}{2021}
+  \endentry
+
+  \entry{Ryo2017}{article}{}{}
+    \name{author}{3}{}{%
+      {{hash=RM}{%
+         family={Ryo},
+         familyi={R\bibinitperiod},
+         given={Masahiro},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=RMC}{%
+         family={Rillig},
+         familyi={R\bibinitperiod},
+         given={Matthias\bibnamedelima C.},
+         giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={Statzner},
+         familyi={S\bibinitperiod},
+         given={Bernhard},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RMRMCSB1}
+    \strng{fullhash}{RMRMCSB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{RRS17}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb 10.1002/ecs2.1976
+    \endverb
+    \field{number}{11}
+    \field{pages}{e01976}
+    \field{title}{Statistically Reinforced Machine Learning for Nonlinear
+  Patterns and Variable Interactions}
+    \verb{url}
+    \verb https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecs2.1976
+    \endverb
+    \field{volume}{8}
+    \field{journaltitle}{Ecosphere}
+    \field{year}{2017}
+  \endentry
+
+  \entry{RICHARDSON2011}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=RJT}{%
+         family={Richardson},
+         familyi={R\bibinitperiod},
+         given={John\bibnamedelima T.E.},
+         giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \keyw{Effect size, Eta squared, Partial eta squared}
+    \strng{namehash}{RJT1}
+    \strng{fullhash}{RJT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Ric11}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{abstract}{%
+    Eta squared measures the proportion of the total variance in a dependent
+  variable that is associated with the membership of different groups defined
+  by an independent variable. Partial eta squared is a similar measure in which
+  the effects of other independent variables and interactions are partialled
+  out. The development of these measures is described and their characteristics
+  compared. In the past, the two measures have been confused in the research
+  literature, partly because of a labelling error in the output produced by
+  certain versions of the statistical package SPSS. Nowadays, partial eta
+  squared is overwhelmingly cited as a measure of effect size in the
+  educational research literature. Although there are good reasons for this,
+  the interpretation of both measures needs to be undertaken with care. The
+  paper concludes with a summary of the key characteristics of eta squared and
+  partial eta squared.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.edurev.2010.12.001
+    \endverb
+    \field{issn}{1747-938X}
+    \field{number}{2}
+    \field{pages}{135\bibrangedash 147}
+    \field{title}{Eta squared and partial eta squared as measures of effect
+  size in educational research}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S1747938X11000029
+    \endverb
+    \field{volume}{6}
+    \field{journaltitle}{Educational Research Review}
+    \field{year}{2011}
+  \endentry
+
+  \entry{scikit-learn2023}{manual}{}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Scikit-Learn Developers}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {scikit-learn}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{{Sci}23}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{note}{Accessed: 2026-03-03}
+    \field{title}{scikit-learn: Machine Learning in Python}
+    \verb{url}
+    \verb https://scikit-learn.org/stable/
+    \endverb
+    \field{year}{2023}
+  \endentry
+
+  \entry{Soto2017}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=SCJ}{%
+         family={Soto},
+         familyi={S\bibinitperiod},
+         given={Christopher\bibnamedelima J.},
+         giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Center for Open Science}%
+    }
+    \strng{namehash}{SCJ1}
+    \strng{fullhash}{SCJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sot17}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{The Life Outcomes Of Personality Replication Project}
+    \verb{url}
+    \verb https://osf.io/d3xb7
+    \endverb
+    \field{year}{2017}
+  \endentry
+
+  \entry{Sotola2022}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=SLK}{%
+         family={Sotola},
+         familyi={S\bibinitperiod},
+         given={Lukas\bibnamedelima Karel},
+         giveni={L\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Center for Open Science}%
+    }
+    \strng{namehash}{SLK1}
+    \strng{fullhash}{SLK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Sot22}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Applying Z-Curve to Large-Scale Replication Studies}
+    \verb{url}
+    \verb https://osf.io/uge5r
+    \endverb
+    \field{year}{2022}
+  \endentry
+
+  \entry{streamlit-docs2024}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Streamlit}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{S2}
+    \strng{fullhash}{S2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{{Str}24}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{howpublished}{\url{https://docs.streamlit.io/}}
+    \field{note}{Accessed: 2026-03-04}
+    \field{title}{Streamlit Documentation}
+    \field{year}{2024}
+  \endentry
+
+  \entry{WassersteinLazar2016}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=WRL}{%
+         family={Wasserstein},
+         familyi={W\bibinitperiod},
+         given={Ronald\bibnamedelima L.},
+         giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=LNA}{%
+         family={Lazar},
+         familyi={L\bibinitperiod},
+         given={Nicole\bibnamedelima A.},
+         giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WRLLNA1}
+    \strng{fullhash}{WRLLNA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{WL16}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.1080/00031305.2016.1154108
+    \endverb
+    \field{number}{2}
+    \field{pages}{129\bibrangedash 133}
+    \field{title}{The ASA's Statement on p-Values: Context, Process, and
+  Purpose}
+    \field{volume}{70}
+    \field{journaltitle}{The American Statistician}
+    \field{year}{2016}
+  \endentry
+
+  \entry{WillmottMatsuura2005}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=WCJ}{%
+         family={Willmott},
+         familyi={W\bibinitperiod},
+         given={Christopher\bibnamedelima J.},
+         giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=MK}{%
+         family={Matsuura},
+         familyi={M\bibinitperiod},
+         given={Kenji},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WCJMK1}
+    \strng{fullhash}{WCJMK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{WM05}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \verb{doi}
+    \verb 10.3354/cr030079
+    \endverb
+    \field{pages}{79\bibrangedash 82}
+    \field{title}{Advantages of the Mean Absolute Error (MAE) over the Root
+  Mean Square Error (RMSE) in Assessing Average Model Performance}
+    \verb{url}
+    \verb https://www.int-res.com/abstracts/cr/v30/cr030079
+    \endverb
+    \field{volume}{30}
+    \field{journaltitle}{Climate Research}
+    \field{year}{2005}
+  \endentry
+\enddatalist
+\endinput

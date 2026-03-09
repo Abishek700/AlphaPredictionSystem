@@ -1,0 +1,19 @@
+\acswitchoff 
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Flow diagram of the Alpha Recommendation System.}}{23}{figure.caption.5}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Decision Tree Regressor: Predicted/Actual Alpha Values }}{33}{figure.caption.7}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Gradient Boosting Regressor: Predicted/Actual Alpha Values}}{34}{figure.caption.8}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Random Forest Regressor: Predicted/Actual Alpha Values}}{34}{figure.caption.9}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Machine Learning System Architecture}}{43}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Interface of the system before entering the values}}{46}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Prediction workflow of the deployed System}}{47}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Interface of the system after entering the values}}{48}{figure.caption.16}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Comparison of Recommended $\alpha $ Values Across 20 Studies}}{55}{figure.caption.18}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Comparison of study outcomes}}{60}{figure.caption.20}%
