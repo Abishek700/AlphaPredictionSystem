@@ -439,6 +439,32 @@
     \field{year}{2019}
   \endentry
 
+  \entry{Ha2023}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=HVT}{%
+         family={Ha},
+         familyi={H\bibinitperiod},
+         given={Vo\bibnamedelima Thanh},
+         giveni={V\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HVT1}
+    \strng{fullhash}{HVT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Ha23}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \verb{doi}
+    \verb 10.20944/preprints202306.0999.v1
+    \endverb
+    \field{title}{Experimental Study on Remaining Useful Life Prediction of
+  Lithium-Ion Batteries Based on Three Regression Models for Electric Vehicle
+  Applications}
+    \field{journaltitle}{Preprints}
+    \field{year}{2023}
+  \endentry
+
   \entry{Hales2023}{article}{}{}
     \name{author}{1}{}{%
       {{hash=HAH}{%
@@ -698,6 +724,35 @@
     \field{journaltitle}{Philosophical Transactions of the Royal Society of
   London. Series A}
     \field{year}{1933}
+  \endentry
+
+  \entry{Nosek22}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=NBA}{%
+         family={Nosek},
+         familyi={N\bibinitperiod},
+         given={Brian\bibnamedelima A.},
+         giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NBA+1}
+    \strng{fullhash}{NBA+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Nos+22}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \verb{doi}
+    \verb 10.1146/annurev-psych-020821-114157
+    \endverb
+    \field{pages}{719\bibrangedash 748}
+    \field{title}{Replicability, Robustness, and Reproducibility in
+  Psychological Science}
+    \field{volume}{73}
+    \field{journaltitle}{Annual Review of Psychology}
+    \field{year}{2022}
   \endentry
 
   \entry{OpenScience2015}{article}{}{}

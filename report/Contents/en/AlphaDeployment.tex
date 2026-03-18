@@ -2,8 +2,11 @@
 % Metadata
 %%%%%%
 \chapter{Deployment}
-
-Before describing the technical implementation of the deployment, it is useful to illustrate how the deployed system operates from a user perspective. Figure \ref{fig:deployment_workflow} presents the overall workflow of the deployed Alpha Recommendation System, showing how the trained machine learning model, contextual adjustments, and the user interface interact to produce a final alpha recommendation.
+\label{chapter:deplyment}
+Before describing the technical implementation of the deployment, it is useful to illustrate how the deployed system operates from a user perspective. Figure \ref{fig:deployment_workflow} illustrates the overall workflow 
+of the deployed Alpha Recommendation System, showing how the 
+trained model, contextual adjustments, and the user interface 
+interact to produce a final $\alpha$ recommendation.
 \begin{figure}[h]
 	\centering
 	\begin{tikzpicture}[
@@ -35,12 +38,12 @@ Before describing the technical implementation of the deployment, it is useful t
 
 The Alpha Recommendation System is deployed as an interactive application so that researchers can easily obtain an alpha recommendation without writing code. The deployed system allows users to enter study parameters and immediately receive a recommended significance level.
 
-Figure \ref{fig:deployment_workflow} illustrates the overall workflow of the deployed system. The trained model developed in Chapter 4 is integrated into a Streamlit application. The following sections describe how users interact with the system to obtain an alpha recommendation.
+The trained model developed in Chapter\ref{chapter:development} is integrated into a Streamlit application. The following sections describe how users interact with the system to obtain an alpha recommendation.
 
 
 \subsection{Purpose of Deployment}
 
-The purpose of deployment is to make the developed model usable for researchers during the study planning stage. Instead of running Python scripts manually, users interact with the system through a simple interface for giving the application context inputs and getting displayed the results. 
+The purpose of deployment is to make the developed model usable for researchers during the study planning stage. Instead of running Python scripts manually, users interact with the system through a simple interface for entering study parameters and receive a recommended significance level.
 
 \subsection{Choice of Deployment Tool}
 
@@ -51,7 +54,7 @@ This makes the system easy to run locally and accessible to users with limited p
 
 \subsection{Loading the Trained Model}
 
-After the machine learning model is trained during system development, it is saved as a serialized **`.pkl` file** using the Python *pickle* library. This file stores the trained model and its learned parameters.
+After the machine learning model is trained during system development, it is saved as a serialized \texttt{.pkl} file using the Python \textit{pickle} library. This file stores the trained model and its learned parameters.
 
 During deployment, the Streamlit application loads the stored model when the application starts. This avoids retraining the model every time the system is used and allows predictions to be generated immediately.
 
@@ -75,7 +78,7 @@ When the Streamlit application starts, this code loads the serialized model into
 After the model is loaded, the application allows users to interact with the system through the Streamlit interface. Users provide the study parameters required for generating an alpha recommendation. The system then processes these inputs and returns the final result.
 
 
-The interaction between the stored model, the Streamlit interface, and the prediction pipeline is illustrated in \ref{fig:prediction_workflow}
+The interaction between the stored model, the Streamlit interface, and the prediction pipeline is illustrated in Figure~\ref{fig:prediction_workflow}
 
 \subsection{User Input Interface}
 
@@ -87,8 +90,8 @@ The application provides a simple interface where users can enter the required s
 	\item test type (one or two tailed)
 	\item number of hypothesis tests
 \end{itemize}
-
-\begin{figure}[H]
+Figure \ref{fig:BeforeInterface} shows the interface before the recommendation is generated.
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.7\textwidth]{Images/AlphaStreamlitBefore}
 	\caption{Interface of the system before entering the values}
@@ -96,7 +99,7 @@ The application provides a simple interface where users can enter the required s
 \end{figure}
 
 
-Figure \ref{fig:BeforeInterface} shows the interface before the recommendation is generated.
+
 
 The following code defines the input components of the Streamlit application:
 
@@ -125,7 +128,7 @@ These inputs are passed to the prediction pipeline to generate the recommendatio
 
 Once the user enters the required parameters, the application generates the alpha recommendation in two steps.
 \begin{itemize}
-\item First, the trained machine learning model predicts a baseline alpha value using the input sample size and expected effect size.
+\item First, the trained machine learning model predicts a $\alpha_{base}$ value using the input sample size and expected effect size.
 
 \item Second, the system applies contextual adjustments based on the selected risk tolerance, test type, and number of hypothesis tests.
 \end{itemize}
@@ -154,7 +157,7 @@ The implementation is shown below:
 		\node (start) [below of=model] {Streamlit Application Starts};
 		\node (input) [below of=start] {User Inputs Study Parameters};
 		\node (code) [below of=input] {Inputs Passed to Python Code};
-		\node (predict) [below of=code] {Model Predicts Baseline Alpha};
+		\node (predict) [below of=code] {Model Predicts $\alpha_{base}$};
 		\node (adjust) [below of=predict] {Context Adjustments Applied};
 		\node (output) [below of=adjust] {Final Alpha Displayed to User};
 		
@@ -166,7 +169,7 @@ The implementation is shown below:
 		\draw[arrow] (adjust) -- (output);
 		
 	\end{tikzpicture}
-	\caption{Prediction workflow of the deployed System}
+	\caption{Prediction workflow of the deployed system}
 	\label{fig:prediction_workflow}
 \end{figure}
 
@@ -176,17 +179,19 @@ The overall prediction workflow of the deployed system is illustrated in Figure 
 
 After the calculations are completed, the final recommended alpha value is displayed clearly in the interface.
 
-Figure \ref{fig:AfterInterface} shows the interface after the user has entered the inputs and generated the recommendation. The highlighted output box presents the final context-adjusted alpha value.
-\begin{figure}[H]
+Figure \ref{fig:AfterInterface} shows the interface after the user has entered the inputs and generated the recommendation. The highlighted output box presents the final context adjusted alpha value.
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.7\textwidth]{Images/StreamlitAlphaAfter}
 	\caption{Interface of the system after entering the values}
 	\label{fig:AfterInterface}
 \end{figure}
 
-In the example shown, a study with a sample size of 241, an expected effect size of 0.30, a lenient risk tolerance, a one-tailed test, and one hypothesis test results in a recommended alpha value of 0.0747. This value is generated through the predictive model and subsequent contextual adjustments.
+In the example shown, a study with a sample size of 241, an expected effect size of 0.30, a lenient risk tolerance, a one tailed test, and one hypothesis test results in a recommended alpha value of 0.0747. 
 
-After the final alpha value has been computed, the application must communicate the result to the user through the interface. The following code implements the output component of the deployed application. It retrieves the final alpha recommendation generated by the prediction pipeline and displays it in the Streamlit interface. This step completes the interaction cycle by presenting the result of the model prediction and contextual adjustments in a clear and accessible format for the user.
+To illustrate how this value is derived, consider the step-by-step calculation. The trained model first predicts a baseline value of $\alpha_{base}$ = 0.030 based on the sample size of 241 and effect size of 0.30. In the second stage, the lenient risk tolerance adjustment multiplies this value by 1.25, giving 0.030 × 1.25 = 0.0375. Since a one-tailed test was selected, the value is further multiplied by 2, giving 0.0375 × 2 = 0.075. Finally, as only one hypothesis is tested, no Bonferroni correction is applied. The result is rounded to four decimal places and clipped to the range [0.001, 0.15], producing the final recommended alpha of 0.0747. Each step corresponds directly to a researcher decision, making the recommendation fully transparent and reproducible.This value is generated through the predictive model and subsequent contextual adjustments.
+
+After the $\alpha_{base}$ value has been computed, the application must communicate the result to the user through the interface. The following code implements the output component of the deployed application. It retrieves the final alpha recommendation generated by the prediction pipeline and displays it in the Streamlit interface. This step completes the interaction cycle by presenting the result of the model prediction and contextual adjustments in a clear and accessible format for the user.
 
 The display is implemented as follows:
 
@@ -219,8 +224,16 @@ This setup allows the Alpha Recommendation System to be easily executed and reus
 
 The source code for the system is available in the project repository \url{https://github.com/Abishek700/AlphaPredictionSystem}.
 
-The GitHub repository link is provided in Appendix A.
+Additional information about the repository and instructions for running
+the application are provided in Appendix\ref{sec:gitappendix}.
 
 \section{Summary}
 
-In summary, the Alpha Recommendation System is deployed as a lightweight Streamlit application that enables user interaction in a straightforward and transparent manner. The trained model is loaded once, inputs are collected through a structured interface, and alpha recommendations are generated through a clearly defined two-stage process. This deployment approach allows the system to function as a practical tool for study planning while maintaining clarity and interpretability.
+The deployed Streamlit application provides a complete and 
+self contained tool for $\alpha$ recommendation. Users with no 
+programming experience can obtain a context adjusted significance 
+level by entering five study parameters through a simple 
+interface. The following chapter evaluates whether the 
+recommendations produced by this system would have supported 
+more reliable statistical decisions compared to the conventional 
+threshold of $\alpha = 0.05$.

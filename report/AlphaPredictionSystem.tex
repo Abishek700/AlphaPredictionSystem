@@ -1,7 +1,7 @@
 %%%%%%
 % Metadata
 %%%%%%
-\documentclass[12pt,a4paper]{scrbook}
+\documentclass[12pt,a4paper,open=any]{scrbook}
 
 % Auswahl der Sprache/Language selection
 % Die nicht gewünschte Sprache muss auskommentiert werden:/The language that is not desired must be commented out:
@@ -35,8 +35,17 @@
 \usetikzlibrary{positioning, arrows.meta}
 \usepackage{tabularx}
 \usepackage{booktabs}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 
+% Show only "Chapter X" in header (no long title)
+\renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter}{}}
 
+% Header layout
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
 % Define custom light green color
 \definecolor{lightgreen}{rgb}{0.6, 0.8, 0.6}
 \lstset{
@@ -56,17 +65,19 @@
 
 
 \begin{document}
-	
+		
 	\InputLanguage{Contents/}{Titlepage} 
 	\newpage
 	
 	\pagenumbering{roman}
-	
+	\InputLanguage{Contents/}{Consent}
+	\InputLanguage{Contents/}{Abstract}
 	\tableofcontents
+	\InputLanguage{Contents/}{Symbols}
 	\listoffigures
-	\cleardoublepage
+
 	\listoftables
-	\cleardoublepage
+
 	\pagenumbering{arabic}
 	\part{Introduction and Problem Setup}
 	\InputLanguage{Contents/}{IntroductionandProblemSetup}
@@ -82,10 +93,12 @@
 	\InputLanguage{Contents/}{AlphaTesting}
 	\part{Conclusion}
 	\InputLanguage{Contents/}{AlphaConclusion}
-	\cleardoublepage
+
+
 	\addcontentsline{toc}{chapter}{\TRANS{Literaturverzeichnis}{Bibliography}}
 	\printbibliography
-	
+
+	\InputLanguage{Contents/}{Appendix}
 	
 	\cleardoublepage
 	

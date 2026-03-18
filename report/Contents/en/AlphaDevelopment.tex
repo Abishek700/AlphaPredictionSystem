@@ -4,32 +4,27 @@
 
 \chapter{Development of the Alpha Recommendation System}
 \label{chapter:development}
+
+The main contribution of this thesis is the development of a data driven system for recommending study specific significance levels. Unlike conventional approaches that rely on fixed thresholds such as $\alpha = 0.05$, the proposed system combines empirical evidence from replication studies with machine learning and contextual statistical adjustments. This approach allows the recommended significance level to adapt to study characteristics and research preferences.
+
 This chapter describes how the proposed Alpha Recommendation System is developed. The aim is to address the research gap identified in the previous chapters \ref{sec:litlmitiations} by developing a practical and usable system.
 
 This chapter explains step by step how the final alpha recommendation is generated. It starts with how the data are collected and prepared. Then it explains how the optimal alpha values are defined and how the prediction model is built. After that, it describes how user preferences and contextual adjustments are applied to produce the final recommended alpha. The recommended alpha is not a universal value but is tailored to the specific situation of the user’s study. Together, these steps show how the system works from start to finish.
 
 \section{Overview of the System Design}
+\label{sec:overview}
+ The purpose of the system is to support researchers in selecting an appropriate significance level ($\alpha$) for hypothesis testing. Instead of relying on a fixed conventional value such as $\alpha = 0.05$, the system provides a recommended $\alpha$ value based on study characteristics and research context. The recommendation is intended to guide decision making during the study design stage and does not replace statistical judgment.
 
- The purpose of the system is to support researchers in selecting an appropriate significance level ($\alpha$) for hypothesis testing. Instead of relying on a fixed conventional value such as $\alpha = 0.05$, the system provides a recommended $\alpha$ value based on study characteristics and research context. The recommendation is intended to guide decision-making during the study design stage and does not replace statistical judgment.
+The system is implemented as a software application in Python and 
+includes a machine learning component. It operates in two stages: 
+a data driven regression model first estimates a baseline significance 
+level ($\alpha_{base}$) from sample size and effect size, and a context 
+adjustment step then refines this value based on researcher preferences. 
+The two stages are described in detail in Sections~\ref{sec:datadriven} 
+and~\ref{sec:contextadjust} respectively, and the full system 
+architecture is illustrated in Figure~\ref{fig:alpha-flow}.
 
-The system is implemented as a software application in Python and includes a machine learning component. It is explained in two stages for quick understandings. In the first stage, a data driven regression model is trained on replication data to estimate a baseline $\alpha$ value($\alpha_{base}$). The model uses sample size and effect size as input variables, since these quantities are known before data collection and directly influence statistical power and error probabilities\cite{PetersonFoley2021}.
 
-In the second stage, the baseline $\alpha$ value is adjusted to account for study and user preferred considerations. These adjustments are based on information provided by the researcher, including risk tolerance, test directionality, and the number of hypotheses being tested. The adjustments follow predefined and transparent rules to ensure interpretability\cite{Herzog2019}\cite{Hales2023}\cite{Baker2016}.
-
-The overall adjustment process can be summarized mathematically as follows:
-
-\begin{equation}
-	\alpha_{\text{final}} 
-	= 
-	\alpha_{\text{baseline}} 
-	\cdot k_1 
-	\cdot k_2 
-	\cdot k_3
-\end{equation}
-
-where $k_1$ represents the risk preference factor, 
-$k_2$ represents the test direction factor, 
-and $k_3$ represents the multiple testing correction factor.
 
 %\cite{Herzog2019} - about multiple test
 %\cite{Akomodi2025} - type 1 type 2 , sample size etc.
@@ -37,7 +32,7 @@ and $k_3$ represents the multiple testing correction factor.
 %\cite{Hales2023} - one tailed test
 %\cite{Kim2015} - most test use 0.05 and other ways to explore alpha
 %\cite{FosterDeardorff2017} - osf is legit
-The system produces a final recommended $\alpha$ value before hypothesis testing is conducted. It does not use calculated $p$-values or study results and does not attempt to define a theoretically optimal significance level. Instead, it provides a practical and context-sensitive reference value to support informed study design decisions. The overall structure of the Alpha Recommendation System is illustrated in Figure~\ref{fig:alpha-flow}.
+ The overall structure of the Alpha Recommendation System is illustrated in Figure~\ref{fig:alpha-flow}.
 
 
 \begin{figure}[!ht]
@@ -151,11 +146,8 @@ The system produces a final recommended $\alpha$ value before hypothesis testing
 
 
 
-
-
-
 \subsection{Data Driven Alpha Recommendation}
-
+\label{sec:datadriven}
 The first stage of the Alpha Recommendation System predicts a baseline value for the significance level ($\alpha$) using information from past replication studies. This stage relies only on information that is available before performing the hypothesis test for the new study.
 
 Two inputs are used: sample size and effect size. These variables are chosen because they are specified during study planning and influence statistical power and error rates\cite{PetersonFoley2021}. No $p$-values or results from the new study are used at this stage.
@@ -164,25 +156,27 @@ Replication data are used to examine how different combinations of sample size a
 
 When a researcher provides the sample size and expected effect size for a new study, the system applies this learned relationship to produce a baseline $\alpha$ value. This value reflects patterns observed in similar past studies and serves as a starting point rather than a final decision.
 
-The internal data preparation and model training procedure used to obtain this baseline $\alpha$ value are described in a later section \ref{sec:Dataset}\ref{sec:MLpart}.
+The internal data preparation and model training procedure used to obtain this $\alpha_{base}$ value are described in a later sections \ref{sec:Dataset} and \ref{sec:MLpart}.
 
-\subsection{Context-Based Adjustment of Alpha}
+\subsection{Context Based Adjustment of Alpha}
+\label{sec:contextadjust}
+The $\alpha_{base}$ value produced in the first stage does not include all aspects of a study. Accurate decisions depend on the research context and the researcher’s preferences in addition to the patterns observed in replication data which provide only a numerical baseline and do not account for the specific context or preferences of the researcher. For this reason, the Alpha Recommendation System includes a second stage that adjusts the $\alpha_{base}$ value using user defined inputs.
 
-The baseline $\alpha$ value produced in the first stage does not include all aspects of a study. Accurate decisions depend on the research context and the researcher’s preferences in addition to the patterns observed in replication data which provide only a numerical baseline and do not account for the specific context or preferences of the researcher. For this reason, the Alpha Recommendation System includes a second stage that adjusts the baseline $\alpha$ value using user-defined inputs.
+In this stage, the user provides information about the study context. Three factors are considered: risk tolerance, test directionality (one tailed or two tailed), and the number of hypotheses being tested. These factors were selected because they are commonly used in classical hypothesis testing and have a clear connection to the choice of the significance level.
 
-In this stage, the user provides information about the study context. Three factors are considered: risk tolerance, test directionality (one-tailed or two-tailed), and the number of hypotheses being tested. These factors were selected because they are commonly used in classical hypothesis testing and have a clear connection to the choice of the significance level.
-
-The system applies simple and predefined rules to modify the baseline $\alpha$ value. Stricter risk preferences lead to smaller $\alpha$ values, while more lenient preferences allow larger values\cite{Baker2016}.
+The system applies simple and predefined rules to modify the $\alpha_{base}$ value. Stricter risk preferences lead to smaller $\alpha$ values, while more lenient preferences allow larger values\cite{Baker2016}.
 
 The first adjustment modifies the baseline alpha according to the selected level of risk tolerance
 \begin{equation}
 	\alpha' 
 	= 
-	\alpha_{\text{baseline}} \cdot k_1
+	\alpha_{\text{base}} \cdot k_1
 \end{equation}
-One-tailed tests and multiple hypothesis testing are handled using standard statistical adjustments.
+where $\alpha'$ denotes the risk-adjusted baseline alpha and 
+$k_1$ is the risk tolerance scaling factor.
+One tailed tests and multiple hypothesis testing are handled using standard statistical adjustments.
  
-The second adjustment accounts for the structural difference between one-tailed and two-tailed tests\cite{Hales2023}:
+The second adjustment accounts for the structural difference between one tailed and two tailed tests\cite{Hales2023}:
  \begin{equation}
  	\alpha'' =
  	\begin{cases}
@@ -190,6 +184,7 @@ The second adjustment accounts for the structural difference between one-tailed 
  		\alpha'  & \text{if two-tailed}
  	\end{cases}
  \end{equation}
+ where $\alpha''$ denotes the directionality adjusted alpha value.
 This adjustment reflects the allocation of the rejection region in hypothesis testing.
 
 Finally, when multiple hypotheses are tested simultaneously, a Bonferroni-style correction is applied\cite{Herzog2019}:
@@ -206,13 +201,27 @@ This prevents unrealistically small or excessively large significance levels.
 
 \begin{equation}
 	0.001 \leq \alpha_{\text{final}} \leq 0.15
+	\label{eq.alpharange}
 \end{equation}
 
 The rules are transparent, so the effect of each input on the final $\alpha$ value is easy to understand.
 
-Although only three contextual factors are included, the system remains broadly usable. The baseline $\alpha$ value, which is derived from replication data, can serve as a default and data-informed reference for selecting the significance level. The contextual adjustments are optional refinements that allow the recommendation to better reflect specific study preferences. Even if additional contextual factors are not included, the system still provides a more flexible and evidence-based alternative to using a fixed value such as $\alpha = 0.05$.
+Although only three contextual factors are included, the system remains broadly usable. The $\alpha_{base}$ value, which is derived from replication data, can serve as a default and data informed reference for selecting the significance level. The contextual adjustments are optional refinements that allow the recommendation to better reflect specific study preferences. Even if additional contextual factors are not included, the system still provides a more flexible and evidence based alternative to using a fixed value such as $\alpha = 0.05$.
+The overall adjustment process can be summarized mathematically as follows:
 
-After applying the adjustments, the system produces a final recommended $\alpha$ value. This value is selected before conducting the hypothesis test and does not depend on observed data or $p$-values. It does not replace statistical judgment, but instead provides a structured and context-aware reference for choosing the significance level.
+\begin{equation}
+	\alpha_{\text{final}} 
+	= 
+	\alpha_{\text{baseline}} 
+	\cdot k_1 
+	\cdot k_2 
+	\cdot k_3
+\end{equation}
+
+where $k_1$ represents the risk preference factor, 
+$k_2$ represents the test direction factor, 
+and $k_3$ represents the multiple testing correction factor.
+After applying the adjustments, the system produces a final recommended $\alpha$ value. This value is selected before conducting the hypothesis test and does not depend on observed data or $p$-values. It does not replace statistical judgment, but instead provides a structured and context aware reference for choosing the significance level.
 
 The implementation details used to perform these adjustments are described in the following section.
 
@@ -226,47 +235,53 @@ In many original studies, the significance level ($\alpha$) is not explicitly re
 
 For studies in which the replication confirms the original finding, the significance level used in the original study is treated as appropriate. In these cases, the original $\alpha$ value (either reported or assumed to be 0.05) is recorded as the optimal alpha, since the original decision is supported by the replication outcome.
 
-For studies in which the replication does not confirm the original finding, the original significance level is considered too lenient. In such cases, an alternative $\alpha$ value is calculated using the original study’s reported $p$-value. The purpose is to determine which significance level would have led to a correct decision when compared with the replication result. The optimal alpha is defined as the largest significance level that is smaller than the original $p$-value. This ensures that the original result would not have been declared statistically significant under the adjusted threshold. The calculations are detially explained in the section \ref{subsec:OAlphaCalculation}.
+For studies in which the replication does not confirm the original finding, the original significance level is considered too lenient. In such cases, an alternative $\alpha$ value is calculated using the original study’s reported $p$-value. The purpose is to determine which significance level would have led to a correct decision when compared with the replication result. The optimal alpha is defined as the largest significance level that is smaller than the original $p$-value. This ensures that the original result would not have been declared statistically significant under the adjusted threshold. The calculations are explained in detail in Section \ref{subsec:OAlphaCalculation}.
 
-This procedure generates a study-specific optimal alpha value for each hypothesis test in the dataset. The calculation relies only on information reported in the original and replication studies, including $p$-values, test statistics, sample size, and effect size. When necessary, standard statistical relationships are used to ensure consistency across different study designs.
+This procedure generates a study specific optimal alpha value for each hypothesis test in the dataset. The calculation relies only on information reported in the original and replication studies, including $p$-values, test statistics, sample size, and effect size. When necessary, standard statistical relationships are used to ensure consistency across different study designs.
 
-After applying this procedure to all replication projects, the result is a single combined dataset in which each row represents one hypothesis test and includes a clearly defined optimal alpha value. This optimal alpha serves as the target variable for the data-driven component of the Alpha Recommendation System. The detailed steps of dataset construction and the full procedure for defining the optimal alpha are explained in the following sections.
+After applying this procedure to all replication projects, the result is a single combined dataset in which each row represents one hypothesis test and includes a clearly defined optimal alpha value. This optimal alpha serves as the target variable for the data driven component of the Alpha Recommendation System. The detailed steps of dataset construction and the full procedure for defining the optimal alpha are explained in the following sections.
 
 \subsection{Data Acquisition}
 
-The dataset used in this study is constructed by combining results from five large-scale replication projects available on the Open Science Framework (OSF). These projects report findings from original studies together with the results of independent replication attempts across multiple research domains\cite{FosterDeardorff2017}. Each row in the final dataset used in this project represents a single hypothesis test.
+The dataset used in this study is constructed by combining results from five large scale replication projects available on the Open Science Framework (OSF). These projects report findings from original studies together with the results of independent replication attempts across multiple research domains\cite{FosterDeardorff2017}. Each row in the final dataset used in this project represents a single hypothesis test.
 
 
-
-Replication data were collected from five large-scale projects hosted on the Open Science Framework (OSF). 
-
-\begin{enumerate}
+	{\renewcommand{\arraystretch}{1.35}
+\begin{table}[H]
+	\centering
+	\caption{Overview of replication projects included in the dataset}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{p{5cm} p{3cm} p{8cm}}
+			\toprule
+			\textbf{Replication Project} & \textbf{Research Field} & \textbf{Main Variables Extracted} \\
+			\midrule
+			
+			Reproducibility Project: Cancer Biology \cite{ErringtonDenis2021}
+			& Biomedical 
+			& Original $p$-values, standardized effect sizes, sample sizes, and replication $p$-values. \\
+			
+			Challenging the N-Myopia\cite{Li2021} 
+			& Psychology 
+			& Original $p$-values, effect sizes, sample sizes, and replication success indicators. \\
+			
+			Applying Z-Curve to Large-Scale Replication Studies \cite{Sotola2022}
+			& Psychology 
+			& Effect sizes and sample sizes derived from reported test statistics together with replication outcomes. \\
+			
+			Pre-hacking Project\cite{Chang2025} 
+			& Psychology 
+			& Original $p$-values, recovered effect sizes, sample sizes, and replication results. \\
+			
+			Life Outcomes of Personality Replication (LOOPR)\cite{Soto2017} 
+			& Personality / Outcomes 
+			& Preregistered effect sizes, sample sizes, and replication outcomes. \\
+			
+			\bottomrule
+		\end{tabular}
+	}
 	
-	\item \textbf{Reproducibility Project: Cancer Biology} \\
-	Focus: Replication of biomedical findings. \\
-	Data extracted: Original $p$-values, standardized effect sizes (SMD), sample sizes, and replication $p$-values \cite{ErringtonDenis2021}.
-	
-	\item \textbf{Challenging the N-Myopia} \\
-	Focus: Large-scale psychology replication efforts. \\
-	Data extracted: Original $p$-values, standardized effect sizes, sample sizes, and replication success indicators. \\
-	Purpose: To examine predictors of replicability in psychological research \cite{Li2021}.
-	
-	\item \textbf{Applying Z-Curve to Large-Scale Replication Studies} \\
-	Focus: Statistical evaluation of replication datasets. \\
-	Data extracted: Effect sizes and sample sizes recovered from reported test statistics ($t$, $F$, $\chi^2$), along with replication outcomes. \\
-	Purpose: To expand the dataset while maintaining statistical consistency\cite{Sotola2022}.
-	
-	\item \textbf{Pre-hacking Project} \\
-	Focus: The impact of analytical flexibility on research findings. \\
-	Data extracted: Original $p$-values, recovered effect sizes, sample sizes, and replication results. \\
-	Purpose: To analyze how design decisions may influence statistical significance\cite{Chang2025}.
-	
-	\item \textbf{Life Outcomes of Personality Replication (LOOPR)} \\
-	Focus: Preregistered, high-powered replications of personality--outcome associations. \\
-	Data extracted: Outcome-level $p$-values, effect sizes, sample sizes, and replication success indicators\cite{Soto2017}.
-	
-
-\end{enumerate}
+	\label{tab:replication_projects}
+\end{table}
 
 \subsection{Data Quantity}
 
@@ -280,19 +295,19 @@ After cleaning and compilation, the final dataset contains 664 individual hypoth
 	\item Pre-hacking Replication Project: 8 tests
 \end{itemize}
 
-Combining multiple replication projects increases diversity in study design and reduces reliance on a single research domain. Sample sizes in the dataset range from very small studies to large-scale experiments with sample sizes exceeding 200,000. Effect sizes also cover a wide range, including both small and large effects.
+Combining multiple replication projects increases diversity in study design and reduces reliance on a single research domain. Sample sizes in the dataset range from very small studies to large scale experiments with sample sizes exceeding 200,000. Effect sizes also cover a wide range, including both small and large effects.
 
-The size of the dataset is sufficient for the purpose of this study because the goal is not high-dimensional prediction, but learning stable relationships between a small number of predictors—primarily sample size and effect size—and corresponding optimal alpha values. The dataset provides adequate variation across study contexts while remaining manageable and interpretable.
+The size of the dataset is sufficient for the purpose of this study because the goal is not high dimensional prediction, but learning stable relationships between a small number of predictors—primarily sample size and effect size—and corresponding optimal alpha values. The dataset provides adequate variation across study contexts while remaining manageable and interpretable.
 
 \subsection{Data Quality and Reliability}
 
 The Open Science Framework is widely used for sharing replication data because it promotes transparency and open research practices. Replication studies hosted on OSF are typically conducted by independent research teams, often follow preregistered analysis plans, and provide open access to data and study materials, replication projects hosted on OSF are conducted by established research teams and are published in peer reviewed journals, which ensures that the results have been scientifically reviewed and validated\cite{FosterDeardorff2017}. These characteristics increase the credibility of the replication outcomes and make OSF projects a reliable source for evaluating statistical decision rules such as hypothesis testing.
 
-The selected projects cover different research fields, including psychology, behavioral science, personality research, and biomedical science. This cross-disciplinary selection ensures diversity in study designs and increases the generalizability of the constructed dataset. Each project provides hypothesis level information including $p$-values, effect sizes, sample sizes, and replication outcomes.
+The selected projects cover different research fields, including psychology, behavioral science, personality research, and biomedical science. This cross disciplinary selection ensures diversity in study designs and increases the generalizability of the constructed dataset. Each project provides hypothesis level information including $p$-values, effect sizes, sample sizes, and replication outcomes.
 
 \subsection{Data Relevance}
 
-Replication data are directly relevant because they allow evaluation of whether original statistical decisions were supported by subsequent evidence\cite{FosterDeardorff2017}. By linking original p-values, sample sizes, effect sizes, and replication outcomes, the dataset provides a structured basis for analyzing how different significance levels relate to reproducibility..
+Replication data are directly relevant because they allow evaluation of whether original statistical decisions were supported by subsequent evidence\cite{FosterDeardorff2017}. By linking original $p$-values, sample sizes, effect sizes, and replication outcomes, the dataset provides a structured basis for analyzing how different significance levels relate to reproducibility..
 
 \subsection{Handling Missing Values and Anomalies}
 
@@ -306,11 +321,49 @@ In some original studies, the significance level ($\alpha$) used for hypothesis 
 %\cite{Kwak2023} - states most studies use 0.05
 For studies in which the replication successfully confirms the original finding, the original significance level is treated as appropriate. In these cases, the original $\alpha$ value (reported or assumed) is recorded as the optimal alpha, since the original decision is supported by the replication outcome.
 
-For studies in which the replication does not confirm the original finding, the original significance level is considered too lenient. In these cases, an alternative $\alpha$ value is calculated using the original study’s reported $p$-value. The optimal alpha is defined as the largest significance level that is smaller than the original $p$-value. This ensures that the original result would not have been declared statistically significant under this adjusted threshold.
+For studies in which the replication does not confirm the original finding, 
+the original significance level is considered too lenient.Concerns 
+about overly permissive significance thresholds and their impact on 
+replication have been widely discussed in the statistical literature 
+\cite{Benjamin2018, WassersteinLazar2016}. In such cases, 
+an alternative significance level is derived using the original study's 
+reported $p$-value $p_{\text{orig}}$. The objective is to determine a 
+study specific significance level that would have resulted in a 
+non significant outcome in the original study while remaining as close as 
+possible to the reported $p$-value.
 
-For example, if a study has $p = 0.047$ and the replication did not find the effect, using $\alpha = 0.05$ would incorrectly declare the result significant. Using $\alpha = 0.04$ would correctly declare it non-significant. In this case, $\alpha = 0.04$ is the optimal alpha for that study.
+Concretely, the optimal alpha is defined as
 
-This procedure produces a study-specific optimal alpha value for every hypothesis test in the dataset. The optimal alpha serves as the target variable for the data-driven component of the Alpha Recommendation System.
+\begin{equation}
+	\alpha_{\text{opt}} = \max \{ \alpha \in \mathcal{A} : \alpha < p_{\text{orig}} \},
+\end{equation}
+\label{eq:optalpha}
+where 
+
+\[
+\mathcal{A} = \{0.001,\,0.005,\,0.01,\,0.02,\,0.03,\,0.04,\,0.05,\,0.06,\,0.09,\,0.10\}
+\]
+This candidate set was derived empirically from the replication 
+dataset. The optimal alpha values observed across all 664 studies 
+fell within this discrete range, making these values the natural 
+choice for the candidate set.
+
+This Formula\ref{eq:optalpha} was derived specifically for this system to operationalise 
+the concept of a study-specific threshold. While the general idea of 
+adapting significance levels to study outcomes is discussed in the 
+literature \cite{Benjamin2018}\cite{WassersteinLazar2016}, the 
+specific formulation presented here was developed as part of this work.
+
+is a predefined set of candidate significance levels. This rule ensures that 
+the original result would not have been declared statistically significant 
+under $\alpha_{\text{opt}}$, while the chosen value remains interpretable 
+and comparable across studies.
+
+For example, if a study has $p = 0.047$ and the replication did not find the effect, using $\alpha = 0.05$ would incorrectly declare the result significant. Using $\alpha = 0.04$ would correctly declare it non significant. In this case, $\alpha = 0.04$ is the optimal alpha for that study.
+
+This procedure produces a study specific optimal alpha value for every hypothesis test in the dataset. The optimal alpha serves as the target variable for the data driven component of the Alpha Recommendation System.
+
+\textbf{It is important to note that replication outcomes alone cannot determine a theoretically optimal significance level. The procedure used here should therefore be interpreted as a pragmatic approximation. Similar discussions about adapting significance thresholds in response to replication evidence can be found in the statistical literature on reproducibility and significance testing \cite{Benjamin2018, WassersteinLazar2016, OpenScience2015}.}
 
 \subsection{Derivation of Sample Size and Effect Size}
 \label{subsec:SampleEfeectCalc}
@@ -369,9 +422,18 @@ Table~\ref{tab:dataset_example} shows the first five rows of the final dataset t
 
 The final dataset is used as input for the machine learning component of the Alpha Recommendation System. Sample size and effect size are used as predictors, and optimal alpha is used as the target variable.
 
-\section{ML model for predicting $\alpha_{base}$ }
+It should be noted that larger sample sizes do not always 
+correspond to stricter optimal $\alpha$ values in the dataset. 
+In cases where the effect size is relatively large and the 
+original $p$-value was substantially above a conventional 
+threshold, the calculated optimal $\alpha$ may exceed $0.05$ 
+even when the replication failed. This reflects the specific 
+$p$-value reported in the original study rather than a general 
+recommendation for leniency.
+
+\section{ML Model for Predicting $\alpha_{base}$ }
 \label{sec:MLpart}
-This section explains how the constructed dataset is processed specifically for model training, how the input features and target variable are selected, and how the data-driven model is implemented to estimate a baseline significance level ($\alpha$).
+This section explains how the constructed dataset is processed specifically for model training, how the input features and target variable are selected, and how the data driven model is implemented to estimate a $\alpha_{base}$.
 
 While the previous section described how the dataset was built and how optimal alpha values were defined\ref{sec:Dataset}, this section focuses on preparing the data for machine learning and implementing the predictive model.
 
@@ -414,9 +476,9 @@ The model predicts the optimal alpha value as a continuous variable. This optima
 
 Contextual factors such as risk tolerance, test directionality, and multiple testing are not included in this stage because they are handled in stage two of the application and explained step by step in following sections \ref{sec:ContextFactors}.
 
-\subsection{Conceptual Idea of the Data-Driven Model}
+\subsection{Conceptual Idea of the Data Driven Model}
 
-The purpose of the data-driven model is to estimate a baseline alpha value based on patterns observed in replication studies. The model does not make final decisions about hypothesis testing. Instead, it provides a reference value based on empirical evidence.
+The purpose of the data driven model is to estimate a baseline alpha value based on patterns observed in replication studies. The model does not make final decisions about hypothesis testing. Instead, it provides a reference value based on empirical evidence.
 
 Each training example (Each row in the dataset) consists of:
 
@@ -428,18 +490,28 @@ Each training example (Each row in the dataset) consists of:
 
 The model learns how changes in sample size and effect size are associated with changes in suitable significance levels. If studies with certain characteristics required stricter or more lenient alpha values to align with replication outcomes, the model captures this pattern.
 
-When new study inputs are provided, the model produces a baseline alpha value based on pattern learned from similar past cases.
+When new study inputs are provided, the model produces a $\alpha_{base}$ value based on pattern learned from similar past cases.
 
 
 \subsection{Choice of Algorithm}
 
-The predictive model is implemented in Python using the scikit-learn library. Scikit-learn is a widely used open-source machine learning library that provides tools for data preprocessing, model training, evaluation, and prediction. It allows the implementation of various machine learning algorithms in a structured and efficient way \cite{scikit-learn2023}.
+The predictive model is implemented in Python using the scikit-learn library. Scikit-learn is a widely used open source machine learning library that provides tools for data preprocessing, model training, evaluation, and prediction. It allows the implementation of various machine learning algorithms in a structured and efficient way \cite{scikit-learn2023}.
 
-Since the objective is to predict a continuous optimal alpha value, the problem is formulated as a regression task. Several machine learning algorithms were tested for this purpose, including Decision Tree, Random Forest, and XGBoost regression models. Their predictive performance was compared using standard evaluation metrics \ref{fig:DecisonTree} \ref{fig:GradientBoosting}\ref{fig:RandomForest}.
+Since the objective is to predict a continuous optimal alpha value, the problem is formulated as a regression task. A regression algorithm learns a function that maps input variables to a continuous numerical output. Three candidate algorithms were evaluated. A Decision Tree regressor partitions the input space into regions and assigns a constant prediction to each region. A XGBoost regressor builds trees sequentially, where each new tree corrects the residual errors of the previous one. A Random Forest regressor builds a large number of independent decision trees and combines their predictions by averaging, which reduces variance and improves generalization\cite{Breiman2001}. Their predictive performance was compared using standard evaluation metrics \ref{fig:DecisonTree}, \ref{fig:GradientBoosting},\ref{fig:RandomForest}.
+
+To evaluate predictive performance, the dataset was divided into training and testing subsets. Eighty percent of the observations were used to train the models, while the remaining twenty percent were reserved for testing. Model performance was evaluated on the test set using the Mean Absolute Error (MAE) metric.
+
+The Mean Absolute Error (MAE) is defined as
+
+\begin{equation}
+	\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+\end{equation}
+
+where $y_i$ represents the true value and $\hat{y}_i$ represents the predicted value\cite{WillmottMatsuura2005}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.62\textwidth]{Images/pred_vs_actual_decision_tree}
+	\includegraphics[width=0.7\textwidth]{Images/pred_vs_actual_decision_tree}
 	\caption{Decision Tree Regressor: Predicted/Actual Alpha Values }
 	\label{fig:DecisonTree}
 \end{figure}
@@ -447,30 +519,51 @@ Since the objective is to predict a continuous optimal alpha value, the problem 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.62\textwidth]{Images/pred_vs_actual_gradient_boosting}
+	\includegraphics[width=0.7\textwidth]{Images/pred_vs_actual_gradient_boosting}
 	\caption{Gradient Boosting Regressor: Predicted/Actual  Alpha Values}
 	\label{fig:GradientBoosting}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.62\textwidth]{Images/pred_vs_actual_random_forest}
+	\includegraphics[width=0.8\textwidth]{Images/pred_vs_actual_random_forest}
 	\caption{Random Forest Regressor: Predicted/Actual  Alpha Values}
 	\label{fig:RandomForest}
 \end{figure}
 
-Among the tested models, the Random Forest regression algorithm achieved the most stable and accurate results on the dataset. Random Forest builds multiple decision trees and combines their predictions by averaging \cite{Breiman2001}. This approach better
+Among the tested models, the Random Forest regression algorithm 
+achieved the lowest Mean Absolute Error (MAE) of $0.0142$ on the 
+test set ($n = 208$), with $71.0\%$ of predictions falling within 
+a $\pm 0.015$ tolerance band. This outperformed the Decision Tree 
+($\text{MAE} = 0.0167$, $72.5\%$ within tolerance) and Gradient 
+Boosting ($\text{MAE} = 0.0141$, $66.5\%$ within tolerance) 
+regressors.
 
-\begin{itemize}
-	\item captures non-linear relationships,
-	\item reduces sensitivity to noise,
-	\item and does not require strong distributional assumptions.\cite{Ryo2017}
-\end{itemize}
-
-The objective is not to develop a new algorithm, but to use a reliable and widely accepted method to learn patterns from replication data.
+ Random Forest builds multiple decision trees and combines their predictions by averaging  and better explained in Figure\ref{fig:randomforestregressor}\cite{Breiman2001}.
+ This approach better
+ 
+ \begin{itemize}
+ 	\item captures non linear relationships,
+ 	\item reduces sensitivity to noise,
+ 	\item and does not require strong distributional assumptions.\cite{Ryo2017}
+ \end{itemize}
+ 
+ The objective is not to develop a new algorithm, but to use a reliable and widely accepted method to learn patterns from replication data.
+\begin{figure}[htbp]
+ 	\centering
+ 	\includegraphics[width=0.8\textwidth]{Images/random_forest_vertical}
+ 	\caption{Structure of the Random Forest regression model used for predicting the baseline significance level.(based on \cite{Ha2023})}
+ 	\label{fig:randomforestregressor}
+ \end{figure}
 
 
 The predictive performance of the models was evaluated using the regression metric Mean Absolute Error (MAE). MAE measures the average absolute difference between the predicted and actual values. This metric was chosen because it is easy to understand and expresses the prediction error in the same units as the target variable. In addition, MAE is less sensitive to large errors than metrics such as Mean Squared Error (MSE), since it does not square the differences between predicted and actual values \cite{WillmottMatsuura2005}.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Images/ml_model_selection}
+	\caption{Performance comparison of ML models }
+	\label{fig:MLmodelComparision}
+\end{figure}
 
 Among the tested models, the Random Forest regression algorithm achieved the lowest MAE\ref{fig:RandomForest}, indicating better predictive performance compared to the alternative models.
 
@@ -501,38 +594,43 @@ The dataset is loaded from an Excel file using the pandas library. The variables
 	model.fit(X, y)
 \end{lstlisting}
 
-After training, the model can predict a baseline alpha for new inputs. When a sample size of 150 and an expected effect size of 0.30 are provided, the model returns a predicted alpha value based on patterns learned from the replication data.
+\subsubsection{Training the Model}
 
-\subsubsection*{Predicting a Baseline Alpha}
+The Random Forest regression model was implemented using the \texttt{scikit-learn} library in Python. The dataset was divided into training and test sets using an 80/20 split. This proportion is commonly used in machine learning because it balances the need for sufficient training data with the need for an independent evaluation dataset.
+
+The number of trees in the forest was set to 200. Increasing the number of trees generally improves the stability of ensemble models, but after a certain point the performance gains become negligible. Preliminary experiments indicated that performance stabilised beyond approximately 150 trees, so 200 estimators were selected.
+
+The random state was fixed at 42 to ensure reproducibility of the results. This guarantees that the same training test split and model initialization can be reproduced in subsequent runs.
+
+\subsubsection*{Predicting $\alpha_{base}$}
 
 \begin{lstlisting}[language=Python]
 	predicted_alpha = model.predict([[150, 0.30]])
 \end{lstlisting}
 
-After training, the model can predict a baseline alpha for new inputs. When a sample size of 150 and an expected effect size of 0.30 are provided, the model returns a predicted alpha value based on patterns learned from the replication data.
+After training, the model can predict a $\alpha_{base}$ for new inputs. When a sample size of 150 and an expected effect size of 0.30 are provided, the model returns a predicted alpha value based on patterns learned from the replication data.
 
-\subsection{Role of the Data-Driven Model}
+%\subsection{Role of the Data-Driven Model}
 
-The data-driven model represents the first stage of the Alpha Recommendation System. Its function is limited to estimating a baseline alpha value based on empirical evidence from replication data.
+%The data-driven model represents the first stage of the Alpha Recommendation System. Its function is limited to estimating a baseline alpha value based on empirical evidence from replication data.
 
-Final recommendations are generated in the second stage, where contextual adjustments are applied.
+%Final recommendations are generated in the second stage, where contextual adjustments are applied.
 
-\section{Context-Based Adjustment of the Baseline Alpha}
+\section{Context Based Adjustment of the $\alpha_{base}$}
 \label{sec:ContextFactors}
-This section describes the second stage of the Alpha Recommendation System. In this stage, the baseline alpha value produced by the data-driven model is adjusted using user-defined preferences with standard statistical rules. The purpose of this step is to update baseline alpha to become context aware and to suggest user an alpha to their preference.
+This section describes the second stage of the Alpha Recommendation System. In this stage, the $\alpha_{base}$ value produced by the data driven model is adjusted using user defined preferences with standard statistical rules. The purpose of this step is to update $\alpha_{base}$ to become context aware and to suggest user an alpha to their preference.
 
-\subsection{Motivation for Context-Based Adjustment}
+\subsection{Motivation for Context Based Adjustment}
 
-The baseline alpha predicted by the model reflects patterns observed in replication studies. However, no single alpha value can be appropriate for all research situations. Even when sample size and effect size are similar, studies may differ in risk tolerance, testing strategy, or research goals .
+The $\alpha_{base}$ predicted by the model reflects patterns observed in replication studies. However, no single alpha value can be appropriate for all research situations. Even when sample size and effect size are similar, studies may differ in risk tolerance, testing strategy, or research goals .
 
-For this reason, the system includes a separate adjustment step. This ensures that contextual preferences are applied explicitly after the data-driven prediction, rather than influencing the model itself. This separation maintains transparency and interpretability.
+For this reason, the system includes a separate adjustment step. This ensures that contextual preferences are applied explicitly after the data driven prediction, rather than influencing the model itself. This separation maintains transparency and interpretability.
+The overall adjustment formula, introduced in Section~\ref{sec:overview}, 
+combines these three factors as follows (see Equation~\ref{eq:alpha_final}):
+
 \begin{equation}
-	\alpha_{\text{final}} 
-	= 
-	\alpha_{\text{baseline}} 
-	\cdot k_1 
-	\cdot k_2 
-	\cdot k_3
+	\alpha_{\text{final}} = \alpha_{\text{base}} \cdot k_1 \cdot k_2 \cdot k_3
+	\label{eq:alpha_final}
 \end{equation}
 
 where $k_1$ represents the risk preference factor, 
@@ -544,13 +642,13 @@ Three contextual factors are included:
 
 \begin{enumerate}
 	\item Risk tolerance
-	\item Test directionality (one-tailed or two-tailed)
+	\item Test directionality (one tailed or two tailed)
 	\item Number of hypotheses tested
 \end{enumerate}
 
-These factors were selected because they are commonly considered in classical hypothesis testing and have a direct and well-defined relationship with the significance level\cite{Baker2016}\cite{Hales2023}\cite{Herzog2019}.
+These factors were selected because they are commonly considered in classical hypothesis testing and have a direct and well defined relationship with the significance level\cite{Baker2016}\cite{Hales2023}\cite{Herzog2019}.
 
-Although other contextual factors may exist, the system focuses on these widely used adjustments to maintain simplicity and clarity. The baseline alpha remains usable as a general reference even without additional adjustments.
+Although other contextual factors may exist, the system focuses on these widely used adjustments to maintain simplicity and clarity. The $\alpha_{base}$ remains usable as a general reference even without additional adjustments.
 
 \subsection{Risk Tolerance}
 
@@ -571,9 +669,9 @@ Five levels are chosen to give a balanced range of options. They allow the resea
 \begin{equation}
 	\alpha' 
 	= 
-	\alpha_{\text{baseline}} \cdot k_1
+	\alpha_{\text{base}} \cdot k_1
 \end{equation}
-Each level is converted into a numerical adjustment by multiplying the baseline alpha with a fixed scaling factor. This converts a qualitative choice (for example, “strict”) into a clear mathematical change.
+Each level is converted into a numerical adjustment by multiplying the $\alpha_{base}$ with a fixed scaling factor. This converts a qualitative choice (for example, “strict”) into a clear mathematical change.
 
 The adjustment is implemented as follows:
 \begin{lstlisting}[language=Python]
@@ -591,7 +689,7 @@ The adjustment is implemented as follows:
 
 If \textit{neutral} is selected, the alpha value remains unchanged.
 
-Multiplication is used because alpha is a probability value. Proportional changes keep the adjustment consistent across different baseline values. For example, if the baseline alpha is $0.04$:
+Multiplication is used because alpha is a probability value. Proportional changes keep the adjustment consistent across different baseline values. For example, if the $\alpha_{base}$ is $0.04$:
 
 \begin{itemize}
 	\item Very strict ($\times 0.5$) $\rightarrow$ $0.02$
@@ -601,13 +699,18 @@ Multiplication is used because alpha is a probability value. Proportional change
 	\item Very lenient ($\times 1.5$) $\rightarrow$ $0.06$
 \end{itemize}
 
-The scaling values ($0.5$, $0.75$, $1.25$, $1.5$) are heuristic choices. They are selected to represent clear and understandable differences in strictness. They are not derived from a formal theoretical model. Instead, they are practical design parameters that translate qualitative risk preferences into transparent numerical adjustments.
+The scaling values used in this thesis (0.5 for ``very strict'' risk tolerance, 
+0.75 for ``strict'', 1.25 for ``lenient'', and 1.5 for ``very lenient'') are 
+heuristic but follow two design principles. First, they are symmetric around 
+1, so that stricter and more lenient choices adjust the $\alpha_{base}$ by comparable relative amounts. Second, the factors are moderate in 
+magnitude, ensuring that the resulting $\alpha$ values remain within a 
+practically interpretable range defined in Equation \ref{eq.alpharange}.  These values were selected as a practical starting point consistent with proportional reasoning used in decision theoretic frameworks \cite{Berger1985}. They are not empirically derived and represent a deliberate design simplification to maintain interpretability. Future work could calibrate these factors empirically across a larger collection of replication studies.
 
 \subsection{Test Directionality}
 
-After adjusting the baseline alpha for risk tolerance, the system next considers the direction of the hypothesis test.
+After adjusting the $\alpha_{base}$ for risk tolerance, the system next considers the direction of the hypothesis test.
 
-Before conducting a hypothesis test, the researcher must decide whether the test is one-tailed or two-tailed. In a two-tailed test, the total significance level is divided between both sides of the distribution. In a one-tailed test, the entire significance level is placed in only one direction.\cite{Hales2023}
+Before conducting a hypothesis test, the researcher must decide whether the test is one tailed or two tailed. In a two tailed test, the total significance level is divided between both sides of the distribution. In a one tailed test, the entire significance level is placed in only one direction.\cite{Hales2023}
 \begin{equation}
 	\alpha'' =
 	\begin{cases}
@@ -615,7 +718,7 @@ Before conducting a hypothesis test, the researcher must decide whether the test
 		\alpha'  & \text{if two-tailed}
 	\end{cases}
 \end{equation}
-To reflect this structural difference, the system adjusts the alpha value when a one-tailed test is selected. The adjustment is implemented in Python as follows:
+To reflect this structural difference, the system adjusts the alpha value when a one tailed test is selected. The adjustment is implemented in Python as follows:
 
 \begin{lstlisting}[language=Python]
 	def adjust_for_tail(alpha, tail_type):
@@ -624,9 +727,9 @@ To reflect this structural difference, the system adjusts the alpha value when a
 	return alpha
 \end{lstlisting}
 
-If a one-tailed test is chosen, the alpha value is multiplied by two. If a two-tailed test is selected, no adjustment is made.
+If a one tailed test is chosen, the alpha value is multiplied by two. If a two tailed test is selected, no adjustment is made.
 
-If no direction is specified, the system assumes a two-tailed test and leaves the alpha unchanged.
+If no direction is specified, the system assumes a two tailed test and leaves the alpha unchanged.
 
 \subsection{Multiple Testing}
 
@@ -647,7 +750,7 @@ Dividing the alpha value by the number of tests makes the decision rule more con
 
 \subsection{Combining the Adjustments}
 
-The final alpha value is obtained by applying the adjustment rules sequentially to the baseline alpha:
+The final alpha($\alpha_{final}$) value is obtained by applying the adjustment rules sequentially to the $\alpha_{base}$:
 
 \begin{lstlisting}[language=Python]
 	alpha_final = adjust_for_risk(alpha_base, risk_level)
@@ -657,7 +760,7 @@ The final alpha value is obtained by applying the adjustment rules sequentially 
 
 Each step corresponds to a clear design choice made by the researcher.
 
-To prevent unrealistic values, the final alpha is restricted to a predefined range:
+To prevent unrealistic values, the $\alpha_{base}$ is restricted to a predefined range:
 
 \begin{lstlisting}[language=Python]
 	alpha_final = max(0.001, min(alpha_final, 0.15))
@@ -669,12 +772,12 @@ This ensures that the recommended alpha remains within reasonable and interpreta
 
 \subsection{Understanding the Final Alpha Recommendation}
 
-The final alpha value should be understood as a recommendation rather than a strict rule. It combines information learned from replication data with preferences defined by the researcher. The predictive model first estimates a baseline alpha based on patterns observed in previous studies.
+The $\alpha_{base}$ value should be understood as a recommendation rather than a strict rule. It combines information learned from replication data with preferences defined by the researcher. The predictive model first estimates a $\alpha_{base}$ based on patterns observed in previous studies.
 
 In the second step, the researcher can adjust this value according to the needs of the study, such as the desired level of strictness or risk tolerance. This makes the recommendation flexible and easier to apply in different research situations. The goal is not to define a theoretically optimal alpha level, but to provide a practical and understandable guideline.
 
 \subsection{Role of the Adjustment Step in the System}
 
-The context-based adjustment represents the second and final stage of the Alpha Recommendation System. In the first stage, the machine learning model predicts a baseline alpha using empirical data. In the second stage, the researcher can modify this value to reflect study-specific considerations.
+The context based adjustment represents the second and final stage of the Alpha Recommendation System. In the first stage, the machine learning model predicts a $\alpha_{base}$ using empirical data. In the second stage, the researcher can modify this value to reflect study specific considerations.
 
 By separating these two stages, the system remains transparent and easy to interpret. Researchers can clearly see which part of the recommendation comes from the data and which part results from their own preferences. This design ensures that the system provides guidance while still allowing researchers to retain full control over their final decision.

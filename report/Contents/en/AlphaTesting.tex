@@ -2,7 +2,7 @@
 % Metadata
 %%%%%%
 \chapter{Testing}
-
+\label{chapter:testing}
 \section{Study Selection for Evaluation}
 
 
@@ -14,7 +14,14 @@ The database contains studies from several disciplines, including psychology, be
 
 For this evaluation, 20 studies were selected based on three criteria. First, the original study reported a statistically significant result using the conventional threshold of $\alpha = 0.05$. Second, an independent replication study was conducted. Third, the replication did not support the original finding. These cases are important because they show situations where a result was initially considered significant but later failed to replicate. By focusing on these studies, the evaluation examines whether a different choice of alpha, as recommended by the system, could have led to a more cautious and potentially more reliable decision.
 
-The selected studies differ in sample size, effect size, and research field. This variation allows the system to be tested across different study settings rather than within a single discipline\ref*{tab:selected_studies}.
+The selected studies differ in sample size, effect size, and research field. This variation allows the system to be tested across different study settings rather than within a single discipline\ref{tab:selected_studies}. It should be noted that this evaluation uses a deliberately 
+selected sample of failed replications. This design allows the 
+system's recommendations to be assessed in cases where the 
+conventional $\alpha = 0.05$ demonstrably led to unreliable 
+decisions. However, it does not evaluate the system's behaviour 
+on studies that successfully replicated, which would be necessary 
+for a complete performance assessment. This limitation is 
+discussed further in Chapter~\ref{chapter:Conclusion}.
 
 \begin{table}[ht]
 	\centering
@@ -58,7 +65,7 @@ For testing we evaluate the developed alpha recommendation system by predicting 
 
 All selected studies originally rejected the null hypothesis using the conventional significance level of $\alpha = 0.05$. However, these findings failed to replicate. These cases therefore represent situations in which the original statistical decision was likely a false positive.
 
-For each study, the given inputs sample size and effect size were entered into the alpha recommendation system and the context based adjustments are set to default(A neutral risk tolerance, a two-tailed test, and a single hypothesis test). Based on these inputs, the system generated recommended alpha value will be compared with the fixed threshold of $\alpha = 0.05$.
+For each study, the given inputs sample size and effect size were entered into the alpha recommendation system and the context based adjustments are set to default(A neutral risk tolerance, a two tailed test, and a single hypothesis test). Based on these inputs, the system generated recommended alpha value will be compared with the fixed threshold of $\alpha = 0.05$.
 
 \subsection{Decision Comparison}
 Table \ref{tab:selected_studies} also contains the recommended alpha coloumn for each studies which is nothing but output from the alpha recommendation system. 
@@ -78,11 +85,20 @@ In the 11 cases where the recommended alpha was stricter than 0.05, the null hyp
 
 In the three cases where the recommended alpha matched 0.05, the system’s recommendation was consistent with the conventional threshold.
 
-In the six cases where a more lenient alpha was recommended, the system reflected a higher tolerance for false positives based on study characteristics. A more lenient alpha does not imply that the original result was correct; rather, it reflects the contextual balance between Type I and Type II errors within that specific study.
+In the six cases where a more lenient alpha was recommended, the system reflected a higher tolerance for false positives based on study characteristics. A more lenient $\alpha$ recommendation in a failed replication 
+case represents an instance where the system, using only sample 
+size and effect size under neutral contextual settings, did not 
+identify the need for a stricter threshold. These cases suggest 
+that the contextual adjustment inputs particularly risk 
+tolerance may play an important role in refining 
+recommendations for studies where the data driven baseline alone 
+is insufficient. Providing accurate researcher preferences, 
+rather than default neutral settings, could shift these 
+recommendations toward stricter values.
 
 \subsection{Overall Result}
 
-Compared with the conventional use of $\alpha = 0.05$, the proposed alpha recommendation system provides improved decision support in several failed replication cases. As illustrated in Figure\ref{fig:Alphabar}, the blue bars represent studies for which the system recommends stricter significance levels ($\alpha < 0.05$), suggesting that a lower threshold could help reduce the risk of false positive conclusions. These stricter recommendations appear in more than half of the evaluated studies, indicating that the conventional threshold may often be too lenient for the given study conditions. In three cases, the system retained the conventional threshold ($\alpha = 0.05$), indicating that the standard level was appropriate under those conditions. Some studies received more lenient recommendations ($\alpha > 0.05$); however, these values were generated using default contextual settings because the original studies did not report researcher preferences such as risk tolerance or testing context. Incorporating such information could further refine the recommended alpha values.
+Compared with the conventional use of $\alpha = 0.05$, the proposed alpha recommendation system provides improved decision support in several failed replication cases. As illustrated in Figure\ref{fig:Alphabar}, the blue bars represent studies for which the system recommends stricter significance levels ($\alpha < 0.05$), suggesting that a lower threshold could help reduce the risk of false positive conclusions. These stricter recommendations appear in   than half of the evaluated studies, indicating that the conventional threshold may often be too lenient for the given study conditions. In three cases, the system retained the conventional threshold ($\alpha = 0.05$), indicating that the standard level was appropriate under those conditions. Some studies received more lenient recommendations ($\alpha > 0.05$); however, these values were generated using default contextual settings because the original studies did not report researcher preferences such as risk tolerance or testing context. Incorporating such contextual information would allow the adjustment stage of the system to better tailor the recommended $\alpha$ values to the specific study conditions.
 
 \begin{table}[h]
 	\centering

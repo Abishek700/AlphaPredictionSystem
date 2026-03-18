@@ -1,0 +1,186 @@
+%%%%%%
+% Metadata
+%%%%%%
+\appendix
+\chapter{Supplementary Materials and Implementation Details}
+
+\renewcommand{\theequation}{A.\arabic{equation}}
+\setcounter{equation}{0}
+
+This appendix summarizes the key mathematical expressions and
+implementation details used in the Alpha Recommendation System.
+The formulas listed here provide a compact reference for the
+computational procedures described in Chapter 4.
+
+\section{Baseline Alpha Prediction}
+
+The baseline significance level is predicted using a Random Forest
+regression model trained on replication data.
+
+\begin{equation}
+	\alpha_{\text{base}} = f(N,d)
+\end{equation}
+
+where $N$ represents the sample size and $d$ denotes the expected
+standardized effect size.
+
+\section{Alpha Adjustment Pipeline}
+
+The baseline alpha predicted by the model is adjusted through a
+sequence of contextual transformations.
+
+\subsection{Risk Tolerance Adjustment}
+
+\begin{equation}
+	\alpha' = \alpha_{\text{base}} \cdot k_1
+\end{equation}
+
+where $k_1$ represents the risk tolerance scaling factor.
+
+\subsection{Test Direction Adjustment}
+
+\begin{equation}
+	\alpha'' =
+	\begin{cases}
+		2\alpha' & \text{if one-tailed}\\
+		\alpha' & \text{if two-tailed}
+	\end{cases}
+\end{equation}
+
+This adjustment accounts for whether the statistical test is
+one-tailed or two-tailed.
+
+\subsection{Multiple Testing Correction}
+
+\begin{equation}
+	\alpha_{\text{final}} = \frac{\alpha''}{m}
+\end{equation}
+
+where $m$ denotes the number of simultaneous hypothesis tests.
+
+\section{Optimal Alpha Definition}
+
+For studies in which the replication does not confirm the original
+finding, a study-specific optimal significance level is derived using
+the original reported p-value.
+
+\begin{equation}
+	\alpha_{\text{opt}} =
+	\max \{\alpha \in A : \alpha < p_{\text{orig}}\}
+\end{equation}
+
+This rule selects the largest candidate alpha value that remains
+strictly smaller than the reported p-value.
+
+\section{Candidate Alpha Set}
+
+The candidate set of significance levels used for selecting the
+optimal alpha is defined as
+
+\begin{equation}
+	A =
+	\{0.001,0.005,0.010,0.020,0.030,0.040,0.050,0.060,0.090,0.100\}
+\end{equation}
+
+Using a discrete set of candidate values ensures that the resulting
+thresholds remain interpretable and comparable across studies.
+
+\section{Statistical Recovery Formulas}
+
+When original studies did not explicitly report sample size or effect
+size, these quantities were reconstructed using standard statistical
+relationships derived from reported test statistics.
+
+\subsection{Effect Size from t-test}
+
+\begin{equation}
+	r = \sqrt{\frac{t^2}{t^2 + df}}
+\end{equation}
+
+\subsection{Sample Size from Degrees of Freedom}
+
+\begin{equation}
+	N = df + 2
+\end{equation}
+
+\subsection{Effect Size from Chi-Squared Test}
+
+\begin{equation}
+	\phi = \sqrt{\frac{\chi^2}{N}}
+\end{equation}
+
+\subsection{Effect Size from F-test}
+
+\begin{equation}
+	\eta^2 = \frac{F \cdot df_1}{F \cdot df_1 + df_2}
+\end{equation}
+
+\subsection{Conversion from $\eta^2$ to Correlation}
+
+\begin{equation}
+	r = \sqrt{\eta^2}
+\end{equation}
+
+\section{Model Evaluation Metric}
+
+The performance of the Random Forest regression model is evaluated
+using the Mean Absolute Error (MAE).
+
+\begin{equation}
+	MAE =
+	\frac{1}{n}
+	\sum_{i=1}^{n}
+	|y_i - \hat{y}_i|
+\end{equation}
+
+where $y_i$ represents the observed optimal alpha values and
+$\hat{y}_i$ denotes the predicted values.
+
+\section{Python Implementation}
+
+The Alpha Recommendation System was implemented in Python using the
+\texttt{scikit-learn} machine learning library.
+
+\begin{lstlisting}[language=Python]
+	import pandas as pd
+	from sklearn.ensemble import RandomForestRegressor
+	
+	data = pd.read_excel("master_alpha_dataset_updated.xlsx")
+	
+	X = data[["sample_size","effect_size"]]
+	y = data["best_alpha"]
+	
+	model = RandomForestRegressor(n_estimators=200, random_state=42)
+	model.fit(X, y)
+\end{lstlisting}
+
+\section{Source Code Repository}
+\label{sec:gitappendix}
+The full implementation of the Alpha Recommendation System,
+including the trained model, dataset, and Streamlit application,
+is available in the public GitHub repository:
+
+\url{https://github.com/Abishek700/AlphaPredictionSystem}
+
+The repository contains the dataset used for training, the Python
+scripts for model training and evaluation, the serialized machine
+learning model, and the Streamlit application used to generate
+alpha recommendations.
+
+\subsection{Running the Application Locally}
+
+\begin{lstlisting}[language=bash]
+	# 1. Clone the repository
+	git clone https://github.com/Abishek700/AlphaPredictionSystem
+	cd AlphaPredictionSystem
+	
+	# 2. Install dependencies
+	pip install -r requirements.txt
+	
+	# 3. Launch the application
+	streamlit run app.py
+\end{lstlisting}
+
+Once launched, Streamlit opens the interface automatically in the
+default web browser, allowing users to enter study parameters and
+generate alpha recommendations.

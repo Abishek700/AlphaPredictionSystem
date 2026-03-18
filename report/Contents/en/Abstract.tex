@@ -1,0 +1,42 @@
+%%%%%%
+% Metadata
+%%%%%%
+% =========================
+% English Abstract
+% =========================
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+	
+	When researchers run a statistical test, they must decide how much evidence is required to call a result statistically significant. This decision is controlled by the significance level, denoted by $\alpha$. For decades, nearly all researchers have used the same threshold: $\alpha = 0.05$. This implies a 5\% chance of incorrectly concluding that an effect exists when it actually does not. The problem is that this threshold was never selected based on strong scientific justification; instead, it gradually became a convention.
+	
+	Using the same significance level for every study, regardless of sample size or the expected strength of an effect, has created practical problems. Many findings that were originally declared significant have later failed to replicate when independent researchers attempted to reproduce them. This phenomenon is commonly referred to as the replication crisis and affects multiple disciplines, including psychology, medicine, and the social sciences. Some researchers have suggested lowering the standard threshold, for example to $\alpha = 0.005$, but such proposals still rely on a single fixed number applied uniformly to all studies.
+	
+	This thesis proposes a different approach. Instead of using one universal threshold, it introduces a system that recommends a study specific significance level. The system operates in two stages. First, a machine learning model is trained on data from 664 real studies that were independently replicated. The model learns how appropriate significance levels tend to vary depending on the sample size and the expected effect size of a study. Based on these inputs, the model generates a personalized baseline value for $\alpha$.
+	
+	In the second stage, this baseline value can be adjusted according to the context of the study. Researchers who want to be more cautious about false positive findings can choose a stricter threshold. Adjustments can also be made for one tailed tests or when multiple hypotheses are tested simultaneously. These adjustments follow transparent rules so that the reasoning behind the final recommended value remains clear.
+	
+	The machine learning model was evaluated using previously unseen data and achieved a mean absolute prediction error of approximately 0.014, which is small relative to the typical range of $\alpha$ values between 0.001 and 0.15. The complete system was then tested on 20 real studies that had originally been reported as significant using $\alpha = 0.05$ but later failed to replicate. In 11 of these cases, the system would have recommended a stricter threshold, meaning that the original results might not have been declared significant.
+	
+	The main conclusion of this work is that treating $\alpha = 0.05$ as a universal rule is not always appropriate. Different studies have different characteristics, and the significance level should reflect these differences. The proposed system provides researchers with a practical tool for making more informed decisions about significance thresholds while maintaining transparency and interpretability.
+	
+
+
+\clearpage
+
+% =========================
+% German Abstract (Zusammenfassung)
+% =========================
+\chapter*{Zusammenfassung}
+\addcontentsline{toc}{chapter}{Zusammenfassung}
+
+Wenn Forschende einen statistischen Test durchführen, müssen sie entscheiden, wie stark die Evidenz sein muss, damit ein Ergebnis als statistisch signifikant gilt. Dies wird durch das Signifikanzniveau bestimmt, das mit $\alpha$ bezeichnet wird. Seit Jahrzehnten verwenden nahezu alle Forschenden denselben Schwellenwert: $\alpha = 0{,}05$. Dies bedeutet, dass eine Wahrscheinlichkeit von 5\,\% besteht, fälschlicherweise zu schließen, dass ein Effekt existiert, obwohl dies tatsächlich nicht der Fall ist. Problematisch ist jedoch, dass dieser Wert nie auf einer klaren wissenschaftlichen Begründung beruhte, sondern sich im Laufe der Zeit als Konvention etabliert hat.
+
+Die Verwendung desselben Schwellenwerts für jede Studie – unabhängig von der Stichprobengröße oder der erwarteten Effektstärke – hat jedoch praktische Probleme verursacht. Viele Ergebnisse, die ursprünglich als signifikant berichtet wurden, konnten später nicht repliziert werden, wenn andere Forschende versuchten, die Studien zu wiederholen. Dieses Phänomen wird als Replikationskrise bezeichnet und betrifft verschiedene wissenschaftliche Bereiche, darunter Psychologie, Medizin und Sozialwissenschaften. Einige Forschende haben vorgeschlagen, den Standardwert zu senken, beispielsweise auf $\alpha = 0{,}005$. Solche Vorschläge beruhen jedoch weiterhin auf einem festen Schwellenwert, der für alle Studien gleichermaßen gilt.
+
+Diese Arbeit verfolgt daher einen anderen Ansatz. Anstatt einen einheitlichen Wert für alle Studien zu verwenden, wird ein System entwickelt, das ein studienspezifisches Signifikanzniveau empfiehlt. Das System arbeitet in zwei Schritten. Zunächst wird ein Machine-Learning-Modell mit Daten aus 664 realen Studien trainiert, die unabhängig repliziert wurden. Das Modell lernt, wie sich geeignete Signifikanzniveaus in Abhängigkeit von der Stichprobengröße und der erwarteten Effektgröße einer Studie verändern. Auf dieser Grundlage wird ein personalisierter Ausgangswert für $\alpha$ berechnet.
+
+Im zweiten Schritt kann dieser Ausgangswert an den Kontext der Studie angepasst werden. Forschende, die besonders vorsichtig gegenüber falsch-positiven Ergebnissen sein möchten, können beispielsweise einen strengeren Schwellenwert wählen. Weitere Anpassungen sind möglich, etwa bei einseitigen Tests oder wenn mehrere Hypothesen gleichzeitig geprüft werden. Diese Anpassungen folgen klaren und transparenten Regeln, sodass nachvollziehbar bleibt, wie der endgültige empfohlene Wert entsteht.
+
+Das Machine-Learning-Modell wurde anschließend mit Daten getestet, die während des Trainings nicht verwendet wurden. Dabei ergab sich ein mittlerer absoluter Vorhersagefehler von etwa 0{,}014, was im Vergleich zum typischen Bereich von $\alpha$-Werten zwischen 0{,}001 und 0{,}15 gering ist. Zusätzlich wurde das vollständige System an 20 realen Studien getestet, die ursprünglich bei $\alpha = 0{,}05$ als signifikant berichtet wurden, später jedoch nicht repliziert werden konnten. In 11 dieser Fälle hätte das System einen strengeren Schwellenwert empfohlen, sodass die ursprünglichen Ergebnisse möglicherweise gar nicht als signifikant eingestuft worden wären.
+
+Die zentrale Erkenntnis dieser Arbeit ist, dass die pauschale Verwendung von $\alpha = 0{,}05$ nicht immer sinnvoll ist. Unterschiedliche Studien besitzen unterschiedliche Eigenschaften, und das Signifikanzniveau sollte diese Unterschiede berücksichtigen. Das entwickelte System bietet Forschenden ein praktisches Werkzeug, um fundiertere Entscheidungen über geeignete Signifikanzschwellen zu treffen.

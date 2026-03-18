@@ -1,0 +1,51 @@
+\frametitle{System Architecture}
+
+	\begin{center}
+		
+		\begin{tikzpicture}
+			
+			\node[draw, rounded corners, minimum width=2.8cm, minimum height=2.2cm, align=center] (input) at (0,0) {
+				\textbf{Input}\\
+				Sample Size\\
+				Effect Size\\
+				{\scriptsize known pre-study}
+			};
+			
+			\node[draw, rounded corners, minimum width=2.8cm, minimum height=2.2cm, align=center] (stage1) at (3,0) {
+				\textbf{Stage 1}\\
+				Random Forest\\
+				Regression\\
+				{\scriptsize Trained on 664 studies}\\
+				{\scriptsize MAE optimized}
+			};
+			
+			\node[draw, rounded corners, minimum width=2.8cm, minimum height=2.2cm, align=center] (stage2) at (6,0) {
+				\textbf{Stage 2}\\
+				Context Adjustment\\
+				{\scriptsize Risk tolerance}\\
+				{\scriptsize Test direction}\\
+				{\scriptsize Multiple testing}
+			};
+			
+			\node[draw, rounded corners, minimum width=2.8cm, minimum height=2.2cm, align=center] (output) at (9,0) {
+				\textbf{Output}\\
+				Final $\alpha$\\
+				Recommendation\\
+				{\scriptsize Clamped 0.001--0.15}
+			};
+			
+			\draw[->] (input) -- (stage1);
+			\draw[->] (stage1) -- (stage2);
+			\draw[->] (stage2) -- (output);
+			
+		\end{tikzpicture}
+		
+	\end{center}
+	
+	\vspace{0.3cm}
+	
+	\centering
+	{\small
+		$\alpha_{final} = \alpha_{baseline} \times k_1(\text{risk}) \times k_2(\text{direction}) \times k_3(\text{multiple testing})$
+	}
+	
