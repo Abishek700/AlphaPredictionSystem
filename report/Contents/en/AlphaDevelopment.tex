@@ -5,7 +5,7 @@
 \chapter{Development of the Alpha Recommendation System}
 \label{chapter:development}
 
-The main contribution of this thesis is the development of a data driven system for recommending study specific significance levels. Unlike conventional approaches that rely on fixed thresholds such as $\alpha = 0.05$, the proposed system combines empirical evidence from replication studies with machine learning and contextual statistical adjustments. This approach allows the recommended significance level to adapt to study characteristics and research preferences.
+The main contribution of this thesis is the development of a data driven system for recommending study specific significance levels.The proposed system combines empirical evidence from replication studies with help of machine learning followed by contextual statistical adjustments. This approach allows the recommended significance level to adapt to study characteristics and research preferences.
 
 This chapter describes how the proposed Alpha Recommendation System is developed. The aim is to address the research gap identified in the previous chapters \ref{sec:litlmitiations} by developing a practical and usable system.
 
@@ -13,7 +13,7 @@ This chapter explains step by step how the final alpha recommendation is generat
 
 \section{Overview of the System Design}
 \label{sec:overview}
- The purpose of the system is to support researchers in selecting an appropriate significance level ($\alpha$) for hypothesis testing. Instead of relying on a fixed conventional value such as $\alpha = 0.05$, the system provides a recommended $\alpha$ value based on study characteristics and research context. The recommendation is intended to guide decision making during the study design stage and does not replace statistical judgment.
+  The recommendation is intended to guide decision making during the study design stage and does not replace statistical judgment.
 
 The system is implemented as a software application in Python and 
 includes a machine learning component. It operates in two stages: 
@@ -32,7 +32,7 @@ architecture is illustrated in Figure~\ref{fig:alpha-flow}.
 %\cite{Hales2023} - one tailed test
 %\cite{Kim2015} - most test use 0.05 and other ways to explore alpha
 %\cite{FosterDeardorff2017} - osf is legit
- The overall structure of the Alpha Recommendation System is illustrated in Figure~\ref{fig:alpha-flow}.
+
 
 
 \begin{figure}[!ht]
@@ -212,7 +212,7 @@ The overall adjustment process can be summarized mathematically as follows:
 \begin{equation}
 	\alpha_{\text{final}} 
 	= 
-	\alpha_{\text{baseline}} 
+	\alpha_{\text{base}} 
 	\cdot k_1 
 	\cdot k_2 
 	\cdot k_3
@@ -227,7 +227,7 @@ The implementation details used to perform these adjustments are described in th
 
 \section{Dataset Construction and Optimal Alpha Definition}
 \label{sec:Dataset}
-This section explains how the dataset used in the Alpha Recommendation System is constructed. It describes the data sources, their reliability, the procedure used to define optimal alpha values, the methods used to recover missing sample sizes and effect sizes, and the structure of the final dataset.
+This section explains how the dataset used to train ML model in the Alpha Recommendation System is constructed. It describes the data sources, their reliability, the procedure used to define optimal alpha values, the methods used to recover missing sample sizes and effect sizes, and the structure of the final dataset.
 
 The dataset used in the Alpha Recommendation System is constructed by combining results from several large scale replication projects available through the Open Science Framework (OSF). These projects report findings from original studies together with the results of independent replication attempts across multiple research fields\cite{FosterDeardorff2017}. Each row in the final dataset represents a single hypothesis test.
 
@@ -297,7 +297,7 @@ After cleaning and compilation, the final dataset contains 664 individual hypoth
 
 Combining multiple replication projects increases diversity in study design and reduces reliance on a single research domain. Sample sizes in the dataset range from very small studies to large scale experiments with sample sizes exceeding 200,000. Effect sizes also cover a wide range, including both small and large effects.
 
-The size of the dataset is sufficient for the purpose of this study because the goal is not high dimensional prediction, but learning stable relationships between a small number of predictors—primarily sample size and effect size—and corresponding optimal alpha values. The dataset provides adequate variation across study contexts while remaining manageable and interpretable.
+The size of the dataset is sufficient for the purpose of this study because the goal is not high dimensional prediction, but learning stable relationships between a small number of predictors, primarily sample size and effect size and corresponding optimal alpha values. The dataset provides adequate variation across study contexts while remaining manageable and interpretable.
 
 \subsection{Data Quality and Reliability}
 
@@ -344,30 +344,25 @@ where
 \mathcal{A} = \{0.001,\,0.005,\,0.01,\,0.02,\,0.03,\,0.04,\,0.05,\,0.06,\,0.09,\,0.10\}
 \]
 This candidate set was derived empirically from the replication 
-dataset. The optimal alpha values observed across all 664 studies 
-fell within this discrete range, making these values the natural 
-choice for the candidate set.
+dataset. Values 0.07 and 0.08 were not observed as optimal thresholds in the dataset and were therefore excluded from the candidate set. The optimal alpha values observed across all 664 studies fell within this discrete range, making these values the natural choice for the candidate set.
 
 This Formula\ref{eq:optalpha} was derived specifically for this system to operationalise 
-the concept of a study-specific threshold. While the general idea of 
+the concept of a study specific threshold. While the general idea of 
 adapting significance levels to study outcomes is discussed in the 
 literature \cite{Benjamin2018}\cite{WassersteinLazar2016}, the 
 specific formulation presented here was developed as part of this work.
 
-is a predefined set of candidate significance levels. This rule ensures that 
-the original result would not have been declared statistically significant 
-under $\alpha_{\text{opt}}$, while the chosen value remains interpretable 
-and comparable across studies.
+Here, $\mathcal{A}$ denotes a predefined set of candidate significance levels. This rule ensures that the original result would not have been declared statistically significant under $\alpha_{opt}$, while the chosen value remains interpretable and comparable across studies.
 
 For example, if a study has $p = 0.047$ and the replication did not find the effect, using $\alpha = 0.05$ would incorrectly declare the result significant. Using $\alpha = 0.04$ would correctly declare it non significant. In this case, $\alpha = 0.04$ is the optimal alpha for that study.
 
 This procedure produces a study specific optimal alpha value for every hypothesis test in the dataset. The optimal alpha serves as the target variable for the data driven component of the Alpha Recommendation System.
 
-\textbf{It is important to note that replication outcomes alone cannot determine a theoretically optimal significance level. The procedure used here should therefore be interpreted as a pragmatic approximation. Similar discussions about adapting significance thresholds in response to replication evidence can be found in the statistical literature on reproducibility and significance testing \cite{Benjamin2018, WassersteinLazar2016, OpenScience2015}.}
+\textbf{It is important to note that replication outcomes alone cannot determine a theoretically optimal significance level. The procedure used here should therefore be interpreted as a pragmatic approximation.} Similar discussions about adapting significance thresholds in response to replication evidence can be found in the statistical literature on reproducibility and significance testing \cite{Benjamin2018, WassersteinLazar2016, OpenScience2015}.
 
 \subsection{Derivation of Sample Size and Effect Size}
 \label{subsec:SampleEfeectCalc}
-To ensure consistency across studies, each hypothesis test must be associated with a sample size and an effect size. When these values were not reported directly, they were recovered using standard statistical formulas.
+To ensure consistency across studies in the dataset, each hypothesis test must be associated with a sample size and an effect size. When these values were not reported directly, they were recovered using standard statistical formulas.
 
 For $t$-tests with reported degrees of freedom, effect size $r$ was computed as \cite{becker2000}:
 
@@ -405,7 +400,7 @@ Table~\ref{tab:dataset_example} shows the first five rows of the final dataset t
 
 \begin{table}[ht]
 	\centering
-	\caption{First Five Rows of the Final Dataset}
+	\caption{First Five Rows of the Final Dataset.}
 	\label{tab:dataset_example}
 	\begin{tabular}{cccc}
 		\hline
@@ -430,12 +425,15 @@ threshold, the calculated optimal $\alpha$ may exceed $0.05$
 even when the replication failed. This reflects the specific 
 $p$-value reported in the original study rather than a general 
 recommendation for leniency.
+To ensure transparency and reproducibility, the complete dataset and all source code used for data processing, model development, and system implementation are provided in the accompanying GitHub repository (see Appendix \ref{sec:gitappendix}).
 
 \section{ML Model for Predicting $\alpha_{base}$ }
 \label{sec:MLpart}
+Machine learning refers to a class of computational methods that learn patterns from data rather than following explicitly programmed rules\cite{Jordan2015}. In this system, a machine learning model is used because the relationship between sample size, effect size, and appropriate significance levels is not known in advance and cannot be expressed as a simple formula it must be learned from empirical replication data.
+
 This section explains how the constructed dataset is processed specifically for model training, how the input features and target variable are selected, and how the data driven model is implemented to estimate a $\alpha_{base}$.
 
-While the previous section described how the dataset was built and how optimal alpha values were defined\ref{sec:Dataset}, this section focuses on preparing the data for machine learning and implementing the predictive model.
+While the previous section described how the dataset was built and how optimal alpha values were defined\ref{sec:Dataset}, this section focuses on processing those data for machine learning and implementing the predictive model.
 
 \subsection{Data Preparation for Model Training}
 
@@ -497,9 +495,9 @@ When new study inputs are provided, the model produces a $\alpha_{base}$ value b
 
 The predictive model is implemented in Python using the scikit-learn library. Scikit-learn is a widely used open source machine learning library that provides tools for data preprocessing, model training, evaluation, and prediction. It allows the implementation of various machine learning algorithms in a structured and efficient way \cite{scikit-learn2023}.
 
-Since the objective is to predict a continuous optimal alpha value, the problem is formulated as a regression task. A regression algorithm learns a function that maps input variables to a continuous numerical output. Three candidate algorithms were evaluated. A Decision Tree regressor partitions the input space into regions and assigns a constant prediction to each region. A XGBoost regressor builds trees sequentially, where each new tree corrects the residual errors of the previous one. A Random Forest regressor builds a large number of independent decision trees and combines their predictions by averaging, which reduces variance and improves generalization\cite{Breiman2001}. Their predictive performance was compared using standard evaluation metrics \ref{fig:DecisonTree}, \ref{fig:GradientBoosting},\ref{fig:RandomForest}.
+Since the objective is to predict a continuous optimal alpha value, the problem is formulated as a regression task. A regression algorithm learns a function that maps input variables to a continuous numerical output. Three candidate algorithms were evaluated. A Decision Tree regressor partitions the input space into regions and assigns a constant prediction to each region. An  XGBoost regressor builds trees sequentially, where each new tree corrects the residual errors of the previous one. A Random Forest regressor builds a large number of independent decision trees and combines their predictions by averaging, which reduces variance and improves generalization\cite{Breiman2001}. 
 
-To evaluate predictive performance, the dataset was divided into training and testing subsets. Eighty percent of the observations were used to train the models, while the remaining twenty percent were reserved for testing. Model performance was evaluated on the test set using the Mean Absolute Error (MAE) metric.
+To evaluate predictive performance, the dataset was divided into training and testing subsets. Seventy percent of the observations were used to train the models, while the remaining thirty percent were reserved for testing. Model performance was evaluated on the test set using the Mean Absolute Error (MAE) metric. Their predictive performance was compared using MAE \ref{fig:DecisonTree}, \ref{fig:GradientBoosting},\ref{fig:RandomForest}.
 
 The Mean Absolute Error (MAE) is defined as
 
@@ -509,6 +507,7 @@ The Mean Absolute Error (MAE) is defined as
 
 where $y_i$ represents the true value and $\hat{y}_i$ represents the predicted value\cite{WillmottMatsuura2005}.
 
+MAE measures the average absolute difference between the predicted and actual values. This metric was chosen because it is easy to understand and expresses the prediction error in the same units as the target variable. In addition, MAE is less sensitive to large errors than metrics such as Mean Squared Error (MSE), since it does not square the differences between predicted and actual values \cite{WillmottMatsuura2005}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{Images/pred_vs_actual_decision_tree}
@@ -539,16 +538,20 @@ a $\pm 0.015$ tolerance band. This outperformed the Decision Tree
 Boosting ($\text{MAE} = 0.0141$, $66.5\%$ within tolerance) 
 regressors.
 
- Random Forest builds multiple decision trees and combines their predictions by averaging  and better explained in Figure\ref{fig:randomforestregressor}\cite{Breiman2001}.
- This approach better
+
  
- \begin{itemize}
- 	\item captures non linear relationships,
- 	\item reduces sensitivity to noise,
- 	\item and does not require strong distributional assumptions.\cite{Ryo2017}
- \end{itemize}
  
  The objective is not to develop a new algorithm, but to use a reliable and widely accepted method to learn patterns from replication data.
+ 
+
+ \begin{figure}[htbp]
+ 	\centering
+ 	\includegraphics[width=0.7\textwidth]{Images/ml_model_selection}
+ 	\caption{Performance comparison of ML models }
+ 	\label{fig:MLmodelComparision}
+ \end{figure}
+ 
+ Among the tested models, the Random Forest regression algorithm achieved the lowest MAE\ref{fig:RandomForest}, indicating better predictive performance compared to the alternative models.
 \begin{figure}[htbp]
  	\centering
  	\includegraphics[width=0.8\textwidth]{Images/random_forest_vertical}
@@ -556,59 +559,71 @@ regressors.
  	\label{fig:randomforestregressor}
  \end{figure}
 
+The Random Forest model is an ensemble learning method that combines multiple decision trees to improve prediction accuracy\cite{Breiman2001}. 
 
-The predictive performance of the models was evaluated using the regression metric Mean Absolute Error (MAE). MAE measures the average absolute difference between the predicted and actual values. This metric was chosen because it is easy to understand and expresses the prediction error in the same units as the target variable. In addition, MAE is less sensitive to large errors than metrics such as Mean Squared Error (MSE), since it does not square the differences between predicted and actual values \cite{WillmottMatsuura2005}.
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.7\textwidth]{Images/ml_model_selection}
-	\caption{Performance comparison of ML models }
-	\label{fig:MLmodelComparision}
-\end{figure}
+The Figure\ref{fig:randomforestregressor} explains the working of the model, First the training dataset is used to generate multiple random samples through a process called bootstrap sampling. Each sample is then used to train an individual decision tree independently.
 
-Among the tested models, the Random Forest regression algorithm achieved the lowest MAE\ref{fig:RandomForest}, indicating better predictive performance compared to the alternative models.
+Each decision tree makes its own prediction based on the input features. Since the trees are trained on slightly different data, their predictions may vary.
+
+Finally, the predictions from all trees are combined by averaging them to produce the final prediction. This approach reduces the impact of noise and improves the stability and accuracy of the model\cite{Ha2023}.
+
+This approach better
+
+\begin{itemize}
+	\item captures non linear relationships,
+	\item reduces sensitivity to noise,
+	\item and does not require strong distributional assumptions.\cite{Ryo2017}
+\end{itemize}
 
 
 \subsection{Model Implementation in Python}
 
-The implementation is written in Python using standard data analysis and machine learning libraries, including \textbf{pandas for data handling, NumPy} for numerical operations, and \textbf{scikit-learn} for model training and evaluation. Each step of the implementation, including data preparation, model training, prediction, and evaluation, is described in detail in the following sections.
+The implementation is written in Python using standard data analysis and machine learning libraries, including \textbf{pandas} for data handling, NumPy for numerical operations, and \textbf{scikit-learn} for model training and evaluation. Each step of the implementation, including data preparation, model training, prediction, and evaluation, is described in detail in the following sections.
 
 \subsubsection*{Loading the Data}
 
 \begin{lstlisting}[language=Python]
+	#Load Data
 	import pandas as pd
 	
-	data = pd.read_excel("master_alpha_dataset_updated.xlsx")
+	data = pd.read_excel("OptimalAlpha.xlsx.xlsx")
 	
 	X = data[["sample_size", "effect_size"]]
 	y = data["best_alpha"]
 \end{lstlisting}
 
-The dataset is loaded from an Excel file using the pandas library. The variables \textbf{sample size} and \textbf{effect size} are selected as input features (X), and \textbf{best alpha} is selected as the target variable (y). This separation allows the model to learn the relationship between study characteristics and the optimal alpha value.
+The dataset is loaded from the Excel file using the pandas library. The variables \textbf{sample size} and \textbf{effect size} are selected as input features (X), and \textbf{best alpha} is selected as the target variable (y). This separation allows the model to learn the relationship between study characteristics and the optimal alpha value.
 
 \subsubsection*{Training the Model}
 
 \begin{lstlisting}[language=Python]
+		# Train-test split
 	from sklearn.ensemble import RandomForestRegressor
-	
-	model = RandomForestRegressor(n_estimators=200, random_state=42)
-	model.fit(X, y)
+	X_train, X_test, y_train, y_test = train_test_split(
+	X, y, test_size=0.3, random_state=42
+	# Model
+	model = RandomForestRegressor(
+	n_estimators=500,
+	max_depth=30,
+	random_state=42,
+	n_jobs=-1)
+	# Train
+	model.fit(X_train, y_train)
 \end{lstlisting}
 
-\subsubsection{Training the Model}
 
-The Random Forest regression model was implemented using the \texttt{scikit-learn} library in Python. The dataset was divided into training and test sets using an 80/20 split. This proportion is commonly used in machine learning because it balances the need for sufficient training data with the need for an independent evaluation dataset.
 
-The number of trees in the forest was set to 200. Increasing the number of trees generally improves the stability of ensemble models, but after a certain point the performance gains become negligible. Preliminary experiments indicated that performance stabilised beyond approximately 150 trees, so 200 estimators were selected.
-
-The random state was fixed at 42 to ensure reproducibility of the results. This guarantees that the same training test split and model initialization can be reproduced in subsequent runs.
+The Random Forest regression model was implemented using the \texttt{scikit-learn} library in Python. The dataset was divided into training and test sets using an 70/30 split. This proportion is commonly used in machine learning because it balances the need for sufficient training data with the need for an independent evaluation dataset. The number of trees in the forest was set to 500. Increasing the number of trees generally improves the stability and predictive performance of ensemble models, although the gains diminish beyond a certain point\cite{Breiman2001}. A higher number of estimators was selected to ensure robust and stable predictions. The maximum depth of each tree was limited to 30 in order to control model complexity and reduce the risk of overfitting. The random state was fixed at 42 to ensure reproducibility of the results. In addition, parallel processing was enabled using \texttt{n\_jobs = -1} to utilize all available CPU cores and improve computational efficiency\cite{scikit-learn2023}.
 
 \subsubsection*{Predicting $\alpha_{base}$}
 
 \begin{lstlisting}[language=Python]
-	predicted_alpha = model.predict([[150, 0.30]])
-\end{lstlisting}
 
-After training, the model can predict a $\alpha_{base}$ for new inputs. When a sample size of 150 and an expected effect size of 0.30 are provided, the model returns a predicted alpha value based on patterns learned from the replication data.
+# Predict
+preds = model.predict(X_test)
+preds = np.clip(preds, 0.001, 0.15)
+\end{lstlisting}
+After training, the model is used to predict a baseline significance level ($\alpha_{\text{base}}$) for new inputs. Given input values such as sample size and expected effect size, the model returns a predicted alpha value based on patterns learned from the replication data.
 
 %\subsection{Role of the Data-Driven Model}
 
@@ -625,7 +640,7 @@ This section describes the second stage of the Alpha Recommendation System. In t
 The $\alpha_{base}$ predicted by the model reflects patterns observed in replication studies. However, no single alpha value can be appropriate for all research situations. Even when sample size and effect size are similar, studies may differ in risk tolerance, testing strategy, or research goals .
 
 For this reason, the system includes a separate adjustment step. This ensures that contextual preferences are applied explicitly after the data driven prediction, rather than influencing the model itself. This separation maintains transparency and interpretability.
-The overall adjustment formula, introduced in Section~\ref{sec:overview}, 
+The overall adjustment method, discussed in Section~\ref{sec:overview}, 
 combines these three factors as follows (see Equation~\ref{eq:alpha_final}):
 
 \begin{equation}
@@ -673,8 +688,9 @@ Five levels are chosen to give a balanced range of options. They allow the resea
 \end{equation}
 Each level is converted into a numerical adjustment by multiplying the $\alpha_{base}$ with a fixed scaling factor. This converts a qualitative choice (for example, “strict”) into a clear mathematical change.
 
-The adjustment is implemented as follows:
+The adjustment is implemented in Python as:
 \begin{lstlisting}[language=Python]
+	# Risk Tolerance
 	def adjust_for_risk(alpha, risk_level):
 	if risk_level == "very_strict":
 	return alpha * 0.5
@@ -721,6 +737,7 @@ Before conducting a hypothesis test, the researcher must decide whether the test
 To reflect this structural difference, the system adjusts the alpha value when a one tailed test is selected. The adjustment is implemented in Python as follows:
 
 \begin{lstlisting}[language=Python]
+	# Test Direction
 	def adjust_for_tail(alpha, tail_type):
 	if tail_type == "one_tailed":
 	return alpha * 2
@@ -740,6 +757,7 @@ When multiple hypotheses are tested within the same study, the probability of at
 	\frac{\alpha''}{m}
 \end{equation}
 \begin{lstlisting}[language=Python]
+	# Multiple testing
 	def adjust_for_multiple_tests(alpha, num_tests):
 	if num_tests > 1:
 	return alpha / num_tests
@@ -772,7 +790,7 @@ This ensures that the recommended alpha remains within reasonable and interpreta
 
 \subsection{Understanding the Final Alpha Recommendation}
 
-The $\alpha_{base}$ value should be understood as a recommendation rather than a strict rule. It combines information learned from replication data with preferences defined by the researcher. The predictive model first estimates a $\alpha_{base}$ based on patterns observed in previous studies.
+The $\alpha_{final}$ value should be understood as a recommendation rather than a strict rule. It combines information learned from replication data with preferences defined by the researcher. The predictive model first estimates a $\alpha_{base}$ based on patterns observed in previous studies.
 
 In the second step, the researcher can adjust this value according to the needs of the study, such as the desired level of strictness or risk tolerance. This makes the recommendation flexible and easier to apply in different research situations. The goal is not to define a theoretically optimal alpha level, but to provide a practical and understandable guideline.
 

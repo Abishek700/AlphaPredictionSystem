@@ -36,14 +36,14 @@ The significance level $\alpha$ represents the probability of making a Type I er
 \begin{equation}
 	\alpha = P(\text{Reject } H_0 \mid H_0 \text{ is true})
 \end{equation}
-
+This procedure, known as the Neyman–Pearson approach to statistical inference, allows researchers to make binary claims while controlling the error rate\cite{Lakens2021}
 In practice, researchers often choose $\alpha = 0.05$. Other common values are $0.10$ and $0.01$. The value $0.05$ has become the standard in many scientific fields. However, \cite{Fisher1925} originally suggested $0.05$ as a convenient reference point, not as a universal rule. Later research has shown that the dominance of $0.05$ is mainly historical and conventional rather than theoretically optimal \cite{CowlesDavis1982}.
 
 At first glance, this decision rule seems clear and simple. If the $p$-value is smaller than $0.05$, the result is called "statistically significant". If it is larger, it is not.
 
-However, problems arise when the $p$-value is very close to the threshold. For example, if $p = 0.049$, the null hypothesis is rejected. If $p = 0.051$, it is not rejected. The numerical difference is very small, but the conclusion changes completely. In practice, researchers sometimes describe such results as "almost significant" or "marginally significant", even though hypothesis testing formally allows only two decisions.
+However, problems arise when the $p$-value is very close to the threshold. For example, if $p = 0.049$, the null hypothesis is rejected. If $p = 0.051$, it is not rejected. The numerical difference is very small, but the conclusion changes completely. In practice, researchers sometimes describe such results as "almost significant" or "marginally significant", even though hypothesis testing formally allows only two decisions\cite{Pritschet2016}.
 
-This discomfort has become more serious in recent years. Large replication projects have shown that many statistically significant findings cannot be reproduced in independent studies. For example, the Open Science Collaboration \cite{OpenScience2015} reported that a substantial proportion of findings in psychology failed to replicate . In addition, the American Statistical Association warned that $p$-values should not be used mechanically or interpreted without context \cite{WassersteinLazar2016}.
+This discomfort has become more serious in recent years. Large replication projects have shown that many statistically significant findings cannot be reproduced in independent studies. For example, the Open Science Collaboration \cite{OpenScience2015} reported that a substantial proportion of findings in psychology failed to replicate . In addition, the ASA (American Statistical Association) warned that $p$-values should not be used mechanically or interpreted without context \cite{WassersteinLazar2016}.
 
 These developments suggest that the routine use of a fixed significance level, especially $\alpha = 0.05$, may not always be appropriate.  More recent work confirms that replication failure remains a persistent challenge across disciplines  and that the validity of initial findings is systematically overestimated when significance thresholds are applied uniformly \cite{Nosek22}.
 
@@ -62,12 +62,12 @@ Statistical power refers to the probability of rejecting a false null hypothesis
 
 Third, the strict division between "significant" and "not significant" can create misleading interpretations when $p$-values are close to the threshold. Two results that are almost identical numerically can lead to completely different conclusions simply because one falls slightly below $0.05$ and the other slightly above.
 
-Although the statistical literature contains proposals to modify or lower the conventional threshold, such as recommending $\alpha = 0.005$ for certain claims \cite{Benjamin2018}, these proposals still rely on fixed values. There is currently no widely used method that systematically adapts the significance level to the characteristics of a specific study.
+Although the statistical literature contains proposals to modify or lower the conventional threshold, such as recommending $\alpha = 0.005$ for certain claims \cite{Benjamin2018}, these proposals still rely on fixed values. To the best of the author's knowledge, no widely adopted method exists that systematically adapts the significance level to the specific characteristics of an individual study.
 
 This gap forms the starting point of the present thesis.
 \section{Research Objective}
 
-The main objective of this thesis is to develop and evaluate a systematic approach for choosing the significance level $\alpha$. Instead of treating $\alpha$ as a fixed constant, this thesis proposes to view it as a flexible value that can depend on study characteristics. In particular, the proposed approach uses information from past replication studies to inform the choice of $\alpha$. Study characteristics such as sample size and effect size are used to generate a data based baseline recommendation.
+The main objective of this thesis is to develop and evaluate a systematic approach for choosing the significance level $\alpha$. Instead of treating $\alpha$ as a fixed constant, this thesis proposes to view it as a flexible value that can depend on study characteristics. In particular, the proposed approach uses information from past replication studies to inform the choice of $\alpha$. Study characteristics such as sample size and effect size are used to generate a data based baseline recommendation using a machine learning model.
 
 In a second step, this baseline value can be adjusted based on contextual factors, such as the researcher’s tolerance for risk or the number of hypotheses being tested.
 
@@ -92,7 +92,7 @@ The remainder of this thesis is organized as follows:
 	
 	\item Chapter \ref{chapter:existing approaches} reviews previous research on how to choose a significance level. It discusses several approaches from the literature, including fixed thresholds, power based methods, and decision theoretic approaches. The limitations of these methods are also highlighted.
 	
-	\item Chapter \ref{chapter:development} explains the development of the proposed Alpha Recommendation System. It describes how the dataset is constructed, how optimal alpha values are defined using replication studies, and how a machine learning model is used to predict $\alpha_{base}$. The chapter also explains the context based adjustment step that modifies the$\alpha_{base}$ based on study characteristics.
+	\item Chapter \ref{chapter:development} explains the development of the proposed Alpha Recommendation System. It describes how the dataset is constructed, how optimal alpha values are defined using replication studies, and how a machine learning model is used to predict $\alpha_{base}$. The chapter also explains the context based adjustment step that modifies the $\alpha_{base}$ based on study characteristics.
 	
 	\item Chapter \ref{chapter:deplyment} presents the deployment of the system. It explains how the trained machine learning model is integrated into an interactive application using Streamlit and how users can interact with the system to obtain an alpha recommendation.
 	

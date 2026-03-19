@@ -1,76 +1,16 @@
-This is BibTeX, Version 0.99d (TeX Live 2024)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: AlphaPredictionSystem.aux
-The style file: biblatex.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: AlphaPredictionSystem-blx.bib
-Database file #2: ../MLbib/MyLiterature.bib
-Warning--entry type for "Chang2025" isn't style-file defined
---line 187 of file ../MLbib/MyLiterature.bib
-Warning--entry type for "ErringtonDenis2021" isn't style-file defined
---line 255 of file ../MLbib/MyLiterature.bib
-Warning--entry type for "Soto2017" isn't style-file defined
---line 745 of file ../MLbib/MyLiterature.bib
-Warning--entry type for "Sotola2022" isn't style-file defined
---line 759 of file ../MLbib/MyLiterature.bib
-Warning--entry type for "Li2021" isn't style-file defined
---line 867 of file ../MLbib/MyLiterature.bib
-Biblatex version: 3.20
-Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 35 entries,
-            6402 wiz_defined-function locations,
-            1471 strings with 16258 characters,
-and the built_in function-call counts, 224147 in all, are:
-= -- 16505
-> -- 3647
-< -- 1371
-+ -- 4776
-- -- 1311
-* -- 16579
-:= -- 22427
-add.period$ -- 0
-call.type$ -- 35
-change.case$ -- 34
-chr.to.int$ -- 44
-cite$ -- 68
-duplicate$ -- 22212
-empty$ -- 21241
-format.name$ -- 2053
-if$ -- 47392
-int.to.chr$ -- 0
-int.to.str$ -- 88
-missing$ -- 0
-newline$ -- 1043
-num.names$ -- 1872
-pop$ -- 11723
-preamble$ -- 1
-purify$ -- 857
-quote$ -- 0
-skip$ -- 7451
-stack$ -- 0
-substring$ -- 30273
-swap$ -- 5239
-text.length$ -- 1056
-text.prefix$ -- 57
-top$ -- 1
-type$ -- 1172
-warning$ -- 0
-while$ -- 2610
-width$ -- 0
-write$ -- 1009
-(There were 5 warnings)
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'AlphaPredictionSystem.blg'
+[98] biber-MSWIN64:340> INFO - === 
+[145] Biber.pm:420> INFO - Reading 'AlphaPredictionSystem.bcf'
+[250] Biber.pm:994> INFO - Found 38 citekeys in bib section 0
+[261] Biber.pm:4463> INFO - Processing section 0
+[271] Biber.pm:4654> INFO - Looking for bibtex file '../MLbib/MyLiterature.bib' for section 0
+[380] bibtex.pm:1713> INFO - LaTeX decoding ...
+[459] bibtex.pm:1519> INFO - Found BibTeX data source '../MLbib/MyLiterature.bib'
+[622] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[622] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[622] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[622] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[642] bbl.pm:676> INFO - Writing 'AlphaPredictionSystem.bbl' with encoding 'ascii'
+[642] bbl.pm:677> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[671] bbl.pm:779> INFO - Output to AlphaPredictionSystem.bbl

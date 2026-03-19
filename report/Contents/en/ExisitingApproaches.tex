@@ -26,7 +26,7 @@ Statistical power as introduced in Chapter~\ref{chapter:Intro} can be expressed 
 	\label{eq:power_definition}
 \end{equation}
 
-Equation~\ref{eq:power_definition} highlights the direct relationship between statistical power and the probability of a Type II error. As discussed in Chapter \ref{chapter:history} the significance level $\alpha$, the sample size $N$, and the true effect size. \cite{Cohen1988} emphasized that these elements should be considered jointly during study planning .
+Equation~\ref{eq:power_definition} highlights the direct relationship between statistical power and the probability of a Type II error. As discussed in Chapter \ref{chapter:history} statistical power depends on the significance level $\alpha$, the sample size $N$, and the true effect size. \cite{Cohen1988} emphasized that these elements should be considered jointly during study planning .
 
 Although fixed thresholds provide comparability and simplicity, they do not adapt to differences between studies.
 
@@ -42,11 +42,11 @@ Consider a simple test statistic for a standardized effect size $d$. Under stand
 	\label{eq:z_statistic}
 \end{equation}
 Z is a standardized test statistic that measures how many standard errors the observed effect is from zero.
-Equation~\ref{eq:z_statistic} shows that the magnitude of the test statistic increases with larger sample sizes and stronger effect sizes. The probability of rejecting the null hypothesis depends on how large $Z$ is relative to the critical value determined by $\alpha$.
+Equation~\ref{eq:z_statistic} shows that the magnitude of the test statistic increases with larger sample sizes and stronger effect sizes. The probability of rejecting the null hypothesis depends on how large $Z$ is relative to the critical value determined by $\alpha$\cite{PetersonFoley2021}.
 
 If $\alpha$ is reduced, the critical value increases. This makes rejection more difficult and reduces the probability of a Type I error. However, as implied by Equation~\ref{eq:power_definition}, reducing $\alpha$ may simultaneously decrease statistical power unless the sample size is increased accordingly.
 
-From this perspective, some researchers argue that $\alpha$ should be chosen in conjunction with sample size planning. Although this approach improves study design, it typically still relies on selecting $\alpha$ from a small set of conventional values\cite{maier2022}.
+From this perspective, some researchers argue that $\alpha$ should be chosen in conjunction with sample size planning. Although this approach improves study design, it typically still relies on selecting $\alpha$ from a small set of conventional values(0.10, 0.05, 0.01)\cite{maier2022}.
 
 
 \section{Decision Theoretic and Error Cost Approaches}
@@ -60,7 +60,7 @@ In this setting, the objective is to select a decision rule that minimizes the
 expected loss associated with incorrect decisions. The expected loss depends on 
 both the probabilities of error and the costs assigned to these errors.
 
-Formally, following \cite{Berger1985}, the expected loss function can be written as
+Formally, following \cite{Berger1985}, the expected loss function can be written as as a weighted combination of error probabilities
 
 \begin{equation}
 	L = C_1 \alpha + C_2 \beta,
@@ -109,13 +109,9 @@ The structural trade offs between $\alpha$ and $\beta$, formalized in Equations~
 
 This gap motivates the development of the method proposed in this thesis. Rather than replacing the concept of statistical significance, the goal is to provide a systematic and data informed way of recommending a study specific significance level.
 
-None of the reviewed approaches provide a practical, continuously 
-valued, and data informed recommendation system that a researcher 
-can use during study design without specialist expertise in decision 
-theory or Bayesian statistics. The present thesis addresses this 
+None of the reviewed approaches appear to provide a practical, continuously valued, and data-informed recommendation system that researchers can use during study design without requiring specialist expertise in decision theory or Bayesian statistics. The present thesis addresses this 
 gap by combining empirical evidence from replication studies with 
-a transparent rule based adjustment system, as described in 
-Chapter \ref{chapter:development}.
+a transparent rule based adjustment system.
 
 
 

@@ -44,8 +44,7 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>AlphaPredictionSystem.aux</file>
-      <file>AlphaPredictionSystem-blx.bib</file>
+      <file>AlphaPredictionSystem.bcf</file>
     </provides>
     <requires type="dynamic">
       <file>AlphaPredictionSystem.bbl</file>
@@ -53,25 +52,25 @@
     <requires type="static">
       <file>blx-dm.def</file>
       <file>blx-compat.def</file>
-      <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
       <file>standard.bbx</file>
-      <file>alphabetic.bbx</file>
-      <file>alphabetic.cbx</file>
+      <file>numeric.bbx</file>
+      <file>numeric-comp.bbx</file>
+      <file>ieee.bbx</file>
+      <file>numeric-comp.cbx</file>
+      <file>ieee.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">
-    <generic>bibtex</generic>
+    <generic>biber</generic>
     <cmdline>
-      <binary>bibtex8</binary>
-      <option>--wolfgang</option>
-      <option>--min_crossrefs 2</option>
+      <binary>biber</binary>
       <infile>AlphaPredictionSystem</infile>
     </cmdline>
     <input>
-      <file>AlphaPredictionSystem.aux</file>
+      <file>AlphaPredictionSystem.bcf</file>
     </input>
     <output>
       <file>AlphaPredictionSystem.bbl</file>
@@ -80,14 +79,10 @@
       <file>AlphaPredictionSystem.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>AlphaPredictionSystem.aux</file>
-      <file>AlphaPredictionSystem-blx.bib</file>
+      <file>AlphaPredictionSystem.bcf</file>
     </requires>
     <requires type="editable">
       <file>../MLbib/MyLiterature.bib</file>
-    </requires>
-    <requires type="static">
-      <file>biblatex.bst</file>
     </requires>
   </external>
 </requests>

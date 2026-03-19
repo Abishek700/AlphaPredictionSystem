@@ -4,19 +4,19 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Flow diagram of the Alpha Recommendation System.}}{20}{figure.caption.15}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Decision Tree Regressor: Predicted/Actual Alpha Values }}{32}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Flow diagram of the Alpha Recommendation System.}}{19}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Decision Tree Regressor: Predicted/Actual Alpha Values }}{31}{figure.caption.18}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Gradient Boosting Regressor: Predicted/Actual Alpha Values}}{32}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Random Forest Regressor: Predicted/Actual Alpha Values}}{33}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Structure of the Random Forest regression model used for predicting the baseline significance level.(based on \blx@tocontentsinit {0}\cite {Ha2023})}}{34}{figure.caption.21}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Performance comparison of ML models }}{35}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Random Forest Regressor: Predicted/Actual Alpha Values}}{32}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Performance comparison of ML models }}{33}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Structure of the Random Forest regression model used for predicting the baseline significance level.(based on \blx@tocontentsinit {0}\cite {Ha2023})}}{34}{figure.caption.22}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Machine Learning System Architecture}}{43}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Interface of the system before entering the values}}{46}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Prediction workflow of the deployed system}}{47}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Interface of the system after entering the values}}{48}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Machine Learning System Architecture}}{42}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Interface of the system before entering the values}}{45}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Prediction workflow of the deployed system}}{46}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Interface of the system after entering the values}}{47}{figure.caption.29}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Comparison of Recommended $\alpha $ Values Across 20 Studies}}{53}{figure.caption.33}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Comparison of Recommended $\alpha $ Values Across 20 Studies}}{52}{figure.caption.31}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Comparison of study outcomes}}{57}{figure.caption.35}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Comparison of study outcomes}}{56}{figure.caption.33}%
 \addvspace {10\p@ }

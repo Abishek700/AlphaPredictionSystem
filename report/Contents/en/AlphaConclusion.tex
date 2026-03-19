@@ -17,14 +17,14 @@ The system was implemented in Python and deployed through a Streamlit interface,
 
 
 The main finding is that the system recommended a significance 
-level stricter than $0.05$ in 11 out of 20 cases where the 
+level stricter than $0.05$ in 13 out of 20 cases where the 
 conventional threshold had led to a false positive decision, 
 suggesting that a data driven approach can support more cautious 
 and reproducible statistical conclusions.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Images/MainfindingsComparision}
+	\includegraphics[width=0.7\textwidth]{Images/study_outcomes_chart}
 	\caption{Comparison of study outcomes}
 	\label{fig:Comparision}
 \end{figure}
@@ -39,7 +39,7 @@ Second, the contextual adjustment factors used in the system were implemented us
 
 Third, neutral contextual settings were used during the evaluation. This decision was made because the original studies did not report the researchers’ preferences, such as their risk tolerance or testing strategy. Using neutral settings allowed the studies to be compared under the same conditions, but it does not fully capture how different researcher preferences might influence the recommended alpha values.
 
-Fourth, the proposed system does not determine sample size and does not replace traditional power analysis. Instead, it assumes that important study parameters, such as sample size and expected effect size, are already specified by the researcher.
+Fourth, the proposed system does not determine sample size and does not replace traditional power analysis. It assumes that important study parameters, such as sample size and expected effect size, are already specified by the researcher. Additionally, while the system can in principle be applied across common hypothesis tests including t-tests, chi-squared tests, and F-tests, since sample size and effect size can be derived from all of these it does not guide the researcher in selecting which test to use. The system focuses solely on recommending a suitable significance threshold, assuming the appropriate test type has already been chosen.
 
 Overall, these limitations indicate that the proposed system should be viewed as a decision support tool that complements existing statistical practices rather than replacing established methods of study design and statistical inference.
 
@@ -47,7 +47,7 @@ Overall, these limitations indicate that the proposed system should be viewed as
 
 Future research can extend the proposed system in several directions.
 
-First, the contextual scaling factors used in this study could be further refined using formal decision theoretic models. Developing such models would require a deeper theoretical analysis and empirical calibration across many studies, which is beyond the scope of the present work.
+First, the contextual scaling factors used in this study could be further increased using formal decision theoretic models. Developing such models would require a deeper theoretical analysis and empirical calibration across many studies, which is beyond the scope of the present work.
 
 Second, the machine learning model could be trained on a larger and more diverse collection of replication datasets from additional scientific disciplines. Expanding the dataset would allow the system to learn broader statistical patterns and improve the generalizability of the alpha recommendations.
 

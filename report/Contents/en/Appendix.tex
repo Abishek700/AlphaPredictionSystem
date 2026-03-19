@@ -136,23 +136,6 @@ using the Mean Absolute Error (MAE).
 where $y_i$ represents the observed optimal alpha values and
 $\hat{y}_i$ denotes the predicted values.
 
-\section{Python Implementation}
-
-The Alpha Recommendation System was implemented in Python using the
-\texttt{scikit-learn} machine learning library.
-
-\begin{lstlisting}[language=Python]
-	import pandas as pd
-	from sklearn.ensemble import RandomForestRegressor
-	
-	data = pd.read_excel("master_alpha_dataset_updated.xlsx")
-	
-	X = data[["sample_size","effect_size"]]
-	y = data["best_alpha"]
-	
-	model = RandomForestRegressor(n_estimators=200, random_state=42)
-	model.fit(X, y)
-\end{lstlisting}
 
 \section{Source Code Repository}
 \label{sec:gitappendix}
@@ -174,11 +157,18 @@ alpha recommendations.
 	git clone https://github.com/Abishek700/AlphaPredictionSystem
 	cd AlphaPredictionSystem
 	
-	# 2. Install dependencies
-	pip install -r requirements.txt
-	
-	# 3. Launch the application
-	streamlit run app.py
+    ## 2. Go to Code folder
+    cd Code
+    
+    ## 3. Install required packages
+    pip install -r requirements.txt
+
+    ## 4. Go to application folder
+    cd AlphaPrediction
+
+    ## 5. Run the application
+    python -m streamlit run app.py
+
 \end{lstlisting}
 
 Once launched, Streamlit opens the interface automatically in the

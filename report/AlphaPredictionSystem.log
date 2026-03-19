@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.9)  17 MAR 2026 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.9)  19 MAR 2026 12:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -923,7 +923,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'alphabetic.dbx' not found.
+Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count393
@@ -1014,20 +1014,10 @@ Package biblatex Info: ... file 'blx-compat.def' found.
 (c:/texlive/2024/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 )
-Package biblatex Info: Trying to load BibTeX backend compatibility...
-Package biblatex Info: ... file 'blx-bibtex.def' found.
-
-(c:/texlive/2024/texmf-dist/tex/latex/biblatex/blx-bibtex.def
-File: blx-bibtex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-
-
-Package biblatex Warning: Using fall-back bibtex backend:
-(biblatex)                functionality may be reduced/unavailable.
-
-)
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (c:/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.def
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 \c@textcitecount=\count461
 \c@textcitetotal=\count462
@@ -1043,11 +1033,21 @@ File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 \biburllcskip=\muskip21
 \c@smartand=\count469
 )
-Package biblatex Info: Trying to load bibliography style 'alphabetic'...
-Package biblatex Info: ... file 'alphabetic.bbx' found.
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
 
-(c:/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/alphabetic.bbx
-File: alphabetic.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex-ieee/ieee.bbx
+File: ieee.bbx 2021/12/06 v1.3f biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+File: numeric-comp.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
@@ -1055,22 +1055,36 @@ Package biblatex Info: ... file 'standard.bbx' found.
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count470
 \c@bbx:relatedtotal=\count471
-))
-Package biblatex Info: Trying to load citation style 'alphabetic'...
-Package biblatex Info: ... file 'alphabetic.cbx' found.
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
 
-(c:/texlive/2024/texmf-dist/tex/latex/biblatex/cbx/alphabetic.cbx
-File: alphabetic.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex-ieee/ieee.cbx
+File: ieee.cbx 2021/12/06 v1.3f biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+(c:/texlive/2024/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count472
+\c@cbx@tempcntb=\count473
+\c@cbx@tempcntc=\count474
+\c@cbx@tempcntd=\count475
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
 Package biblatex Info: Redefining '\footcitetext'.
 Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
 Package biblatex Info: Redefining '\textcite'.
 Package biblatex Info: Redefining '\textcites'.
 Package biblatex Info: Redefining '\cites'.
 Package biblatex Info: Redefining '\parencites'.
 Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\cites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
@@ -1101,7 +1115,7 @@ Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
 \TX@old@col=\dimen273
 \TX@target=\dimen274
 \TX@delta=\dimen275
-\TX@cols=\count472
+\TX@cols=\count476
 \TX@ftn=\toks39
 )
 (c:/texlive/2024/texmf-dist/tex/latex/tools/longtable.sty
@@ -1110,20 +1124,20 @@ Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
 \LTright=\skip102
 \LTpre=\skip103
 \LTpost=\skip104
-\LTchunksize=\count473
+\LTchunksize=\count477
 \LTcapwidth=\dimen276
 \LT@head=\box111
 \LT@firsthead=\box112
 \LT@foot=\box113
 \LT@lastfoot=\box114
 \LT@gbox=\box115
-\LT@cols=\count474
-\LT@rows=\count475
-\c@LT@tables=\count476
-\c@LT@chunks=\count477
+\LT@cols=\count478
+\LT@rows=\count479
+\c@LT@tables=\count480
+\c@LT@chunks=\count481
 \LT@p@ftn=\toks40
 )
-Class scrbook Info: longtable captions redefined on input line 126.
+Class scrbook Info: longtable captions redefined on input line 140.
 
 (c:/texlive/2024/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
@@ -1143,7 +1157,7 @@ Class scrbook Warning: Usage of package `tocbibind' together
 (scrbook)              the list of figures, list of tables, bibliography,
 (scrbook)              index and the running head.
 (scrbook)              Nevertheless, using requested
-(scrbook)              package `tocbibind' on input line 128.
+(scrbook)              package `tocbibind' on input line 142.
 
 (c:/texlive/2024/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
@@ -1168,7 +1182,7 @@ Class scrbook Warning: Usage of package `fancyhdr' together
 (scrbook)              `\addtokomafont' for the page style elements need
 (scrbook)              explicite user intervention to work.
 (scrbook)              Nevertheless, using requested
-(scrbook)              package `fancyhdr' on input line 146.
+(scrbook)              package `fancyhdr' on input line 160.
 
 (c:/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
@@ -1185,29 +1199,29 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 )
 (c:/texlive/2024/texmf-dist/tex/latex/media9/media9.sty
 Package: media9 2022/08/04 v1.25 acrobat-9/X compatible media
-\g_mix_pkgresizeflag_int=\count478
+\g_mix_pkgresizeflag_int=\count482
 
 (c:/texlive/2024/texmf-dist/tex/latex/media9/pdfbase.sty
 Package: pdfbase 2022/08/04 v0.55 driver independent access to low-level PDF fe
 atures
-\g_pbs_page_int=\count479
-\g_pbs_oc_int=\count480
+\g_pbs_page_int=\count483
+\g_pbs_oc_int=\count484
 )
 (c:/texlive/2024/texmf-dist/tex/latex/ocgx2/ocgbase.sty
 Package: ocgbase 2022/08/04 v0.22 support package for ocgx2.sty
-\g_ocgbase_nd_int=\count481
+\g_ocgbase_nd_int=\count485
 )
 \l_mix_poster_box=\box117
 \g_mix_wd_dim=\dimen281
 \g_mix_ht_dim=\dimen282
 \g_mix_dp_dim=\dimen283
-\g_mix_rmcnt_int=\count482
-\l_mix_viewcnt_int=\count483
-\g@mix@page@int=\count484
-\g_mix_resizeflag_int=\count485
-\l_mix_lineno_int=\count486
+\g_mix_rmcnt_int=\count486
+\l_mix_viewcnt_int=\count487
+\g@mix@page@int=\count488
+\g_mix_resizeflag_int=\count489
+\l_mix_lineno_int=\count490
 \l_mix_pbtn_box=\box118
-\g_mix_mbtncnt_int=\count487
+\g_mix_mbtncnt_int=\count491
 \mix@btn@dim=\dimen284
 )
 (c:/texlive/2024/texmf-dist/tex/latex/animate/animate.sty
@@ -1226,41 +1240,41 @@ Package zref Info: New property list: main on input line 767.
 Package zref Info: New property: default on input line 768.
 Package zref Info: New property: page on input line 769.
 )
-\c@abspage=\count488
+\c@abspage=\count492
 Package zref Info: New property: abspage on input line 67.
 )
 \@anim@box=\box119
 \@anim@measbox=\box120
 \@anim@tmpdima=\dimen285
 \@anim@tmpdimb=\dimen286
-\@anim@num=\count489
-\@anim@curframe=\count490
-\@anim@curframe@zb=\count491
-\@anim@resizeflags=\count492
-\@anim@skipfram=\count493
-\@anim@mulframecnt=\count494
+\@anim@num=\count493
+\@anim@curframe=\count494
+\@anim@curframe@zb=\count495
+\@anim@resizeflags=\count496
+\@anim@skipfram=\count497
+\@anim@mulframecnt=\count498
 \@anim@@tmlnfile=\read5
-\@anim@tmpcnt=\count495
-\c@@anim@ltxcnt=\count496
-\@anim@curlayer=\count497
-\@anim@lineno=\count498
-\@anim@curfield=\count499
-\@anim@@resizeflags=\count500
+\@anim@tmpcnt=\count499
+\c@@anim@ltxcnt=\count500
+\@anim@curlayer=\count501
+\@anim@lineno=\count502
+\@anim@curfield=\count503
+\@anim@@resizeflags=\count504
 )
-\c@AnimateAngle=\count501
-\c@AnimateStepFactor=\count502
-\c@AnimateSteps=\count503
+\c@AnimateAngle=\count505
+\c@AnimateStepFactor=\count506
+\c@AnimateSteps=\count507
 
 (c:/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip115
-\multirow@cntb=\count504
+\multirow@cntb=\count508
 \multirow@dima=\skip116
 \bigstrutjot=\dimen287
 )
 (c:/texlive/2024/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
-\c@r@tfl@t=\count505
+\c@r@tfl@t=\count509
 \rotFPtop=\skip117
 \rotFPbot=\skip118
 \rot@float@box=\box121
@@ -1272,28 +1286,28 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@outerparindent=\dimen288
 \enit@toks=\toks42
 \enit@inbox=\box122
-\enit@count@id=\count506
-\enitdp@description=\count507
+\enit@count@id=\count510
+\enitdp@description=\count511
 )
 (c:/texlive/2024/texmf-dist/tex/latex/spverbatim/spverbatim.sty
 Package: spverbatim 2009/08/10 v1.0 Verbatim with breakable spaces
 )
 (c:/texlive/2024/texmf-dist/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2024-02-15 v3.3.12 A comprehensive (SI) units package
-\l__siunitx_number_uncert_offset_int=\count508
-\l__siunitx_number_exponent_fixed_int=\count509
-\l__siunitx_number_min_decimal_int=\count510
-\l__siunitx_number_min_integer_int=\count511
-\l__siunitx_number_round_precision_int=\count512
-\l__siunitx_number_lower_threshold_int=\count513
-\l__siunitx_number_upper_threshold_int=\count514
-\l__siunitx_number_group_first_int=\count515
-\l__siunitx_number_group_size_int=\count516
-\l__siunitx_number_group_minimum_int=\count517
+\l__siunitx_number_uncert_offset_int=\count512
+\l__siunitx_number_exponent_fixed_int=\count513
+\l__siunitx_number_min_decimal_int=\count514
+\l__siunitx_number_min_integer_int=\count515
+\l__siunitx_number_round_precision_int=\count516
+\l__siunitx_number_lower_threshold_int=\count517
+\l__siunitx_number_upper_threshold_int=\count518
+\l__siunitx_number_group_first_int=\count519
+\l__siunitx_number_group_size_int=\count520
+\l__siunitx_number_group_minimum_int=\count521
 \l__siunitx_angle_tmp_dim=\dimen289
 \l__siunitx_angle_marker_box=\box123
 \l__siunitx_angle_unit_box=\box124
-\l__siunitx_compound_count_int=\count518
+\l__siunitx_compound_count_int=\count522
 \l__siunitx_table_tmp_box=\box125
 \l__siunitx_table_tmp_dim=\dimen290
 \l__siunitx_table_column_width_dim=\dimen291
@@ -1304,9 +1318,9 @@ Package: siunitx 2024-02-15 v3.3.12 A comprehensive (SI) units package
 \l__siunitx_table_after_box=\box130
 \l__siunitx_table_before_dim=\dimen292
 \l__siunitx_table_carry_dim=\dimen293
-\l__siunitx_unit_tmp_int=\count519
-\l__siunitx_unit_position_int=\count520
-\l__siunitx_unit_total_int=\count521
+\l__siunitx_unit_tmp_int=\count523
+\l__siunitx_unit_position_int=\count524
+\l__siunitx_unit_total_int=\count525
 
 
 Package siunitx Warning: Option "binary-units" has been removed in this
@@ -1358,14 +1372,14 @@ de.tex
 \pgf@yd=\dimen305
 \w@pgf@writea=\write5
 \r@pgf@reada=\read6
-\c@pgf@counta=\count522
-\c@pgf@countb=\count523
-\c@pgf@countc=\count524
-\c@pgf@countd=\count525
+\c@pgf@counta=\count526
+\c@pgf@countb=\count527
+\c@pgf@countc=\count528
+\c@pgf@countd=\count529
 \t@pgf@toka=\toks47
 \t@pgf@tokb=\toks48
 \t@pgf@tokc=\toks49
-\pgf@sys@id@count=\count526
+\pgf@sys@id@count=\count530
  (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -1379,8 +1393,8 @@ File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )))
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count527
-\pgfsyssoftpath@bigbuffer@items=\count528
+\pgfsyssoftpath@smallbuffer@items=\count531
+\pgfsyssoftpath@bigbuffer@items=\count532
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -1391,7 +1405,7 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen306
-\pgfmath@count=\count529
+\pgfmath@count=\count533
 \pgfmath@box=\box132
 \pgfmath@toks=\toks50
 \pgfmath@stack@operand=\toks51
@@ -1416,7 +1430,7 @@ x)
 etics.code.tex)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count530
+\c@pgfmathroundto@lastzeros=\count534
 ))
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
@@ -1453,7 +1467,7 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box133
 \pgf@hbox=\box134
 \pgf@layerbox@main=\box135
-\pgf@picture@serial@count=\count531
+\pgf@picture@serial@count=\count535
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
 .tex
@@ -1484,8 +1498,8 @@ File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen330
-\pgf@sys@shading@range@num=\count532
-\pgf@shadingcount=\count533
+\pgf@sys@shading@range@num=\count536
+\pgf@shadingcount=\count537
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -1539,7 +1553,7 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
 de.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count534
+\pgf@plot@mark@count=\count538
 \pgfplotmarksize=\dimen335
 )
 \tikz@lastx=\dimen336
@@ -1554,18 +1568,18 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@figbox@bg=\box139
 \tikz@tempbox=\box140
 \tikz@tempbox@bg=\box141
-\tikztreelevel=\count535
-\tikznumberofchildren=\count536
-\tikznumberofcurrentchild=\count537
-\tikz@fig@count=\count538
+\tikztreelevel=\count539
+\tikznumberofchildren=\count540
+\tikznumberofcurrentchild=\count541
+\tikz@fig@count=\count542
 
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count539
-\pgfmatrixcurrentcolumn=\count540
-\pgf@matrix@numberofcolumns=\count541
+\pgfmatrixcurrentrow=\count543
+\pgfmatrixcurrentcolumn=\count544
+\pgf@matrix@numberofcolumns=\count545
 )
-\tikz@expandcount=\count542
+\tikz@expandcount=\count546
 
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 brarytopaths.code.tex
@@ -1575,12 +1589,12 @@ File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 brarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-\c@@todonotes@numberoftodonotes=\count543
+\c@@todonotes@numberoftodonotes=\count547
 )
 (c:/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen344
-\c@nlinenum=\count544
+\c@nlinenum=\count548
 \TeXr@lab=\toks55
 )
 (c:/texlive/2024/texmf-dist/tex/latex/bera/beramono.sty
@@ -1592,8 +1606,8 @@ rtcuts
 
 (c:/texlive/2024/texmf-dist/tex/generic/xstring/xstring.sty
 (c:/texlive/2024/texmf-dist/tex/generic/xstring/xstring.tex
-\xs_counta=\count545
-\xs_countb=\count546
+\xs_counta=\count549
+\xs_countb=\count550
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 )
@@ -1654,20 +1668,20 @@ File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 
 (c:/texlive/2024/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count547
+\c@checkoddpage=\count551
 )
 (c:/texlive/2024/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box143
-\sift@deathcycles=\count548
+\sift@deathcycles=\count552
 \@vwid@loff=\dimen357
 \@vwid@roff=\dimen358
 ))
 (c:/texlive/2024/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\l__twmk_indris_int=\count549
-\c@tw@hyphen@char@num=\count550
+\l__twmk_indris_int=\count553
+\c@tw@hyphen@char@num=\count554
 )
 (c:/texlive/2024/texmf-dist/tex/latex/nomencl/nomencl.sty
 Package: nomencl 2021/11/10 v5.6 Nomenclature package
@@ -1681,8 +1695,8 @@ Package tocbasic Info: setting babel extension for `nls' on input line 188.
 \openout6 = `AlphaPredictionSystem.nlo'.
 
 Package nomencl Info: Writing nomenclature file AlphaPredictionSystem.nlo on in
-put line 275.
-\enitdp@todolist=\count551
+put line 289.
+\enitdp@todolist=\count555
 
 (c:/texlive/2024/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
@@ -1690,24 +1704,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 (c:/texlive/2024/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count552
-\c@Blindtext=\count553
-\c@blind@countparstart=\count554
-\blind@countxx=\count555
-\blindtext@numBlindtext=\count556
-\blind@countyy=\count557
-\c@blindlist=\count558
-\c@blindlistlevel=\count559
-\c@blindlist@level=\count560
-\blind@listitem=\count561
-\c@blind@listcount=\count562
-\c@blind@levelcount=\count563
-\blind@mathformula=\count564
-\blind@Mathformula=\count565
-\c@blind@randomcount=\count566
-\c@blind@randommax=\count567
-\c@blind@pangramcount=\count568
-\c@blind@pangrammax=\count569
+\c@blindtext=\count556
+\c@Blindtext=\count557
+\c@blind@countparstart=\count558
+\blind@countxx=\count559
+\blindtext@numBlindtext=\count560
+\blind@countyy=\count561
+\c@blindlist=\count562
+\c@blindlistlevel=\count563
+\c@blindlist@level=\count564
+\blind@listitem=\count565
+\c@blind@listcount=\count566
+\c@blind@levelcount=\count567
+\blind@mathformula=\count568
+\blind@Mathformula=\count569
+\c@blind@randomcount=\count570
+\c@blind@randommax=\count571
+\c@blind@pangramcount=\count572
+\c@blind@pangrammax=\count573
 ))
 
 LaTeX Warning: \include should only be used after \begin{document} on input lin
@@ -1715,7 +1729,7 @@ e 13.
 
 (./General/commands.tex
 LaTeX Info: Redefining \Atan2 on input line 39.
-\c@fehlernummer=\count570
+\c@fehlernummer=\count574
 
 (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/03/11 1.10a listings language file
@@ -1728,11 +1742,11 @@ Package: newfloat 2023/10/01 v1.2 Defining new floating environments (AR)
 Package newfloat Info: `rotating' package detected.
 )
 Package newfloat Info: New float `code' with options `' on input line 147.
-\c@code=\count571
+\c@code=\count575
 Package newfloat Info: float type `code'=4 on input line 147.
 Package tocbasic Info: setting babel extension for `locode' on input line 147.
 Package caption Info: New subtype `subcode' on input line 147.
-\c@subcode=\count572
+\c@subcode=\count576
 )
 
 LaTeX Warning: \include should only be used after \begin{document} on input lin
@@ -1749,8 +1763,8 @@ Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 \t@pgfplots@tokb=\toks57
 \t@pgfplots@tokc=\toks58
 \pgfplots@tmpa=\dimen361
-\c@pgfplots@coordindex=\count573
-\c@pgfplots@scanlineindex=\count574
+\c@pgfplots@coordindex=\count577
+\c@pgfplots@scanlineindex=\count578
 
 (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.te
 x))
@@ -1773,13 +1787,13 @@ cture.code.tex)
 ctureext.code.tex)
 (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.co
 de.tex
-\c@pgfplotsarray@tmp=\count575
+\c@pgfplotsarray@tmp=\count579
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.c
 ode.tex)
 (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.c
 ode.tex
-\c@pgfplotstable@counta=\count576
+\c@pgfplotstable@counta=\count580
 \t@pgfplotstable@a=\toks62
 )
 (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.co
@@ -1791,7 +1805,7 @@ tex))
 x)
 (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfsh
 ading.code.tex
-\c@pgfplotslibrarysurf@no=\count577
+\c@pgfplotslibrarysurf@no=\count581
 
 (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfsha
 ding.pgfsys-pdftex.def)))
@@ -1819,7 +1833,7 @@ ex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen364
 \pgfdecoratedinputsegmentremainingdistance=\dimen365
 \pgf@decorate@distancetomove=\dimen366
-\pgf@decorate@repeatstate=\count578
+\pgf@decorate@repeatstate=\count582
 \pgfdecorationsegmentamplitude=\dimen367
 \pgfdecorationsegmentlength=\dimen368
 )
@@ -1835,7 +1849,7 @@ brarydecorations.pathreplacing.code.tex
 orations.pathreplacing.code.tex))
 (c:/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.conto
 urlua.code.tex)
-\pgfplots@numplots=\count579
+\pgfplots@numplots=\count583
 \pgfplots@xmin@reg=\dimen369
 \pgfplots@xmax@reg=\dimen370
 \pgfplots@ymin@reg=\dimen371
@@ -1938,7 +1952,7 @@ File: tikzlibrarybabel.code.tex 2023-01-15 v3.1.10 (3.1.10)
 brarymath.code.tex
 (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
 braryfpu.code.tex)
-\tikz@math@for@depth=\count580
+\tikz@math@for@depth=\count584
 \tikz@math@dimen=\dimen376
 \tikz@math@toks=\toks63
 )
@@ -1961,88 +1975,88 @@ File: tikzlibrarythrough.code.tex 2023-01-15 v3.1.10 (3.1.10)
 brary3d.code.tex
 File: tikzlibrary3d.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (./General/acronyms.tex
-\c@g@acro@adc@int=\count581
-\c@g@acro@ap@int=\count582
-\c@g@acro@api@int=\count583
-\c@g@acro@ARM@int=\count584
-\c@g@acro@bs@int=\count585
-\c@g@acro@cci@int=\count586
-\c@g@acro@cli@int=\count587
-\c@g@acro@csi@int=\count588
-\c@g@acro@cg@int=\count589
-\c@g@acro@cifar@int=\count590
-\c@g@acro@cnc@int=\count591
-\c@g@acro@cnn@int=\count592
-\c@g@acro@coco@int=\count593
-\c@g@acro@cpu@int=\count594
-\c@g@acro@csp@int=\count595
-\c@g@acro@cuda@int=\count596
-\c@g@acro@cudnn@int=\count597
-\c@g@acro@dac@int=\count598
-\c@g@acro@dll@int=\count599
-\c@g@acro@dnn@int=\count600
-\c@g@acro@fp32@int=\count601
-\c@g@acro@flops@int=\count602
-\c@g@acro@fp16@int=\count603
-\c@g@acro@fpga@int=\count604
-\c@g@acro@fps@int=\count605
-\c@g@acro@gpio@int=\count606
-\c@g@acro@gpgpu@int=\count607
-\c@g@acro@gpu@int=\count608
-\c@g@acro@hdmi@int=\count609
-\c@g@acro@i2c@int=\count610
-\c@g@acro@i2s@int=\count611
-\c@g@acro@ide@int=\count612
-\c@g@acro@imu@int=\count613
-\c@g@acro@int8@int=\count614
-\c@g@acro@iot@int=\count615
-\c@g@acro@kdd@int=\count616
-\c@g@acro@ki@int=\count617
-\c@g@acro@knn@int=\count618
-\c@g@acro@led@int=\count619
-\c@g@acro@mimd@int=\count620
-\c@g@acro@nn@int=\count621
-\c@g@acro@opencl@int=\count622
-\c@g@acro@pan@int=\count623
-\c@g@acro@ppa@int=\count624
-\c@g@acro@pip@int=\count625
-\c@g@acro@pypi@int=\count626
-\c@g@acro@ram@int=\count627
-\c@g@acro@relu@int=\count628
-\c@g@acro@resnets@int=\count629
-\c@g@acro@rle@int=\count630
-\c@g@acro@rgb@int=\count631
-\c@g@acro@roi@int=\count632
-\c@g@acro@rpc@int=\count633
-\c@g@acro@RTOS@int=\count634
-\c@g@acro@sd@int=\count635
-\c@g@acro@sda@int=\count636
-\c@g@acro@sd-1@int=\count637
-\c@g@acro@sd-3@int=\count638
-\c@g@acro@scl@int=\count639
-\c@g@acro@ssh@int=\count640
-\c@g@acro@spi@int=\count641
-\c@g@acro@sbc@int=\count642
-\c@g@acro@simd@int=\count643
-\c@g@acro@sm@int=\count644
-\c@g@acro@sp@int=\count645
-\c@g@acro@spp@int=\count646
-\c@g@acro@sps@int=\count647
-\c@g@acro@tpu@int=\count648
-\c@g@acro@uart@int=\count649
-\c@g@acro@ui@int=\count650
-\c@g@acro@uma@int=\count651
-\c@g@acro@venv@int=\count652
-\c@g@acro@vpu@int=\count653
-\c@g@acro@vm@int=\count654
-\c@g@acro@vnc@int=\count655
-\c@g@acro@yolo@int=\count656
+\c@g@acro@adc@int=\count585
+\c@g@acro@ap@int=\count586
+\c@g@acro@api@int=\count587
+\c@g@acro@ARM@int=\count588
+\c@g@acro@bs@int=\count589
+\c@g@acro@cci@int=\count590
+\c@g@acro@cli@int=\count591
+\c@g@acro@csi@int=\count592
+\c@g@acro@cg@int=\count593
+\c@g@acro@cifar@int=\count594
+\c@g@acro@cnc@int=\count595
+\c@g@acro@cnn@int=\count596
+\c@g@acro@coco@int=\count597
+\c@g@acro@cpu@int=\count598
+\c@g@acro@csp@int=\count599
+\c@g@acro@cuda@int=\count600
+\c@g@acro@cudnn@int=\count601
+\c@g@acro@dac@int=\count602
+\c@g@acro@dll@int=\count603
+\c@g@acro@dnn@int=\count604
+\c@g@acro@fp32@int=\count605
+\c@g@acro@flops@int=\count606
+\c@g@acro@fp16@int=\count607
+\c@g@acro@fpga@int=\count608
+\c@g@acro@fps@int=\count609
+\c@g@acro@gpio@int=\count610
+\c@g@acro@gpgpu@int=\count611
+\c@g@acro@gpu@int=\count612
+\c@g@acro@hdmi@int=\count613
+\c@g@acro@i2c@int=\count614
+\c@g@acro@i2s@int=\count615
+\c@g@acro@ide@int=\count616
+\c@g@acro@imu@int=\count617
+\c@g@acro@int8@int=\count618
+\c@g@acro@iot@int=\count619
+\c@g@acro@kdd@int=\count620
+\c@g@acro@ki@int=\count621
+\c@g@acro@knn@int=\count622
+\c@g@acro@led@int=\count623
+\c@g@acro@mimd@int=\count624
+\c@g@acro@nn@int=\count625
+\c@g@acro@opencl@int=\count626
+\c@g@acro@pan@int=\count627
+\c@g@acro@ppa@int=\count628
+\c@g@acro@pip@int=\count629
+\c@g@acro@pypi@int=\count630
+\c@g@acro@ram@int=\count631
+\c@g@acro@relu@int=\count632
+\c@g@acro@resnets@int=\count633
+\c@g@acro@rle@int=\count634
+\c@g@acro@rgb@int=\count635
+\c@g@acro@roi@int=\count636
+\c@g@acro@rpc@int=\count637
+\c@g@acro@RTOS@int=\count638
+\c@g@acro@sd@int=\count639
+\c@g@acro@sda@int=\count640
+\c@g@acro@sd-1@int=\count641
+\c@g@acro@sd-3@int=\count642
+\c@g@acro@scl@int=\count643
+\c@g@acro@ssh@int=\count644
+\c@g@acro@spi@int=\count645
+\c@g@acro@sbc@int=\count646
+\c@g@acro@simd@int=\count647
+\c@g@acro@sm@int=\count648
+\c@g@acro@sp@int=\count649
+\c@g@acro@spp@int=\count650
+\c@g@acro@sps@int=\count651
+\c@g@acro@tpu@int=\count652
+\c@g@acro@uart@int=\count653
+\c@g@acro@ui@int=\count654
+\c@g@acro@uma@int=\count655
+\c@g@acro@venv@int=\count656
+\c@g@acro@vpu@int=\count657
+\c@g@acro@vm@int=\count658
+\c@g@acro@vnc@int=\count659
+\c@g@acro@yolo@int=\count660
 ) (./General/Hyphenations.tex
 (c:/texlive/2024/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2024/03/29 v3.1b Micro-typographical refinements (RS)
 \MT@toks=\toks64
 \MT@tempbox=\box167
-\MT@count=\count657
+\MT@count=\count661
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1061.
 LaTeX Info: Redefining \leftprotrusion on input line 1062.
 \MT@prot@toks=\toks65
@@ -2050,7 +2064,7 @@ LaTeX Info: Redefining \rightprotrusion on input line 1081.
 LaTeX Info: Redefining \textls on input line 1392.
 \MT@outer@kern=\dimen377
 LaTeX Info: Redefining \textmicrotypecontext on input line 2013.
-\MT@listname@count=\count658
+\MT@listname@count=\count662
 
 (c:/texlive/2024/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2024/03/29 v3.1b Definitions specific to pdftex (RS)
@@ -2079,20 +2093,20 @@ Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
 (c:/texlive/2024/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2024/01/21 v0.5y Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count659
+\pdfpages@includegraphics@status=\count663
 \AM@pagebox=\box168
 \AM@global@opts=\toks66
-\AM@pagecnt=\count660
+\AM@pagecnt=\count664
 \AM@toc@title=\toks67
 \AM@lof@heading=\toks68
-\c@AM@survey=\count661
+\c@AM@survey=\count665
 \AM@templatesizebox=\box169
 )
 (c:/texlive/2024/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 \@float@every@algorithm=\toks69
-\c@algorithm=\count662
+\c@algorithm=\count666
 )
 (c:/texlive/2024/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -2101,15 +2115,15 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count663
-\c@ALG@rem=\count664
-\c@ALG@nested=\count665
+\c@ALG@line=\count667
+\c@ALG@rem=\count668
+\c@ALG@nested=\count669
 \ALG@tlm=\skip122
 \ALG@thistlm=\skip123
-\c@ALG@Lnr=\count666
-\c@ALG@blocknr=\count667
-\c@ALG@storecount=\count668
-\c@ALG@tmpcounter=\count669
+\c@ALG@Lnr=\count670
+\c@ALG@blocknr=\count671
+\c@ALG@storecount=\count672
+\c@ALG@tmpcounter=\count673
 \ALG@tmplength=\skip124
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -2146,20 +2160,20 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen394
 \cmidrulekern=\dimen395
 \defaultaddspace=\dimen396
-\@cmidla=\count670
-\@cmidlb=\count671
+\@cmidla=\count674
+\@cmidlb=\count675
 \@aboverulesep=\dimen397
 \@belowrulesep=\dimen398
-\@thisruleclass=\count672
-\@lastruleclass=\count673
+\@thisruleclass=\count676
+\@lastruleclass=\count677
 \@thisrulewidth=\dimen399
 )
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count674
-\@quotereset=\count675
+\@quotelevel=\count678
+\@quotereset=\count679
 (./AlphaPredictionSystem.aux)
 \openout1 = `AlphaPredictionSystem.aux'.
 
@@ -2247,16 +2261,16 @@ Package tocbasic Warning: `tocbibind' redefinition of `\listoftables'
 
 (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count676
+\scratchcounter=\count680
 \scratchdimen=\dimen400
 \scratchbox=\box170
-\nofMPsegments=\count677
-\nofMParguments=\count678
+\nofMPsegments=\count681
+\nofMParguments=\count682
 \everyMPshowfont=\toks70
-\MPscratchCnt=\count679
+\MPscratchCnt=\count683
 \MPscratchDim=\dimen401
-\MPnumerator=\count680
-\makeMPintoPDFobject=\count681
+\MPnumerator=\count684
+\makeMPintoPDFobject=\count685
 \everyMPtoPDFconversion=\toks71
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -2288,9 +2302,9 @@ Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 (c:/texlive/2024/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO
 )
-\BKM@id=\count682
+\BKM@id=\count686
 ))
-\c@lstlisting=\count683
+\c@lstlisting=\count687
 Package tocbasic Info: setting babel extension for `lol' on input line 67.
 \scr@dte@lstlisting@maxnumwidth=\skip125
 LaTeX Font Info:    Trying to load font information for T1+fvm on input line 67
@@ -2470,12 +2484,7 @@ Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
 Package biblatex Info: Input encoding 'ascii' forced by
 (biblatex)             'safeinputenc' option.
-Package biblatex Info: Input encoding 'utf8' detected.
-Package biblatex Info: Data encoding 'utf8' specified.
-(biblatex)             No need to reencode data.
-Package biblatex Info: Input encoding 'ascii' forced by
-(biblatex)             'safeinputenc' option.
-\openout4 = `AlphaPredictionSystem-blx.bib'.
+\openout4 = `AlphaPredictionSystem.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'AlphaPredictionSystem.bbl' found.
@@ -2597,13 +2606,13 @@ Overfull \hbox (23.94188pt too wide) in paragraph at lines 22--23
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 42.
+(Font)              <10.95> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 42.
+(Font)              <8> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 42.
+(Font)              <6> on input line 43.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 47.
+(Font)              scaled to size 9.85492pt on input line 48.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -2617,9 +2626,15 @@ texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2024/texmf-dist/fonts/enc/d
 vips/lm/lm-mathit.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}
 {c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2024/t
 exmf-dist/fonts/enc/dvips/base/8r.enc} <./General/Logo.png>])
-(./Contents/en/Consent.tex [1
+(./Contents/en/Consent.tex
+<Images/signature.jpg, id=49, 1795.70876pt x 957.5775pt>
+File: Images/signature.jpg Graphic file (type jpg)
+<use Images/signature.jpg>
+Package pdftex.def Info: Images/signature.jpg  used on input line 26.
+(pdftex.def)             Requested size: 113.81102pt x 60.68129pt.
+ [1
 
-]
+ <./Images/Signature.jpg>]
 
 Package marginnote Warning: Consecutive odd pages found.
 (marginnote)                Note, it is not recommended to use consecutive
@@ -2631,7 +2646,11 @@ Package marginnote Warning: Consecutive odd pages found.
 (marginnote)                changing the page numbering on page i.
 
 Package marginnote Info: Using workaround for absolute page number on input lin
-e 30.
+e 32.
+File: Images/signature.jpg Graphic file (type jpg)
+<use Images/signature.jpg>
+Package pdftex.def Info: Images/signature.jpg  used on input line 53.
+(pdftex.def)             Requested size: 113.81102pt x 60.68129pt.
 ) (./Contents/en/Abstract.tex [2
 
 ] [3
@@ -2672,7 +2691,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
 [8]
-Overfull \hbox (1.41953pt too wide) detected at line 79
+Overfull \hbox (1.41953pt too wide) detected at line 78
 \T1/lmss/bx/n/14.4 VII. 
  []
 
@@ -2777,8 +2796,8 @@ Package biblatex Info: Setting label 'refsegment:06' on input line 7.
 [3
 
 ]
-Package biblatex Info: Reference segment=7 on input line 54.
-Package biblatex Info: Setting label 'refsegment:07' on input line 54.
+Package biblatex Info: Reference segment=7 on input line 50.
+Package biblatex Info: Setting label 'refsegment:07' on input line 50.
 
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
@@ -2789,8 +2808,8 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
 [4]
-Package biblatex Info: Reference segment=8 on input line 72.
-Package biblatex Info: Setting label 'refsegment:08' on input line 72.
+Package biblatex Info: Reference segment=8 on input line 68.
+Package biblatex Info: Setting label 'refsegment:08' on input line 68.
 
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
@@ -2801,13 +2820,13 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
 [5]
-Package biblatex Info: Reference segment=9 on input line 89.
-Package biblatex Info: Setting label 'refsegment:09' on input line 89.
+Package biblatex Info: Reference segment=9 on input line 85.
+Package biblatex Info: Setting label 'refsegment:09' on input line 85.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
-5.
+1.
  (c:/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
+))
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2816,21 +2835,12 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[6{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}])
-
-Package fancyhdr Warning: \headheight is too small (1.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
-
-[7]
+[6{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 part II.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 84.
-[8
+[7
 
 ] (./Contents/en/History.tex
 chapter 2.
@@ -2838,7 +2848,7 @@ Package biblatex Info: Reference segment=10 on input line 7.
 Package biblatex Info: Setting label 'refsegment:010' on input line 7.
 Package biblatex Info: Reference segment=11 on input line 22.
 Package biblatex Info: Setting label 'refsegment:011' on input line 22.
-[9
+[8
 
 ]
 Package biblatex Info: Reference segment=12 on input line 53.
@@ -2852,7 +2862,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[10]
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 82--82
 []|\T1/lmr/m/n/12 (+20) Neyman--Pearson
  []
@@ -2893,7 +2903,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[11]
+[10]
 Package biblatex Info: Reference segment=14 on input line 101.
 Package biblatex Info: Setting label 'refsegment:014' on input line 101.
 )
@@ -2905,18 +2915,18 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[12]
+[11]
 part III.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 86.
-[13
+[12
 
 ] (./Contents/en/ExisitingApproaches.tex
 chapter 3.
 Package biblatex Info: Reference segment=15 on input line 7.
 Package biblatex Info: Setting label 'refsegment:015' on input line 7.
-[14
+[13
 
 ]
 Package biblatex Info: Reference segment=16 on input line 34.
@@ -2932,11 +2942,11 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[15]
-Package biblatex Info: Reference segment=18 on input line 88.
-Package biblatex Info: Setting label 'refsegment:018' on input line 88.
-Package biblatex Info: Reference segment=19 on input line 99.
-Package biblatex Info: Setting label 'refsegment:019' on input line 99.
+[14]
+Package biblatex Info: Reference segment=18 on input line 89.
+Package biblatex Info: Setting label 'refsegment:018' on input line 89.
+Package biblatex Info: Reference segment=19 on input line 100.
+Package biblatex Info: Setting label 'refsegment:019' on input line 100.
 
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
@@ -2946,7 +2956,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[16])
+[15])
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2955,24 +2965,37 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[17]
+[16]
 part IV.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 88.
-[18
+[17
 
 ] (./Contents/en/AlphaDevelopment.tex
 chapter 4.
 Package biblatex Info: Reference segment=20 on input line 14.
 Package biblatex Info: Setting label 'refsegment:020' on input line 14.
-[19
 
-]
 Overfull \hbox (14.62634pt too wide) in paragraph at lines 141--142
  [][] 
  []
 
+[18
+
+]
+Underfull \vbox (badness 6526) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (1.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
+
+[19]
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2990,16 +3013,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[21]
-
-Package fancyhdr Warning: \headheight is too small (1.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
-
-[22{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+[21{c:/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 Package biblatex Info: Reference segment=21 on input line 228.
 Package biblatex Info: Setting label 'refsegment:021' on input line 228.
 
@@ -3011,7 +3025,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[23]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 281--281
 []|\T1/lmr/m/n/12 (+20) Reproducibility Project:
  []
@@ -3033,16 +3047,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 281--281
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 281--281
-[]|\T1/lmr/m/n/12 (+20) Life Out^^?comes of Per^^?
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--281
-\T1/lmr/m/n/12 (+20) son^^?al^^?ity Repli^^?ca^^?tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--281
 []|\T1/lmr/m/n/12 (+20) Personality /
  []
 
@@ -3054,10 +3058,16 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
+[23]
+
+Package fancyhdr Warning: \headheight is too small (1.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
+
 [24]
-Underfull \vbox (badness 1292) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -3085,6 +3095,25 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
 [27]
+Package biblatex Info: Reference segment=22 on input line 430.
+Package biblatex Info: Setting label 'refsegment:022' on input line 430.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 430.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\alpha' on input line 430.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 430.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 430.
+
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -3094,24 +3123,8 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
 [28]
-Package biblatex Info: Reference segment=22 on input line 434.
-Package biblatex Info: Setting label 'refsegment:022' on input line 434.
+Underfull \vbox (badness 1616) has occurred while \output is active []
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 434.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 434.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 434.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 434.
 
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
@@ -3131,43 +3144,18 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
 [30]
-Overfull \hbox (17.47766pt too wide) in paragraph at lines 510--511
-[]\T1/lmr/m/n/12 (-20) where $\OML/lmm/m/it/12 y[]$ \T1/lmr/m/n/12 (-20) rep^^?
-re^^?sents the true value and $[]$ rep^^?re^^?sents the pre^^?dicted value[[]WM
-05[]]. 
- []
-
-<Images/pred_vs_actual_decision_tree.png, id=674, 458.6736pt x 445.1832pt>
+<Images/pred_vs_actual_decision_tree.png, id=687, 458.6736pt x 445.1832pt>
 File: Images/pred_vs_actual_decision_tree.png Graphic file (type png)
 <use Images/pred_vs_actual_decision_tree.png>
 Package pdftex.def Info: Images/pred_vs_actual_decision_tree.png  used on input
- line 514.
+ line 513.
 (pdftex.def)             Requested size: 258.91895pt x 251.3116pt.
-
-Underfull \vbox (badness 1286) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (1.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
-
-[31]
-<Images/pred_vs_actual_gradient_boosting.png, id=683, 458.6736pt x 445.1832pt>
+<Images/pred_vs_actual_gradient_boosting.png, id=688, 458.6736pt x 445.1832pt>
 File: Images/pred_vs_actual_gradient_boosting.png Graphic file (type png)
 <use Images/pred_vs_actual_gradient_boosting.png>
 Package pdftex.def Info: Images/pred_vs_actual_gradient_boosting.png  used on i
-nput line 522.
+nput line 521.
 (pdftex.def)             Requested size: 258.91895pt x 251.3116pt.
-<Images/pred_vs_actual_random_forest.png, id=684, 458.6736pt x 445.1832pt>
-File: Images/pred_vs_actual_random_forest.png Graphic file (type png)
-<use Images/pred_vs_actual_random_forest.png>
-Package pdftex.def Info: Images/pred_vs_actual_random_forest.png  used on input
- line 529.
-(pdftex.def)             Requested size: 295.90979pt x 287.21228pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -3180,20 +3168,13 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[32 <./Images/pred_vs_actual_decision_tree.png> <./Images/pred_vs_actual_gradie
-nt_boosting.png>]
-<Images/random_forest_vertical.png, id=695, 440.044pt x 654.445pt>
-File: Images/random_forest_vertical.png Graphic file (type png)
-<use Images/random_forest_vertical.png>
-Package pdftex.def Info: Images/random_forest_vertical.png  used on input line 
-554.
-(pdftex.def)             Requested size: 295.90979pt x 440.09361pt.
-<Images/ml_model_selection.png, id=699, 1026.234pt x 495.451pt>
-File: Images/ml_model_selection.png Graphic file (type png)
-<use Images/ml_model_selection.png>
-Package pdftex.def Info: Images/ml_model_selection.png  used on input line 563.
-
-(pdftex.def)             Requested size: 258.91895pt x 124.99643pt.
+[31 <./Images/pred_vs_actual_decision_tree.png>]
+<Images/pred_vs_actual_random_forest.png, id=697, 458.6736pt x 445.1832pt>
+File: Images/pred_vs_actual_random_forest.png Graphic file (type png)
+<use Images/pred_vs_actual_random_forest.png>
+Package pdftex.def Info: Images/pred_vs_actual_random_forest.png  used on input
+ line 528.
+(pdftex.def)             Requested size: 295.90979pt x 287.21228pt.
 
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
@@ -3203,7 +3184,30 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[33 <./Images/pred_vs_actual_random_forest.png>]
+[32 <./Images/pred_vs_actual_gradient_boosting.png> <./Images/pred_vs_actual_ra
+ndom_forest.png>]
+<Images/ml_model_selection.png, id=706, 1026.234pt x 495.451pt>
+File: Images/ml_model_selection.png Graphic file (type png)
+<use Images/ml_model_selection.png>
+Package pdftex.def Info: Images/ml_model_selection.png  used on input line 549.
+
+(pdftex.def)             Requested size: 258.91895pt x 124.99643pt.
+<Images/random_forest_vertical.png, id=708, 440.044pt x 654.445pt>
+File: Images/random_forest_vertical.png Graphic file (type png)
+<use Images/random_forest_vertical.png>
+Package pdftex.def Info: Images/random_forest_vertical.png  used on input line 
+557.
+(pdftex.def)             Requested size: 295.90979pt x 440.09361pt.
+
+
+Package fancyhdr Warning: \headheight is too small (1.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
+
+[33 <./Images/ml_model_selection.png>]
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -3214,7 +3218,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 [34 <./Images/random_forest_vertical.png>]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 577.
+(Font)              scaled to size 8.99994pt on input line 585.
 
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
@@ -3224,25 +3228,25 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[35 <./Images/ml_model_selection.png>]
-Package biblatex Info: Reference segment=23 on input line 619.
-Package biblatex Info: Setting label 'refsegment:023' on input line 619.
+[35]
+Package biblatex Info: Reference segment=23 on input line 634.
+Package biblatex Info: Setting label 'refsegment:023' on input line 634.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 619.
+(hyperref)                removing `math shift' on input line 634.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 619.
+(hyperref)                removing `\alpha' on input line 634.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 619.
+(hyperref)                removing `subscript' on input line 634.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 619.
+(hyperref)                removing `math shift' on input line 634.
 
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
@@ -3279,7 +3283,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[39]
+[39])
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -3288,27 +3292,18 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[40])
-
-Package fancyhdr Warning: \headheight is too small (1.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
-
-[41]
+[40]
 part V.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 90.
-[42
+[41
 
 ] (./Contents/en/AlphaDeployment.tex
 chapter 5.
 Package biblatex Info: Reference segment=24 on input line 37.
 Package biblatex Info: Setting label 'refsegment:024' on input line 37.
-[43
+[42
 
 ]
 
@@ -3319,10 +3314,10 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[44]
+[43]
 Package biblatex Info: Reference segment=25 on input line 76.
 Package biblatex Info: Setting label 'refsegment:025' on input line 76.
-<Images/AlphaStreamlitBefore.png, id=845, 597.73312pt x 429.85594pt>
+<Images/AlphaStreamlitBefore.png, id=866, 597.73312pt x 429.85594pt>
 File: Images/AlphaStreamlitBefore.png Graphic file (type png)
 <use Images/AlphaStreamlitBefore.png>
 Package pdftex.def Info: Images/AlphaStreamlitBefore.png  used on input line 96
@@ -3337,7 +3332,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[45]
+[44]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -3353,8 +3348,8 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[46 <./Images/AlphaStreamlitBefore.png>]
-<Images/StreamlitAlphaAfter.png, id=881, 562.35094pt x 472.01344pt>
+[45 <./Images/AlphaStreamlitBefore.png>]
+<Images/StreamlitAlphaAfter.png, id=901, 562.35094pt x 472.01344pt>
 File: Images/StreamlitAlphaAfter.png Graphic file (type png)
 <use Images/StreamlitAlphaAfter.png>
 Package pdftex.def Info: Images/StreamlitAlphaAfter.png  used on input line 185
@@ -3369,7 +3364,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[47]
+[46]
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -3378,9 +3373,9 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[48 <./Images/StreamlitAlphaAfter.png>]
-Package biblatex Info: Reference segment=26 on input line 228.
-Package biblatex Info: Setting label 'refsegment:026' on input line 228.
+[47 <./Images/StreamlitAlphaAfter.png>]
+Package biblatex Info: Reference segment=26 on input line 224.
+Package biblatex Info: Setting label 'refsegment:026' on input line 224.
 )
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
@@ -3390,25 +3385,38 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[49]
+[48]
 part VI.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 92.
-[50
+[49
 
 ] (./Contents/en/AlphaTesting.tex
 chapter 6.
 Package biblatex Info: Reference segment=27 on input line 6.
 Package biblatex Info: Setting label 'refsegment:027' on input line 6.
-[51
+[50
 
 ]
 Package biblatex Info: Reference segment=28 on input line 62.
 Package biblatex Info: Setting label 'refsegment:028' on input line 62.
 
-Underfull \vbox (badness 2318) has occurred while \output is active []
 
+Package fancyhdr Warning: \headheight is too small (1.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
+
+[51]
+<Images/recommended_alpha_chart.png, id=945, 932.283pt x 425.4294pt>
+File: Images/recommended_alpha_chart.png Graphic file (type png)
+<use Images/recommended_alpha_chart.png>
+Package pdftex.def Info: Images/recommended_alpha_chart.png  used on input line
+ 80.
+(pdftex.def)             Requested size: 258.91895pt x 118.15218pt.
 
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
@@ -3418,22 +3426,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[52]
-<Images/Alphabar.png, id=924, 688.171pt x 363.3575pt>
-File: Images/Alphabar.png Graphic file (type png)
-<use Images/Alphabar.png>
-Package pdftex.def Info: Images/Alphabar.png  used on input line 80.
-(pdftex.def)             Requested size: 258.91895pt x 136.70781pt.
-
-
-Package fancyhdr Warning: \headheight is too small (1.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
-
-[53 <./Images/Alphabar.png>]
+[52 <./Images/recommended_alpha_chart.png>]
 Underfull \hbox (badness 1845) in paragraph at lines 112--113
 \T1/lmr/m/n/12 (+20) may change with proper
  []
@@ -3452,12 +3445,12 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[54]
+[53]
 part VII.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 94.
-[55
+[54
 
 ] (./Contents/en/AlphaConclusion.tex
 chapter 7.
@@ -3465,16 +3458,16 @@ Package biblatex Info: Reference segment=29 on input line 6.
 Package biblatex Info: Setting label 'refsegment:029' on input line 6.
 Package biblatex Info: Reference segment=30 on input line 16.
 Package biblatex Info: Setting label 'refsegment:030' on input line 16.
-<Images/MainfindingsComparision.png, id=945, 497.057pt x 350.5095pt>
-File: Images/MainfindingsComparision.png Graphic file (type png)
-<use Images/MainfindingsComparision.png>
-Package pdftex.def Info: Images/MainfindingsComparision.png  used on input line
- 27.
-(pdftex.def)             Requested size: 258.91895pt x 182.58688pt.
+<Images/study_outcomes_chart.png, id=967, 498.663pt x 423.7431pt>
+File: Images/study_outcomes_chart.png Graphic file (type png)
+<use Images/study_outcomes_chart.png>
+Package pdftex.def Info: Images/study_outcomes_chart.png  used on input line 27
+.
+(pdftex.def)             Requested size: 258.91895pt x 220.01791pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [56
+ [55
 
 ]
 Package biblatex Info: Reference segment=31 on input line 33.
@@ -3488,12 +3481,24 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[57 <./Images/MainfindingsComparision.png>]
+[56 <./Images/study_outcomes_chart.png>]
 Package biblatex Info: Reference segment=32 on input line 46.
 Package biblatex Info: Setting label 'refsegment:032' on input line 46.
 Package biblatex Info: Reference segment=33 on input line 60.
 Package biblatex Info: Setting label 'refsegment:033' on input line 60.
-)
+
+Underfull \vbox (badness 2875) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (1.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
+
+[57])
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -3503,30 +3508,15 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
 [58]
-
-Package fancyhdr Warning: \headheight is too small (1.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
-
-[59]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
-
-Overfull \hbox (52.64436pt too wide) in paragraph at lines 100--100
-[]$\T1/fvm/l/it/12 https : / / www . stat . berkeley . edu / ~breiman / randomf
-orest2001 .
- []
-
-[60
+ [59
 
 ]
-Overfull \hbox (13.71652pt too wide) in paragraph at lines 100--100
-[]\T1/lmr/m/n/12 (-20) H.[]Y. Kim. ``Sta^^?tis^^?ti^^?cal notes for clin^^?i^^?
-cal re^^?searchers: Chi-squared
+Overfull \hbox (24.29422pt too wide) in paragraph at lines 100--100
+\T1/lmr/m/n/12 (-20) [On^^?line]. Avail^^?able: []$\T1/fvm/l/it/12 https : / / 
+doi . org / 10 . 1177 / 25152459221080396$[]\T1/lmr/m/n/12 (-20) . 
  []
 
 
@@ -3537,13 +3527,21 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[61]
-Overfull \hbox (32.27283pt too wide) in paragraph at lines 100--100
-\T1/fvm/l/it/12 1002 / ecs2 . 1976$[]\T1/lmr/m/n/12 (-20) . \T1/lmr/m/sc/12 (-2
-0) url\T1/lmr/m/n/12 (-20) : []$\T1/fvm/l/it/12 https : / / esajournals . onlin
-elibrary .
+[60]
+Overfull \hbox (45.96985pt too wide) in paragraph at lines 100--100
+\T1/lmr/m/n/12 (-20) able: []$\T1/fvm/l/it/12 https : / / www . stat . berkeley
+ . edu / ~breiman / randomforest2001 .
  []
 
+
+Package fancyhdr Warning: \headheight is too small (1.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
+
+[61] (./Contents/en/Appendix.tex
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -3553,34 +3551,12 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
 [62]
-Overfull \hbox (20.23666pt too wide) in paragraph at lines 100--100
-[]\T1/lmr/m/n/12 (-20) Streamlit. \T1/lmr/m/it/12 (-20) Stream-lit Doc-u-men-ta
--tion\T1/lmr/m/n/12 (-20) . []$\T1/fvm/l/it/12 https : / / docs . streamlit .
- []
-
-
-Overfull \hbox (1.00314pt too wide) in paragraph at lines 100--100
-\T1/lmr/m/it/12 (-20) mate Re-search \T1/lmr/m/n/12 (-20) 30 (2005), pp. 79^^U8
-2. \T1/lmr/m/sc/12 (-20) doi\T1/lmr/m/n/12 (-20) : []$\T1/fvm/l/it/12 10 . 3354
- / cr030079$[]\T1/lmr/m/n/12 (-20) .
- []
-
-(./Contents/en/Appendix.tex
-
-Package fancyhdr Warning: \headheight is too small (1.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
-
-[63]
 chapter A.
 Package biblatex Info: Reference segment=34 on input line 15.
 Package biblatex Info: Setting label 'refsegment:034' on input line 15.
 Package biblatex Info: Reference segment=35 on input line 27.
 Package biblatex Info: Setting label 'refsegment:035' on input line 27.
-[64
+[63
 
 ]
 Package biblatex Info: Reference segment=36 on input line 61.
@@ -3598,7 +3574,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[65]
+[64]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 118.
 
@@ -3620,8 +3596,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package biblatex Info: Reference segment=39 on input line 124.
 Package biblatex Info: Setting label 'refsegment:039' on input line 124.
-Package biblatex Info: Reference segment=40 on input line 139.
-Package biblatex Info: Setting label 'refsegment:040' on input line 139.
+Package biblatex Info: Reference segment=40 on input line 140.
+Package biblatex Info: Setting label 'refsegment:040' on input line 140.
 
 Package fancyhdr Warning: \headheight is too small (1.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -3630,10 +3606,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[66]
-Package biblatex Info: Reference segment=41 on input line 157.
-Package biblatex Info: Setting label 'refsegment:041' on input line 157.
- (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+[65] (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/03/11 1.10a listings language file
 )
 (c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -3647,10 +3620,7 @@ Package fancyhdr Warning: \headheight is too small (1.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-13.49998pt}.
 
-[67] [68
-
-
-] (./AlphaPredictionSystem.aux)
+[66] (./AlphaPredictionSystem.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
@@ -3670,13 +3640,13 @@ Package logreq Info: Writing requests to 'AlphaPredictionSystem.run.xml'.
 ### simple group (level 1) entered at line 249 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 77412 strings out of 474104
- 1892201 string characters out of 5747503
- 2920018 words of memory out of 5000000
- 98013 multiletter control sequences out of 15000+600000
- 692688 words of font info for 338 fonts, out of 8000000 for 9000
+ 77465 strings out of 474104
+ 1893610 string characters out of 5747503
+ 2956374 words of memory out of 5000000
+ 98061 multiletter control sequences out of 15000+600000
+ 689351 words of font info for 333 fonts, out of 8000000 for 9000
  1146 hyphenation exceptions out of 8191
- 110i,13n,136p,10916b,3235s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,13n,136p,10916b,2819s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb>
 <c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2024/t
 exmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2024/texmf-dist/fonts/t
@@ -3691,10 +3661,10 @@ c/lm/lmro17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c
 :/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2024/t
 exmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/ty
 pe1/public/lm/lmsy8.pfb>
-Output written on AlphaPredictionSystem.pdf (83 pages, 1185098 bytes).
+Output written on AlphaPredictionSystem.pdf (81 pages, 1411361 bytes).
 PDF statistics:
- 1597 PDF objects out of 1728 (max. 8388607)
- 1422 compressed objects within 15 object streams
- 378 named destinations out of 1000 (max. 500000)
- 61895 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1616 PDF objects out of 1728 (max. 8388607)
+ 1442 compressed objects within 15 object streams
+ 386 named destinations out of 1000 (max. 500000)
+ 59844 words of extra memory for PDF output out of 61914 (max. 10000000)
 
