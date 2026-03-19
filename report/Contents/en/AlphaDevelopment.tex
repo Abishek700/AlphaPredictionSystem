@@ -311,7 +311,7 @@ Replication data are directly relevant because they allow evaluation of whether 
 
 \subsection{Handling Missing Values and Anomalies}
 
-Not all studies reported complete information. Some studies did not explicitly report sample size or effect size but provided test statistics such as $t$, $F$, or $\chi^2$ values. Rather than discarding these studies, standard statistical relationships were used to recover missing quantities when sufficient information was available. The methods are explained in \ref{subsec:SampleEfeectCalc}
+Not all studies reported complete information. Some studies did not explicitly report sample size or effect size but provided test statistics such as $t$, $F$, or $\chi^2$ values. Rather than discarding these studies, standard statistical relationships were used to recover missing quantities when sufficient information was available. The methods are explained in Section \ref{subsec:SampleEfeectCalc}
 
 Studies that lacked enough information to reliably recover sample size or effect size were excluded. No aggressive outlier removal was applied. Only clearly implausible or incomplete records were removed to maintain consistency while preserving as much valid replication information as possible.
 
@@ -336,8 +336,9 @@ Concretely, the optimal alpha is defined as
 
 \begin{equation}
 	\alpha_{\text{opt}} = \max \{ \alpha \in \mathcal{A} : \alpha < p_{\text{orig}} \},
+	\label{eq:optalpha}
 \end{equation}
-\label{eq:optalpha}
+
 where 
 
 \[
@@ -346,8 +347,7 @@ where
 This candidate set was derived empirically from the replication 
 dataset. Values 0.07 and 0.08 were not observed as optimal thresholds in the dataset and were therefore excluded from the candidate set. The optimal alpha values observed across all 664 studies fell within this discrete range, making these values the natural choice for the candidate set.
 
-This Formula\ref{eq:optalpha} was derived specifically for this system to operationalise 
-the concept of a study specific threshold. While the general idea of 
+This equation (Equation~\ref{eq:optalpha}) was derived specifically for this system to operationalise the concept of a study-specific threshold. While the general idea of 
 adapting significance levels to study outcomes is discussed in the 
 literature \cite{Benjamin2018}\cite{WassersteinLazar2016}, the 
 specific formulation presented here was developed as part of this work.

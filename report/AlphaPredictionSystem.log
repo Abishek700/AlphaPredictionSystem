@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.9)  19 MAR 2026 12:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.9)  19 MAR 2026 13:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3640,9 +3640,9 @@ Package logreq Info: Writing requests to 'AlphaPredictionSystem.run.xml'.
 ### simple group (level 1) entered at line 249 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 77465 strings out of 474104
- 1893610 string characters out of 5747503
- 2956374 words of memory out of 5000000
+ 77466 strings out of 474104
+ 1893626 string characters out of 5747503
+ 2956366 words of memory out of 5000000
  98061 multiletter control sequences out of 15000+600000
  689351 words of font info for 333 fonts, out of 8000000 for 9000
  1146 hyphenation exceptions out of 8191
@@ -3661,10 +3661,10 @@ c/lm/lmro17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c
 :/texlive/2024/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2024/t
 exmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/ty
 pe1/public/lm/lmsy8.pfb>
-Output written on AlphaPredictionSystem.pdf (81 pages, 1411361 bytes).
+Output written on AlphaPredictionSystem.pdf (81 pages, 1411364 bytes).
 PDF statistics:
- 1616 PDF objects out of 1728 (max. 8388607)
- 1442 compressed objects within 15 object streams
- 386 named destinations out of 1000 (max. 500000)
+ 1617 PDF objects out of 1728 (max. 8388607)
+ 1443 compressed objects within 15 object streams
+ 387 named destinations out of 1000 (max. 500000)
  59844 words of extra memory for PDF output out of 61914 (max. 10000000)
 
