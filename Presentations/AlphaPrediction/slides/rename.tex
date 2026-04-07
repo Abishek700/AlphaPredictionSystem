@@ -1,0 +1,647 @@
+
+
+\section{Problem}
+
+\frame{\frametitle{Hypothesis Testing}
+	
+	\begin{itemize}
+		\item Decisions in hypothesis testing are based on a simple rule:
+		
+		\[
+		\begin{aligned}
+			\text{p-value} &\;\longrightarrow\; \text{Compare with } \alpha \\
+			p \leq \alpha &\;\Rightarrow\; \text{Reject } H_0 \\
+			p > \alpha &\;\Rightarrow\; \text{Fail to reject } H_0
+		\end{aligned}
+		\]
+		
+		\item The choice of $\alpha$ directly affects the decision.
+		
+	\end{itemize}
+	
+	\footnotesize \cite{Fisher1925}
+	
+}
+\frame{\frametitle{Why do we use $\alpha = 0.05$?}
+	
+	\begin{itemize}
+		\item $\alpha$ = probability of a Type I error
+		\item $\alpha = 0.05$ is commonly used as a standard threshold
+		\item This choice is largely based on historical convention
+		\item There is no clear justification for its universal use
+	\end{itemize}
+	
+	\footnotesize \cite{Fisher1925,CowlesDavis1982}
+	
+}
+
+\frame{\frametitle{The Problem with $\alpha = 0.05$}
+	
+	\begin{columns}[T]
+		
+		\column{0.33\textwidth}
+		\begin{block}{One Size Fits All}
+			\begin{minipage}[t][3.5cm][t]{\linewidth}
+				Same $\alpha$ used regardless of
+				\begin{itemize}
+					\item sample size
+					\item effect size
+				\end{itemize}
+			\end{minipage}
+		\end{block}
+		
+		\column{0.33\textwidth}
+		\begin{block}{Cliff-Edge Effect}
+			\begin{minipage}[t][3.5cm][t]{\linewidth}
+				\begin{itemize}
+					\item $p = 0.049$ $\rightarrow$ Significant
+					\item $p = 0.051$ $\rightarrow$ Not significant
+				\end{itemize}
+			\end{minipage}
+		\end{block}
+		
+		\column{0.33\textwidth}
+		\begin{block}{Replication Crisis}
+			\begin{minipage}[t][3.5cm][t]{\linewidth}
+				\begin{itemize}
+					\item Many statistically significant findings fail to replicate.
+				\end{itemize}
+			\end{minipage}
+		\end{block}
+		
+	\end{columns}
+	
+	
+	
+	\footnotesize \cite{OpenScience2015,WassersteinLazar2016}
+	
+}
+
+\section{Existing approaches}
+
+\frame{\frametitle{Existing Approaches for Choosing $\alpha$}
+	
+\begin{itemize}
+	\item Fixed $\alpha$ levels ($0.10,\; 0.05,\; 0.01$)
+	\item Power-based approaches (sample size, effect size)
+	\item Decision-theoretic approaches (error costs)
+	\item Stricter thresholds ($\alpha = 0.005$)
+\end{itemize}
+
+\vspace{0.01cm}
+
+\begin{center}
+	$\Longrightarrow$ \; \textbf{All approaches still rely on a fixed $\alpha$}
+\end{center}
+	
+	\footnotesize \cite{Cohen1988,Berger1985,Benjamin2018}
+	
+}
+
+\frame{\frametitle{Limitations of Current Approaches}
+	
+	\begin{itemize}
+		\item Still rely on a fixed $\alpha$
+		\item No adaptation to study characteristics
+		\item No practical system for selecting $\alpha$
+	\end{itemize}
+	
+	\vspace{0.1cm}
+	
+	\begin{center}
+		$\Longrightarrow$ \; \textbf{This motivates a data driven approach}
+	\end{center}
+	
+}
+	
+
+\section{Objective}
+
+\frame{\frametitle{Proposed Approach}
+	
+	\begin{itemize}
+		\item Build a system to recommend a study-specific $\alpha$
+	\end{itemize}
+	
+	\vspace{0.01cm}
+	
+	\begin{center}
+		\begin{tabular}{c}
+			Sample Size + Effect Size \\
+			$\downarrow$ \\
+			$\alpha_{\text{baseline}}$ (ML, from data) \\
+			$\downarrow$ \\
+			Context Adjustment (statistical rules) \\
+			$\downarrow$ \\
+			Final $\alpha$
+		\end{tabular}
+	\end{center}
+		\footnotesize \cite{Cohen1988,Baker2016,Herzog2019}
+}
+
+\frame{\frametitle{Research Question}
+	
+	\begin{center}
+		\Large
+		Can a data-driven, context-sensitive approach improve $\alpha$ compared to $\alpha = 0.05$?
+	\end{center}
+	
+}
+
+\section{Proposed Alpha Recommendation System}
+
+\begin{frame}{System Architecture}
+{\Large
+	\[
+	\mathbf{\alpha_{\text{final}} =
+		\alpha_{\text{baseline}}
+		\times k_1
+		\times k_2
+		\times k_3}
+	\]
+}
+	\begin{columns}[T]
+		
+		\column{0.15\textwidth}
+		\fbox{
+			\begin{minipage}[t][4.8cm][t]{\linewidth}
+				\centering
+				\textbf{INPUT}
+				
+					\vspace{0.5cm}
+				
+			\textbf{	Sample Size\\
+				+ Effect Size}
+				
+				\vspace{0.2cm}
+				
+				{\small
+					
+					(Known initially)
+				}
+			\end{minipage}
+		}
+		
+		\column{0.01\textwidth}
+		\centering
+		\vspace{3cm}
+		\small $\rightarrow$
+		
+		\column{0.15\textwidth}
+		\fbox{
+			\begin{minipage}[t][4.8cm][t]{\linewidth}
+				\centering
+				\textbf{STAGE 1}
+				
+					\vspace{0.5cm}
+				
+			\textbf{	Random Forest\\
+				Regression}
+				
+				\vspace{0.2cm}
+				
+				{\small
+					Trained on 664\\
+					replication studies\\
+					MAE-optimized
+				}
+			\end{minipage}
+		}
+		
+		\column{0.01\textwidth}
+		\centering
+		\vspace{3cm}
+		\small $\rightarrow$
+		
+		\column{0.15\textwidth}
+		\fbox{
+			\begin{minipage}[t][4.8cm][t]{\linewidth}
+				\centering
+				\textbf{STAGE 2}
+				
+					\vspace{0.5cm}
+				
+			\textbf{	Context\\
+				Adjustment}
+				
+				\vspace{0.2cm}
+				
+				{\small
+					Risk tolerance(K1)\\
+					Test direction(k2)\\
+					Multiple testing(k3)
+				}
+			\end{minipage}
+		}
+		
+		\column{0.01\textwidth}
+		\centering
+		\vspace{3cm}
+		\small $\rightarrow$
+		
+		\column{0.15\textwidth}
+		\fbox{
+			\begin{minipage}[t][4.8cm][t]{\linewidth}
+				\centering
+				\textbf{OUTPUT}
+				
+				\vspace{0.5cm}
+				
+			\textbf{	Final $\alpha$ 	Recommendation}
+				
+					\vspace{0.2cm}
+				
+				{\small
+					Clamped to\\
+					0.001 -- 0.15\\
+					Ready to use
+				}
+			\end{minipage}
+		}
+		
+	\end{columns}
+	
+
+	
+
+\end{frame}
+\section{Replication Dataset}
+
+\frame{\frametitle{Data Source}
+	
+	\begin{itemize}
+		\item Replication studies (OSF)
+		\item Across multiple research fields
+		\item 664 hypothesis tests
+		\item Includes:
+		\begin{itemize}
+			\item Sample size
+			\item Effect size
+			\item p-values
+		\end{itemize}
+	\end{itemize}
+	\footnotesize \cite{Chang2025,ErringtonDenis2021,Soto2017,Sotola2022,Li2021,OpenScience2015}
+}
+
+\frame{\frametitle{Example Dataset Rows}
+	
+	\begin{center}
+		
+		\begin{tabular}{cccc}
+			\hline
+			Sample Size & Effect Size & p-value & Optimal $\alpha$ \\
+			\hline
+			120 & 0.35 & 0.041 & 0.052 \\
+			85  & 0.28 & 0.063 & 0.061 \\
+			241 & 0.30 & 0.048 & 0.074 \\
+			150 & 0.22 & 0.071 & 0.066 \\
+			96  & 0.40 & 0.032 & 0.049 \\
+			\hline
+		\end{tabular}
+		
+	\end{center}
+	
+	\vspace{0.5cm}
+	
+	\begin{itemize}
+		\item Each row represents one hypothesis test.
+	\end{itemize}
+	
+}
+
+\begin{frame}{Optimal Alpha Definition}
+	
+	\begin{columns}[T]
+		
+		\column{0.48\textwidth}
+		\begin{block}{Replicated}
+			Keep original $\alpha$  
+			
+			(decision validated)
+		\end{block}
+		
+		\column{0.48\textwidth}
+		\begin{alertblock}{Failed}
+			Adjust $\alpha$: largest  
+			
+			$\alpha < p$-value  
+			
+			(correct decision)
+		\end{alertblock}
+		
+	\end{columns}
+	
+	\vspace{0.5cm}
+	
+	\begin{exampleblock}{Example}
+		
+		$p = 0.047 \rightarrow$ failed to replicate  
+		
+		Optimal $\alpha = 0.04$ (not 0.05)
+		
+	\end{exampleblock}
+	
+
+\end{frame}
+
+\begin{frame}{Predicting Baseline $\alpha$}
+	
+	\begin{block}{Machine Learning Task}
+		
+		\begin{itemize}
+			\item Goal: predict $\alpha_{\text{baseline}}$.
+			\item Input features:
+			\begin{itemize}
+				\item Sample size
+				\item Effect size
+			\end{itemize}
+			\item Target variable: optimal $\alpha$ .
+		\end{itemize}
+		
+	\end{block}
+	
+\end{frame}
+
+\section{Stage 1}
+\begin{frame}{Algorithms Evaluated}
+	
+	\begin{block}{Regression Models Evaluated}
+		
+		\begin{itemize}
+			\item Decision Tree Regressor
+			\item Gradient Boosting Regressor
+			\item Random Forest Regressor
+		\end{itemize}
+		
+	\end{block}
+	
+	\vspace{0.4cm}
+	
+	\begin{exampleblock}{Evaluation Metric}
+		
+		Mean Absolute Error (MAE)
+		
+	\end{exampleblock}
+	
+\end{frame}
+
+\begin{frame}{Machine Learning Model Selection}
+	
+	\begin{center}
+		
+		\includegraphics[width=0.95\textwidth]{Images/ml_model_selection}
+		
+	\end{center}
+	{\footnotesize
+		Random Forest achieves the lowest error
+	}
+\end{frame}
+
+\begin{frame}{Selected Model: Random Forest}
+	
+	\begin{block}
+		
+		\begin{itemize}
+			\item Lowest prediction error 
+			\item Handles non-linear relationships.
+			\item Stable performance 
+		\end{itemize}
+		
+	\end{block}
+	
+	\vspace{0.4cm}
+	
+	\begin{exampleblock}{Implementation}
+		
+		Random Forest with \textbf{200 trees} used for baseline $\alpha$ prediction.
+		
+	\end{exampleblock}
+	
+\end{frame}
+\section{Stage 2}
+\begin{frame}{Stage 2: Context-Based Adjustment}
+	
+	\begin{block}{Reason}
+		
+	Baseline $\alpha$ is not sufficient
+		
+	\end{block}
+	
+	\vspace{0.4cm}
+	
+	\begin{exampleblock}{Adjustment Factors}
+		
+		\begin{itemize}
+			\item Risk tolerance
+			\item Test direction (one-tailed vs two-tailed)
+			\item Number of hypothesis tests (multiple testing)
+		\end{itemize}
+		
+	\end{exampleblock}
+	
+\end{frame}
+
+\begin{frame}{Adjustment Factors}
+	
+	\begin{columns}[T]
+		
+		\column{0.32\textwidth}
+		\begin{block}{$k_1$ — Risk Tolerance}
+			
+			\begin{itemize}
+				\item Very Strict $\times 0.50$
+				\item Strict $\times 0.75$
+				\item Neutral $\times 1.00$
+				\item Lenient $\times 1.25$
+				\item Very Lenient $\times 1.50$
+			\end{itemize}
+			
+		\end{block}
+		
+		
+		\column{0.32\textwidth}
+		\begin{block}{$k_2$ — Test Direction}
+			
+			\begin{itemize}
+				\item Two-tailed $\times 1.00$
+				\item One-tailed $\times 2.00$
+			\end{itemize}
+			
+			\vspace{0.3cm}
+			
+			Reflects rejection region allocation.
+			
+		\end{block}
+		
+		
+		\column{0.32\textwidth}
+		\begin{block}{$k_3$ — Multiple Testing}
+			
+			Bonferroni correction:
+			
+			\[
+			\alpha / m
+			\]
+			
+			where $m$ = number of hypothesis tests.
+			
+		\end{block}
+		
+	\end{columns}
+	
+	\vspace{0.4cm}
+	
+	\centering
+	\small
+	Final clamping: $0.001 \leq \alpha_{final} \leq 0.15$
+	
+\end{frame}
+\begin{frame}{Final Alpha Calculation}
+	
+	\begin{block}{Adjusted Significance Level}
+		
+		\[
+		\alpha_{final}
+		=
+		\alpha_{baseline}
+		\times
+		k_1
+		\times
+		k_2
+		\times
+		k_3
+		\]
+		
+	\end{block}
+	
+	\vspace{0.5cm}
+	
+	\begin{exampleblock}{Interpretation}
+		
+		\begin{itemize}
+			\item $\alpha_{baseline}$: predicted by the machine learning model.
+			\item $k_1$: adjustment for risk tolerance.
+			\item $k_2$: adjustment for test direction.
+			\item $k_3$: adjustment for multiple hypothesis testing.
+		\end{itemize}
+		
+	\end{exampleblock}
+	
+\end{frame}
+\section{System Deployment}
+\begin{frame}{System Deployment}
+	
+	\begin{block}{Implementation}
+		
+		\begin{itemize}
+			\item Implemented in \textbf{Python}.
+			\item ML model:\textbf{scikit-learn}.
+			\item interface:\textbf{Streamlit}.
+		\end{itemize}
+		
+	\end{block}
+	
+	\vspace{0.4cm}
+	
+\begin{center}
+	User Inputs $\;\Longrightarrow\;$ Recommended $\alpha$
+\end{center}
+	
+\end{frame}
+
+\begin{frame}{System Interface}
+	
+	\begin{center}
+		
+		\includegraphics[width=0.6\textwidth]{Images/StreamlitAlphaAfter}
+		
+	
+	
+		
+	\end{center}
+	
+\end{frame}
+\section{Evaluation}
+\begin{frame}{Evaluation Setup}
+	
+	\begin{block}{Dataset}
+		\begin{itemize}
+			\item Tested on 20 failed replication studies
+		\end{itemize}
+	\end{block}
+	
+	\begin{block}{Comparison}
+		\begin{itemize}
+			\item $\alpha = 0.05$
+			\item Recommended $\alpha$
+		\end{itemize}
+	\end{block}
+	
+	\begin{block}{Evaluation}
+		\begin{itemize}
+			\item Decision outcomes
+		\end{itemize}
+	\end{block}
+	
+	\vspace{0.4cm}
+	
+	\begin{center}
+		$\Longrightarrow$ \; \textbf{Goal: Reduce incorrect rejections}
+	\end{center}
+	
+\end{frame}
+\section{Interpreting the results}
+\begin{frame}{Main Findings}
+	
+	\begin{center}
+		
+		\includegraphics[width=0.7\textwidth]{Images/study_outcomes_chart}
+		
+	
+		
+		{\footnotesize
+		\textbf{	Reduces false positives by 65\% (13 out of 20 cases)}}
+		
+	\end{center}
+	
+\end{frame}
+\section{Limitations}
+\begin{frame}{Limitations}
+	
+	\begin{block}{Key Limitations}
+		\begin{itemize}
+			\item Limited dataset size
+			\item Limited input features
+			\item Dependent on available replication data
+			\item Results provide guidance, not strict rules
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
+\section{Conclusion}
+\begin{frame}{Conclusion}
+	
+	\begin{block}{Key Takeaways}
+		\begin{itemize}
+			\item $\alpha = 0.05$ is not universally appropriate
+			\item $\alpha$ should depend on study characteristics
+			\item A data-driven approach improves $\alpha$ selection
+			\item Combines machine learning with interpretable adjustments
+			\item \textbf{Statistical significance should be adaptive, not fixed}
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}{Future Work}
+	
+	\begin{block}{Next Steps}
+		\begin{itemize}
+			\item Expand replication dataset  
+			\item Include additional study features 
+			\item Explore alternative ML models
+			\item Deploy as a fully accessible web application
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
