@@ -1,47 +1,72 @@
 
 
-\section{Problem}
+\section{What is Alpha in Hypothesis Testing}
 
 \frame{\frametitle{Hypothesis Testing}
 	
+	\textbf{Observed Result}
 	\begin{itemize}
-		\item Decisions in hypothesis testing are based on a simple rule:
-		
-		\[
-		\begin{aligned}
-			\text{p-value} &\;\longrightarrow\; \text{Compare with } \alpha \\
-			p \leq \alpha &\;\Rightarrow\; \text{Reject } H_0 \\
-			p > \alpha &\;\Rightarrow\; \text{Fail to reject } H_0
-		\end{aligned}
-		\]
-		
-		\item The choice of $\alpha$ directly affects the decision.
-		
+		\item “A method shows improvement”
 	\end{itemize}
 	
-	\footnotesize \cite{Fisher1925}
+	\vspace{0.2cm}
 	
-}
-\frame{\frametitle{Why do we use $\alpha = 0.05$?}
+	\textbf{Key Question}
+	\begin{center}
+		\Large
+		Is it \textbf{real} or just \textbf{coincidence}?
+	\end{center}
 	
+	
+	\begin{center}
+		$\Downarrow$
+	\end{center}
+	
+	\textbf{Hypothesis Testing Procedure}
 	\begin{itemize}
-		\item $\alpha$ = probability of a Type I error
-		\item $\alpha = 0.05$ is commonly used as a standard threshold
-		\item This choice is largely based on historical convention
-		\item There is no clear justification for its universal use
+		\item Assume $H_0$: No effect  
+		\item Choose $\alpha$ (risk level)  
+		\item Compute p-value (under $H_0$)  
+		\item Compare p-value with $\alpha$  
 	\end{itemize}
 	
-	\footnotesize \cite{Fisher1925,CowlesDavis1982}
+}
+\frame{\frametitle{Decision Rule}
+	
+	\begin{center}
+		\Large
+		Decision based on p-value and $\alpha$
+	\end{center}
+	
+	\vspace{0.6cm}
+	
+	\begin{center}
+		\begin{tabular}{c}
+			$p \leq \alpha \;\Rightarrow\;$ Reject $H_0$ \\
+			\vspace{0.3cm} \\
+			$p > \alpha \;\Rightarrow\;$ Do not reject $H_0$
+		\end{tabular}
+	\end{center}
+	
+	\vspace{0.8cm}
+	
+	\begin{center}
+		\alert{\Large $\alpha$ determines what is considered ``surprising''}
+	\end{center}
 	
 }
+\section{Problem}
 
 \frame{\frametitle{The Problem with $\alpha = 0.05$}
 	
+	\begin{itemize}
+	\item $\alpha = 0.05$ become standard threshold with no clear justification
+\end{itemize}
 	\begin{columns}[T]
 		
 		\column{0.33\textwidth}
 		\begin{block}{One Size Fits All}
-			\begin{minipage}[t][3.5cm][t]{\linewidth}
+			\begin{minipage}[t][3 cm][t]{\linewidth}
 				Same $\alpha$ used regardless of
 				\begin{itemize}
 					\item sample size
@@ -52,7 +77,7 @@
 		
 		\column{0.33\textwidth}
 		\begin{block}{Cliff-Edge Effect}
-			\begin{minipage}[t][3.5cm][t]{\linewidth}
+			\begin{minipage}[t][3cm][t]{\linewidth}
 				\begin{itemize}
 					\item $p = 0.049$ $\rightarrow$ Significant
 					\item $p = 0.051$ $\rightarrow$ Not significant
@@ -62,7 +87,7 @@
 		
 		\column{0.33\textwidth}
 		\begin{block}{Replication Crisis}
-			\begin{minipage}[t][3.5cm][t]{\linewidth}
+			\begin{minipage}[t][3cm][t]{\linewidth}
 				\begin{itemize}
 					\item Many statistically significant findings fail to replicate.
 				\end{itemize}
@@ -98,68 +123,47 @@
 	
 }
 
-\frame{\frametitle{Limitations of Current Approaches}
-	
-	\begin{itemize}
-		\item Still rely on a fixed $\alpha$
-		\item No adaptation to study characteristics
-		\item No practical system for selecting $\alpha$
-	\end{itemize}
-	
-	\vspace{0.1cm}
-	
-	\begin{center}
-		$\Longrightarrow$ \; \textbf{This motivates a data driven approach}
-	\end{center}
-	
-}
-	
 
-\section{Objective}
 
-\frame{\frametitle{Proposed Approach}
-	
-	\begin{itemize}
-		\item Build a system to recommend a study-specific $\alpha$
-	\end{itemize}
-	
-	\vspace{0.01cm}
-	
-	\begin{center}
-		\begin{tabular}{c}
-			Sample Size + Effect Size \\
-			$\downarrow$ \\
-			$\alpha_{\text{baseline}}$ (ML, from data) \\
-			$\downarrow$ \\
-			Context Adjustment (statistical rules) \\
-			$\downarrow$ \\
-			Final $\alpha$
-		\end{tabular}
-	\end{center}
-		\footnotesize \cite{Cohen1988,Baker2016,Herzog2019}
-}
+%\section{Objective}
 
-\frame{\frametitle{Research Question}
+%\frame{\frametitle{Proposed Approach}
 	
-	\begin{center}
-		\Large
-		Can a data-driven, context-sensitive approach improve $\alpha$ compared to $\alpha = 0.05$?
-	\end{center}
+%	\begin{itemize}
+%		\item Build a system to recommend a study-specific $\alpha$
+%	\end{itemize}
 	
-}
+%	\vspace{0.01cm}
+	
+%	\begin{center}
+%		\begin{tabular}{c}
+%			Sample Size + Effect Size \\
+%			$\downarrow$ \\
+%			$\alpha_{\text{baseline}}$ (ML, from data) \\
+%			$\downarrow$ \\
+%			Context Adjustment (statistical rules) \\
+%			$\downarrow$ \\
+%			Final $\alpha$
+%		\end{tabular}
+%	\end{center}
+%		\footnotesize \cite{Cohen1988,Baker2016,Herzog2019}
+%}
+
+%\frame{\frametitle{Research Question}
+	
+%	\begin{center}
+	%	\Large
+	%	Can a data-driven, context-sensitive approach improve $\alpha$ compared to $\alpha = 0.05$?
+%	\end{center}
+	
+%}
 
 \section{Proposed Alpha Recommendation System}
 
-\begin{frame}{System Architecture}
-{\Large
-	\[
-	\mathbf{\alpha_{\text{final}} =
-		\alpha_{\text{baseline}}
-		\times k_1
-		\times k_2
-		\times k_3}
-	\]
-}
+\begin{frame}{Proposed Alpha Recommendation System}
+\begin{center}
+	\alert{\Large Goal: Recommend $\alpha$ based on data \& study context}
+\end{center}
 	\begin{columns}[T]
 		
 		\column{0.15\textwidth}
@@ -201,9 +205,7 @@
 				\vspace{0.2cm}
 				
 				{\small
-					Trained on 664\\
-					replication studies\\
-					MAE-optimized
+				Baseline $\alpha$ Learned from previous data
 				}
 			\end{minipage}
 		}
@@ -227,9 +229,9 @@
 				\vspace{0.2cm}
 				
 				{\small
-					Risk tolerance(K1)\\
-					Test direction(k2)\\
-					Multiple testing(k3)
+					(K1)\\
+					(k2)\\
+					(k3)
 				}
 			\end{minipage}
 		}
@@ -253,8 +255,7 @@
 				
 				{\small
 					Clamped to\\
-					0.001 -- 0.15\\
-					Ready to use
+					0.001 -- 0.15
 				}
 			\end{minipage}
 		}
@@ -363,27 +364,6 @@
 \end{frame}
 
 \section{Stage 1}
-\begin{frame}{Algorithms Evaluated}
-	
-	\begin{block}{Regression Models Evaluated}
-		
-		\begin{itemize}
-			\item Decision Tree Regressor
-			\item Gradient Boosting Regressor
-			\item Random Forest Regressor
-		\end{itemize}
-		
-	\end{block}
-	
-	\vspace{0.4cm}
-	
-	\begin{exampleblock}{Evaluation Metric}
-		
-		Mean Absolute Error (MAE)
-		
-	\end{exampleblock}
-	
-\end{frame}
 
 \begin{frame}{Machine Learning Model Selection}
 	
@@ -419,9 +399,9 @@
 	
 \end{frame}
 \section{Stage 2}
-\begin{frame}{Stage 2: Context-Based Adjustment}
+\begin{frame}{Stage 2: Context Based Adjustment}
 	
-	\begin{block}{Reason}
+	\begin{block}
 		
 	Baseline $\alpha$ is not sufficient
 		
@@ -429,19 +409,19 @@
 	
 	\vspace{0.4cm}
 	
-	\begin{exampleblock}{Adjustment Factors}
+	\begin{exampleblock}{Reason}
 		
 		\begin{itemize}
-			\item Risk tolerance
-			\item Test direction (one-tailed vs two-tailed)
-			\item Number of hypothesis tests (multiple testing)
+			\item Same inputs can have different study contexts
+			\item Baseline $\alpha$ does not reflect user preferences or risk
+			\item Real world decisions require context aware adjustment
 		\end{itemize}
 		
 	\end{exampleblock}
 	
 \end{frame}
 
-\begin{frame}{Adjustment Factors}
+\begin{frame}{Adjustment factors}
 	
 	\begin{columns}[T]
 		
@@ -467,23 +447,17 @@
 				\item One-tailed $\times 2.00$
 			\end{itemize}
 			
-			\vspace{0.3cm}
-			
-			Reflects rejection region allocation.
-			
 		\end{block}
 		
 		
 		\column{0.32\textwidth}
 		\begin{block}{$k_3$ — Multiple Testing}
 			
-			Bonferroni correction:
+			Bonferroni:
 			
 			\[
 			\alpha / m
 			\]
-			
-			where $m$ = number of hypothesis tests.
 			
 		\end{block}
 		
@@ -492,16 +466,9 @@
 	\vspace{0.4cm}
 	
 	\centering
-	\small
-	Final clamping: $0.001 \leq \alpha_{final} \leq 0.15$
 	
-\end{frame}
-\begin{frame}{Final Alpha Calculation}
-	
-	\begin{block}{Adjusted Significance Level}
-		
-		\[
-		\alpha_{final}
+	\textbf{
+		$\alpha_{final}
 		=
 		\alpha_{baseline}
 		\times
@@ -509,25 +476,17 @@
 		\times
 		k_2
 		\times
-		k_3
-		\]
-		
-	\end{block}
+		k_3$
+	}
 	
-	\vspace{0.5cm}
+	\vspace{0.2cm}
 	
-	\begin{exampleblock}{Interpretation}
-		
-		\begin{itemize}
-			\item $\alpha_{baseline}$: predicted by the machine learning model.
-			\item $k_1$: adjustment for risk tolerance.
-			\item $k_2$: adjustment for test direction.
-			\item $k_3$: adjustment for multiple hypothesis testing.
-		\end{itemize}
-		
-	\end{exampleblock}
+	\small
+	Final range: $0.001 \leq \alpha_{final} \leq 0.15$
 	
 \end{frame}
+	
+
 \section{System Deployment}
 \begin{frame}{System Deployment}
 	
@@ -579,14 +538,14 @@
 	
 	\begin{block}{Evaluation}
 		\begin{itemize}
-			\item Decision outcomes
+			\item Decision change (reject $\rightarrow$ not reject)
 		\end{itemize}
 	\end{block}
 	
 	\vspace{0.4cm}
 	
 	\begin{center}
-		$\Longrightarrow$ \; \textbf{Goal: Reduce incorrect rejections}
+		$\Longrightarrow$ \; \textbf{Goal: Avoid false positives}
 	\end{center}
 	
 \end{frame}
@@ -611,8 +570,8 @@
 	\begin{block}{Key Limitations}
 		\begin{itemize}
 			\item Limited dataset size
-			\item Limited input features
-			\item Dependent on available replication data
+			\item Heuristic adjustment factors
+			\item Neutral context used in evaluation
 			\item Results provide guidance, not strict rules
 		\end{itemize}
 	\end{block}
@@ -640,6 +599,7 @@
 			\item Expand replication dataset  
 			\item Include additional study features 
 			\item Explore alternative ML models
+			\item Evaluate beyond only rejected cases
 			\item Deploy as a fully accessible web application
 		\end{itemize}
 	\end{block}
